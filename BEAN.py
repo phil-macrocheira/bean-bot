@@ -37,7 +37,7 @@ class Client(commands.Bot):
         # ignore all messages from self or from another bot
         if message.author == self.user or message.author.bot:
             return
-        if "thanks bean" in message.content.replace(',','').replace('!',''):
+        if "thanks bean" in message.content.lower().replace(',','').replace('!',''):
             await message.reply("NICE ROD, PAL.")
 
 # define client and intents
