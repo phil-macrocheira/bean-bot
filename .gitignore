@@ -1,0 +1,8 @@
+token.txt
+secret.txt
+.dockerignore
+.venv
+fly.toml
+poetry.lock
+pyproject.toml
+Dockerfile

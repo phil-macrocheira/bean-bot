@@ -1,0 +1,1 @@
+Bot for the UFO 50 discord server

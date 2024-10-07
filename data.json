@@ -1,0 +1,452 @@
+[
+    {
+        "name": "Barbuta",
+        "num": "1",
+        "emoji": "<:barbuta:1292612809682583564>",
+        "alias": ["barbuta"],
+        "gift": "VISIT AT LEAST 25 ROOMS",
+        "gold": "LIBERATE THE CASTLE",
+        "cherry": "WIN WITH MAX EGGS"
+    },
+    {
+        "name": "Bug Hunter",
+        "num": "2",
+        "emoji": "<:bughunter:1292612191748489267>",
+        "alias": ["bughunter", "bug hunter", "bug hunt"],
+        "gift": "COMPLETE YOUR FIRST JOB",
+        "gold": "COMPLETE 3 JOBS IN A ROW",
+        "cherry": "COMPLETE 6 JOBS IN A ROW"
+    },
+    {
+        "name": "Ninpek",
+        "num": "3",
+        "emoji": "<:ninpek:1292612202745958537>",
+        "alias": ["ninpek", "nin pek"],
+        "gift": "EAT 3 SANDWICHES",
+        "gold": "BEAT THE GAME",
+        "cherry": "BEAT THE SECOND LOOP"
+    },
+    {
+        "name": "Paint Chase",
+        "num": "4",
+        "emoji": "<:paintchase:1292610924632342608>",
+        "alias": ["paintchase", "paint chase"],
+        "gift": "PASS THE FIRST 12 COURSES",
+        "gold": "PASS ALL 25 COURSES AND DEFEAT THE PINK RACER",
+        "cherry": "WIN WITH A SCORE OF AT LEAST 555"
+    },
+    {
+        "name": "Magic Garden",
+        "num": "5",
+        "emoji": "<:magicgarden:1292610886216974407>",
+        "alias": ["magicgarden","magic garden"],
+        "gift": "SAVE AT LEAST 10 OPPIES AT ONCE",
+        "gold": "SAVE 200 OPPIES",
+        "cherry": "WIN WITH A SCORE OF AT LEAST 20000"
+    },
+    {
+        "name": "Mortol",
+        "num": "6",
+        "emoji": "<:mortol:1292610889756704821>",
+        "alias": ["mortol", "mortol 1"],
+        "gift": "BEAT LEVEL 2-C",
+        "gold": "BEAT ALL 10 LEVELS.",
+        "cherry": "FINISH WITH AT LEAST 75 LIVES."
+    },
+    {
+        "name": "Velgress",
+        "num": "7",
+        "emoji": "<:velgress:1292610865333403669>",
+        "alias": ["velgress","velgres"],
+        "gift": "COLLECT 2 KEYS",
+        "gold": "ESCAPE VELGRESS",
+        "cherry": "UNLOCK FINAL LEVEL AND DEFEAT CHARKAS"
+    },
+    {
+        "name": "Planet Zoldath",
+        "num": "8",
+        "emoji": "<:planetzoldath:1292624202029072385>",
+        "alias": ["planetzoldath", "planet zoldath", "zoldath"],
+        "gift": "FIND 1 MAP PART(S)",
+        "gold": "FIND ALL 3 MAP PARTS AND ESCAPE ZOLDATH",
+        "cherry": "WIN IN 20 MINUTES OR LESS"
+    },
+    {
+        "name": "Attactics",
+        "num": "9",
+        "emoji": "<:attactics:1292610848354734150>",
+        "alias": ["attactics"],
+        "gift": "BEAT THE FIRST 12 LEVELS IN THE CAMPAIGN",
+        "gold": "BEAT ALL 24 LEVELS IN THE CAMPAIGN",
+        "cherry": "BEAT THE CAMPAIGN AND REACH RANK 100 IN RANKED MODE"
+    },
+    {
+        "name": "Devilition",
+        "num": "10",
+        "emoji": "<:devilition:1292610851756310639>",
+        "alias": ["devilition"],
+        "gift": "SURVIVE FOR 5 ROUNDS",
+        "gold": "SURVIVE 10 ROUNDS",
+        "cherry": "SCORE 30000 POINTS"
+    },
+    {
+        "name": "Kick Club",
+        "num": "11",
+        "emoji": "<:kickclub:1292612195577893026>",
+        "alias": ["kickclub","kick club"],
+        "gift": "BEAT TRACK WORLD",
+        "gold": "BEAT ALL 4 WORLDS",
+        "cherry": "WIN WITH 150000 POINTS"
+    },
+    {
+        "name": "Avianos",
+        "num": "12",
+        "emoji": "<:avianos:1292612216193028176>",
+        "alias": ["avianos"],
+        "gift": "MAX OUT BLESSINGS FROM ONE ANCESTOR.",
+        "gold": "BEAT HATCHLING, FLEDGLING, AND ADULT",
+        "cherry": "BEAT ALL 5 TRIALS"
+    },
+    {
+        "name": "Mooncat",
+        "num": "13",
+        "emoji": "<:mooncat:1292610858299686974>",
+        "alias": ["mooncat", "moon cat"],
+        "gift": "FIND A WARP",
+        "gold": "FIND THE EGG",
+        "cherry": "FIND ALL 3 EGGS"
+    },
+    {
+        "name": "Bushido Ball",
+        "num": "14",
+        "emoji": "<:bushidoball:1292612193304580189>",
+        "alias": ["bushidoball", "bushido ball", "bushido", "bush ball", "bushball"],
+        "gift": "DEFEAT 3 IN THE TOURNAMENT",
+        "gold": "WIN THE TOURNAMENT",
+        "cherry": "WIN WITH NO CONTINUES"
+    },
+    {
+        "name": "Block Koala",
+        "num": "15",
+        "emoji": "<:blockkoala:1292612191375327313>",
+        "alias": ["blockkoala", "block koala", "koala"],
+        "gift": "COMPLETE A CUSTOM LEVEL",
+        "gold": "BEAT LEVEL 50",
+        "cherry": "EARN 50 STARS"
+    },
+    {
+        "name": "Camouflage",
+        "num": "16",
+        "emoji": "<:camouflage:1292610850636566618>",
+        "alias": ["camouflage"],
+        "gift": "EARN 30% COMPLETION",
+        "gold": "REACH THE SKY TEMPLE ON THE FAR SIDE OF THE ISLAND",
+        "cherry": "EARN 100% COMPLETION"
+    },
+    {
+        "name": "Campanella",
+        "num": "17",
+        "emoji": "<:campanella:1292610849596248094>",
+        "alias": ["campanella", "campanela", "campanela 1", "campanella 1"],
+        "gift": "AMASS 15 SPARE SHIPS",
+        "gold": "BEAT ALL 50 STAGES",
+        "cherry": "WIN WITH ALL 40 COFFEES"
+    },
+    {
+        "name": "Golfaria",
+        "num": "18",
+        "emoji": "<:golfaria:1292610852620341382>",
+        "alias": ["golfaria"],
+        "gift": "OBTAIN THE BLOCK BUSTER",
+        "gold": "BEAT THE GAME",
+        "cherry": "WIN WITH 100% COMPLETION"
+    },
+    {
+        "name": "The Big Bell Race",
+        "num": "19",
+        "emoji": "<:thebigbellrace:1292612806641975386>",
+        "alias": ["thebigbellrace", "bellrace", "bigbellrace", "bell race", "big bell race", "the big bell race"],
+        "gift": "WIN FIRST PLACE IN AT LEAST 1 RACE",
+        "gold": "WIN FIRST PLACE IN THE TOURNAMENT",
+        "cherry": "WIN FIRST PLACE IN ALL 8 RACES"
+    },
+    {
+        "name": "Warptank",
+        "num": "20",
+        "emoji": "<:warptank:1292612190683267088>",
+        "alias": ["warptank", "warp tank"],
+        "gift": "DEFEAT RENEGADE",
+        "gold": "DEFEAT BIG TANK",
+        "cherry": "FIND ALL COFFEES AND CLEAR SPECIAL STAGE"
+    },
+    {
+        "name": "Waldorf's Journey",
+        "num": "21",
+        "emoji": "<:waldorfsjourney:1292610875756249249>",
+        "alias": ["waldorfsjourney", "waldorfs journey", "waldorf'sjourney", "waldorf's journey", "waldorf", "waldorfs"],
+        "gift": "COMPLETE 50% OF THE JOURNEY",
+        "gold": "UNCOVER THE SECRET AT THE END OF THE DREAM",
+        "cherry": "REACH THE END WITH 50 SHELLS"
+    },
+    {
+        "name": "Porgy",
+        "num": "22",
+        "emoji": "<:porgy:1292612187927478272>",
+        "alias": ["porgy"],
+        "gift": "DEFEAT LAMIA",
+        "gold": "SOLVE THE MYSTERY",
+        "cherry": "ACHIEVE 100% COMPLETION"
+    },
+    {
+        "name": "Onion Delivery",
+        "num": "23",
+        "emoji": "<:oniondelivery:1292612807547949148>",
+        "alias": ["oniondelivery", "onion delivery", "onion"],
+        "gift": "COMPLETE 2 DAYS OF DELIVERIES",
+        "gold": "SURVIVE A WEEK ON THE JOB",
+        "cherry": "MAKE 50+ DELIVERIES IN A WEEK"
+    },
+    {
+        "name": "Caramel Caramel",
+        "num": "24",
+        "emoji": "<:caramelcaramel:1292612212552106047>",
+        "alias": ["caramelcaramel", "caramel", "caramel caramel"],
+        "gift": "BEAT THE EGG",
+        "gold": "BEAT THE GAME",
+        "cherry": "DEFEAT THE TRUE BOSS"
+    },
+    {
+        "name": "Party House",
+        "num": "25",
+        "emoji": "<:partyhouse:1292612808529416262>",
+        "alias": ["partyhouse", "party house", "party", "house party", "houseparty"],
+        "gift": "BEAT 1 SCENARIO",
+        "gold": "BEAT ALL 5 SCENARIOS",
+        "cherry": "ACHIEVE A STREAK OF 5"
+    },
+    {
+        "name": "Hot Foot",
+        "num": "26",
+        "emoji": "<:hotfoot:1292610914306228265>",
+        "alias": ["hotfoot", "hot foot"],
+        "gift": "WIN 3 MATCHES",
+        "gold": "WIN THE TOURNAMENT",
+        "cherry": "WIN WITH 6 BLOWOUTS"
+    },
+    {
+        "name": "Divers",
+        "num": "27",
+        "emoji": "<:divers:1292610872484560916>",
+        "alias": ["divers", "diver"],
+        "gift": "COLLECT PARASITE HAMMER",
+        "gold": "EXPLORE THE DEEPEST DEPTHS",
+        "cherry": "FIND ALL 3 EMBLEMS"
+    },
+    {
+        "name": "Rail Heist",
+        "num": "28",
+        "emoji": "<:railheist:1292610861835354183>",
+        "alias": ["railheist", "rail heist", "heist"],
+        "gift": "BEAT LEVEL 10",
+        "gold": "BEAT ALL 20 LEVELS",
+        "cherry": "BEAT THE GAME WITH AT LEAST 40 STARS"
+    },
+    {
+        "name": "Vainger",
+        "num": "29",
+        "emoji": "<:vainger:1292610853648072846>",
+        "alias": ["vainger"],
+        "gift": "OBTAIN A MOD",
+        "gold": "BEAT THE GAME",
+        "cherry": "WIN WITH 100% EXPLORATION AND UPGRADES"
+    },
+    {
+        "name": "Rock On! Island",
+        "num": "30",
+        "emoji": "<:rockonisland:1292612810710192241>",
+        "alias": ["rockonisland", "rock on island", "rock on", "rock on! island", "rock-on island", "rock-on! island", "rockon!island"],
+        "gift": "REACH THE SECOND VILLAGE",
+        "gold": "CLEAR THE LAST LEVEL",
+        "cherry": "CLEAR ALL LEVELS WITHOUT ANY DAMAGE"
+    },
+    {
+        "name": "Pingolf",
+        "num": "31",
+        "emoji": "<:pingolf:1292610879602294864>",
+        "alias": ["pingolf", "pin golf"],
+        "gift": "GET A HOLE IN ONE",
+        "gold": "WIN THE UFO INVITATIONAL",
+        "cherry": "WIN WITH A SCORE OF 0 OR LESS"
+    },
+    {
+        "name": "Mortol II",
+        "num": "32",
+        "emoji": "<:mortol2:1292610847503548437>",
+        "alias": ["mortol2", "mortol 2", "mortolii", "mortol ii"],
+        "gift": "ACTIVATE A SWITCH",
+        "gold": "DESTROY THE DARK HEARTS OF CASTLE NILPIS",
+        "cherry": "SACRIFICE LESS THAN 50 LIVES TO WIN"
+    },
+    {
+        "name": "Fist Hell",
+        "num": "33",
+        "emoji": "<:fisthell:1292610855900287007>",
+        "alias": ["fisthell", "fist hell"],
+        "gift": "SURVIVE 9 WAVES IN THE GYM",
+        "gold": "BEAT THE GAME",
+        "cherry": "BEAT THE GAME WITH NO CONTINUES"
+    },
+    {
+        "name": "Overbold",
+        "num": "34",
+        "emoji": "<:overbold:1292612198723752067>",
+        "alias": ["overbold", "over bold"],
+        "gift": "WIN AT LEAST 500 IN ONE FIGHT",
+        "gold": "SURVIVE 8 ROUNDS IN THE RED ARENA",
+        "cherry": "WIN WITH AT LEAST 4500"
+    },
+    {
+        "name": "Campanella 2",
+        "num": "35",
+        "emoji": "<:campanella2:1292612205736624228>",
+        "alias": ["campanella2", "campanella 2", "campanela 2", "campanela2"],
+        "gift": "OBTAIN THE FRIENDSHIP BRACELET",
+        "gold": "ESCAPE WITH PILOT",
+        "cherry": "SAVE THE PLANETOID"
+    },
+    {
+        "name": "Hyper Contender",
+        "num": "36",
+        "emoji": "<:hypercontender:1292612209200857131>",
+        "alias": ["hypercontender", "hyper contender", "hyper", "contender"],
+        "gift": "WIN A DRAFT BATTLE (ON DEFAULT RING SETTINGS)",
+        "gold": "WIN THE TOURNAMENT (ON DEFAULT RING SETTINGS)",
+        "cherry": "WIN WITH 4 DIFFERENT CHARACTERS (ON DEFAULT RING SETTINGS)"
+    },
+    {
+        "name": "Valbrace",
+        "num": "37",
+        "emoji": "<:valbrace:1292610900221624371>",
+        "alias": ["valbrace", "val brace"],
+        "gift": "OBTAIN 8 IN ANY STAT",
+        "gold": "DEFEAT THE ABYSS LORD AND ESCAPE GNOTHROK KEEP",
+        "cherry": "DEFEAT THE ABYSS LORD WITH THE RED STAR SWORD"
+    },
+    {
+        "name": "Rakshasa",
+        "num": "38",
+        "emoji": "<:rakshasa:1292612805509513229>",
+        "alias": ["rakshasa", "rashaka", "rakshaka", "rashasa"],
+        "gift": "CHEAT DEATH 3 TIMES",
+        "gold": "BEAT THE GAME",
+        "cherry": "BEAT THE GAME WITH A SCORE OF AT LEAST 50000"
+    },
+    {
+        "name": "Star Waspir",
+        "num": "39",
+        "emoji": "<:starwaspir:1292610868734988390>",
+        "alias": ["starwaspir", "star waspir", "waspir"],
+        "gift": "OBTAIN A 10X MULTIPLIER",
+        "gold": "BEAT 5 WAVES",
+        "cherry": "SCORE AT LEAST 300000 POINTS"
+    },
+    {
+        "name": "Grimstone",
+        "num": "40",
+        "emoji": "<:grimstone:1292612188690714735>",
+        "alias": ["grimstone", "grim stone"],
+        "gift": "REACH EXP LEVEL 10",
+        "gold": "BEAT THE GAME",
+        "cherry": "WIN WITH ALL POSSE MEMBERS ALIVE"
+    },
+    {
+        "name": "Lords of Diskonia",
+        "num": "41",
+        "emoji": "<:lordsofdiskonia:1292610896711127092>",
+        "alias": ["lordsofdiskonia", "lords of diskonia", "diskonia"],
+        "gift": "BEAT LEVEL 5 IN THE CAMPAIGN",
+        "gold": "BEAT ALL 10 SCENARIOS",
+        "cherry": "ACHIEVE A STREAK OF AT LEAST 3"
+    },
+    {
+        "name": "Night Manor",
+        "num": "42",
+        "emoji": "<:nightmanor:1292610907154944012>",
+        "alias": ["nightmanor", "night manor"],
+        "gift": "ESCAPE THE KILLER",
+        "gold": "ESCAPE THE MANOR",
+        "cherry": "END THE NIGHTMARE"
+    },
+    {
+        "name": "Elfazar's Hat",
+        "num": "43",
+        "emoji": "<:elfazarshat:1292610893200359516>",
+        "alias": ["elfazarshat", "elfazar'shat", "elfazar", "elfazars hat", "elfazar's hat"],
+        "gift": "EARN A CONTINUE IN THE BONUS ROUND",
+        "gold": "DEFEAT ELFAZAR",
+        "cherry": "DEFEAT ELFAZAR WITHOUT CONTINUES"
+    },
+    {
+        "name": "Pilot Quest",
+        "num": "44",
+        "emoji": "<:pilotquest:1292610903866347541>",
+        "alias": ["pilotquest", "pilot quest", "pilot"],
+        "gift": "DEFEAT UNKTOMI",
+        "gold": "FIX YOUR SHIP AND ESCAPE ZOLDATH",
+        "cherry": "LEAVE ZOLDATH WITH THE DONKA DONKA IDOL"
+    },
+    {
+        "name": "Mini & Max",
+        "num": "45",
+        "emoji": "<:miniandmax:1292610910745264138>",
+        "alias": ["miniandmax", "mini and max", "mini&max", "mini & max", "mini max"],
+        "gift": "COLLECT AT LEAST 100 SHINIES",
+        "gold": "ESCAPE THE STORAGE ROOM",
+        "cherry": "FIND PONGO AND RESTORE BALANCE"
+    },
+    {
+        "name": "Combatants",
+        "num": "46",
+        "emoji": "<:combatants:1292610883008200784>",
+        "alias": ["combatants"],
+        "gift": "SLAY A SPIDER",
+        "gold": "RETAKE THE CAPITAL",
+        "cherry": "COMPLETE ALL MISSIONS"
+    },
+    {
+        "name": "Quibble Race",
+        "num": "47",
+        "emoji": "<:quibblerace:1292612189391425618>",
+        "alias": ["quibblerace", "quibble", "quible"],
+        "gift": "SPONSOR A QUIBBLE THAT WINS A RACE",
+        "gold": "BE THE RICHEST PLAYER IN A SINGLE PLAYER GAME THAT LASTS 6 ROUNDS",
+        "cherry": "WIN WITH $10000 IN A 6 ROUND GAME"
+    },
+    {
+        "name": "Seaside Drive",
+        "num": "48",
+        "emoji": "<:seasidedrive:1292610921210052779>",
+        "alias": ["seasidedrive", "seaside drive", "sunset drive", "sunsetdrive", "seaside"],
+        "gift": "OBTAIN A COIN",
+        "gold": "BEAT ALL 4 STAGES",
+        "cherry": "BEAT THE GAME WITH AT LEAST 300000 POINTS."
+    },
+    {
+        "name": "Campanella 3",
+        "num": "49",
+        "emoji": "<:campanella3:1292612038375379025>",
+        "alias": ["campanella3", "campanella 3", "campanela 3", "campanela3"],
+        "gift": "CLEAR THE BONUS ROUND",
+        "gold": "DEFEAT QUEEN ZU",
+        "cherry": "WIN WITH A SCORE OF AT LEAST 1500"
+    },
+    {
+        "name": "Cyber Owls",
+        "num": "50",
+        "emoji": "<:cyberowls:1292610917821059183>",
+        "alias": ["cyberowls", "cyber", "cyber owl", "cyber owls", "cyberowl"],
+        "gift": "RESCUE AN OWL",
+        "gold": "SAVE THE WORLD",
+        "cherry": "SAVE THE WORLD WITH NO DEATHS"
+    }
+]
