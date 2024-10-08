@@ -14,9 +14,6 @@ game_list = []
 d = []
 counter = 0
 file_content = ""
-totalCherry = 0
-totalGold = 0
-totalGift = 0
 
 # create array of game names from json file as well as store json data
 with open('data.json') as f:
