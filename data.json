@@ -2,6 +2,7 @@
     {
         "name": "Barbuta",
         "num": "1",
+        "game_id":"40",
         "emoji": "<:barbuta:1292612809682583564>",
         "alias": ["barbuta"],
         "gift": "VISIT AT LEAST 25 ROOMS",
@@ -11,6 +12,7 @@
     {
         "name": "Bug Hunter",
         "num": "2",
+        "game_id":"20",
         "emoji": "<:bughunter:1292612191748489267>",
         "alias": ["bughunter", "bug hunter", "bug hunt"],
         "gift": "COMPLETE YOUR FIRST JOB",
@@ -20,6 +22,7 @@
     {
         "name": "Ninpek",
         "num": "3",
+        "game_id":"34",
         "emoji": "<:ninpek:1292612202745958537>",
         "alias": ["ninpek", "nin pek"],
         "gift": "EAT 3 SANDWICHES",
@@ -29,6 +32,7 @@
     {
         "name": "Paint Chase",
         "num": "4",
+        "game_id":"49",
         "emoji": "<:paintchase:1292610924632342608>",
         "alias": ["paintchase", "paint chase"],
         "gift": "PASS THE FIRST 12 COURSES",
@@ -38,6 +42,7 @@
     {
         "name": "Magic Garden",
         "num": "5",
+        "game_id":"27",
         "emoji": "<:magicgarden:1292610886216974407>",
         "alias": ["magicgarden","magic garden"],
         "gift": "SAVE AT LEAST 10 OPPIES AT ONCE",
@@ -47,6 +52,7 @@
     {
         "name": "Mortol",
         "num": "6",
+        "game_id":"29",
         "emoji": "<:mortol:1292610889756704821>",
         "alias": ["mortol", "mortol 1"],
         "gift": "BEAT LEVEL 2-C",
@@ -56,6 +62,7 @@
     {
         "name": "Velgress",
         "num": "7",
+        "game_id":"15",
         "emoji": "<:velgress:1292610865333403669>",
         "alias": ["velgress","velgres"],
         "gift": "COLLECT 2 KEYS",
@@ -65,6 +72,7 @@
     {
         "name": "Planet Zoldath",
         "num": "8",
+        "game_id":"48",
         "emoji": "<:planetzoldath:1292624202029072385>",
         "alias": ["planetzoldath", "planet zoldath", "zoldath"],
         "gift": "FIND 1 MAP PART(S)",
@@ -74,6 +82,7 @@
     {
         "name": "Attactics",
         "num": "9",
+        "game_id":"2",
         "emoji": "<:attactics:1292610848354734150>",
         "alias": ["attactics"],
         "gift": "BEAT THE FIRST 12 LEVELS IN THE CAMPAIGN",
@@ -83,6 +92,7 @@
     {
         "name": "Devilition",
         "num": "10",
+        "game_id":"5",
         "emoji": "<:devilition:1292610851756310639>",
         "alias": ["devilition"],
         "gift": "SURVIVE FOR 5 ROUNDS",
@@ -92,6 +102,7 @@
     {
         "name": "Kick Club",
         "num": "11",
+        "game_id":"26",
         "emoji": "<:kickclub:1292612195577893026>",
         "alias": ["kickclub","kick club"],
         "gift": "BEAT TRACK WORLD",
@@ -101,6 +112,7 @@
     {
         "name": "Avianos",
         "num": "12",
+        "game_id":"50",
         "emoji": "<:avianos:1292612216193028176>",
         "alias": ["avianos"],
         "gift": "MAX OUT BLESSINGS FROM ONE ANCESTOR.",
@@ -110,6 +122,7 @@
     {
         "name": "Mooncat",
         "num": "13",
+        "game_id":"11",
         "emoji": "<:mooncat:1292610858299686974>",
         "alias": ["mooncat", "moon cat"],
         "gift": "FIND A WARP",
@@ -119,6 +132,7 @@
     {
         "name": "Bushido Ball",
         "num": "14",
+        "game_id":"22",
         "emoji": "<:bushidoball:1292612193304580189>",
         "alias": ["bushidoball", "bushido ball", "bushido", "bush ball", "bushball"],
         "gift": "DEFEAT 3 IN THE TOURNAMENT",
@@ -128,6 +142,7 @@
     {
         "name": "Block Koala",
         "num": "15",
+        "game_id":"18",
         "emoji": "<:blockkoala:1292612191375327313>",
         "alias": ["blockkoala", "block koala", "koala"],
         "gift": "COMPLETE A CUSTOM LEVEL",
@@ -137,6 +152,7 @@
     {
         "name": "Camouflage",
         "num": "16",
+        "game_id":"4",
         "emoji": "<:camouflage:1292610850636566618>",
         "alias": ["camouflage"],
         "gift": "EARN 30% COMPLETION",
@@ -146,6 +162,7 @@
     {
         "name": "Campanella",
         "num": "17",
+        "game_id":"3",
         "emoji": "<:campanella:1292610849596248094>",
         "alias": ["campanella", "campanela", "campanela 1", "campanella 1"],
         "gift": "AMASS 15 SPARE SHIPS",
@@ -155,6 +172,7 @@
     {
         "name": "Golfaria",
         "num": "18",
+        "game_id":"6",
         "emoji": "<:golfaria:1292610852620341382>",
         "alias": ["golfaria"],
         "gift": "OBTAIN THE BLOCK BUSTER",
@@ -164,6 +182,7 @@
     {
         "name": "The Big Bell Race",
         "num": "19",
+        "game_id":"28",
         "emoji": "<:thebigbellrace:1292612806641975386>",
         "alias": ["thebigbellrace", "bellrace", "bigbellrace", "bell race", "big bell race", "the big bell race"],
         "gift": "WIN FIRST PLACE IN AT LEAST 1 RACE",
@@ -173,6 +192,7 @@
     {
         "name": "Warptank",
         "num": "20",
+        "game_id":"16",
         "emoji": "<:warptank:1292612190683267088>",
         "alias": ["warptank", "warp tank"],
         "gift": "DEFEAT RENEGADE",
@@ -182,6 +202,7 @@
     {
         "name": "Waldorf's Journey",
         "num": "21",
+        "game_id":"21",
         "emoji": "<:waldorfsjourney:1292610875756249249>",
         "alias": ["waldorfsjourney", "waldorfs journey", "waldorf'sjourney", "waldorf's journey", "waldorf", "waldorfs"],
         "gift": "COMPLETE 50% OF THE JOURNEY",
@@ -191,6 +212,7 @@
     {
         "name": "Porgy",
         "num": "22",
+        "game_id":"10",
         "emoji": "<:porgy:1292612187927478272>",
         "alias": ["porgy"],
         "gift": "DEFEAT LAMIA",
@@ -200,6 +222,7 @@
     {
         "name": "Onion Delivery",
         "num": "23",
+        "game_id":"32",
         "emoji": "<:oniondelivery:1292612807547949148>",
         "alias": ["oniondelivery", "onion delivery", "onion"],
         "gift": "COMPLETE 2 DAYS OF DELIVERIES",
@@ -209,6 +232,7 @@
     {
         "name": "Caramel Caramel",
         "num": "24",
+        "game_id":"46",
         "emoji": "<:caramelcaramel:1292612212552106047>",
         "alias": ["caramelcaramel", "caramel", "caramel caramel"],
         "gift": "BEAT THE EGG",
@@ -218,6 +242,7 @@
     {
         "name": "Party House",
         "num": "25",
+        "game_id":"36",
         "emoji": "<:partyhouse:1292612808529416262>",
         "alias": ["partyhouse", "party house", "party", "house party", "houseparty"],
         "gift": "BEAT 1 SCENARIO",
@@ -227,6 +252,7 @@
     {
         "name": "Hot Foot",
         "num": "26",
+        "game_id":"43",
         "emoji": "<:hotfoot:1292610914306228265>",
         "alias": ["hotfoot", "hot foot"],
         "gift": "WIN 3 MATCHES",
@@ -236,6 +262,7 @@
     {
         "name": "Divers",
         "num": "27",
+        "game_id":"19",
         "emoji": "<:divers:1292610872484560916>",
         "alias": ["divers", "diver"],
         "gift": "COLLECT PARASITE HAMMER",
@@ -245,6 +272,7 @@
     {
         "name": "Rail Heist",
         "num": "28",
+        "game_id":"13",
         "emoji": "<:railheist:1292610861835354183>",
         "alias": ["railheist", "rail heist", "heist"],
         "gift": "BEAT LEVEL 10",
@@ -254,6 +282,7 @@
     {
         "name": "Vainger",
         "num": "29",
+        "game_id":"7",
         "emoji": "<:vainger:1292610853648072846>",
         "alias": ["vainger"],
         "gift": "OBTAIN A MOD",
@@ -263,6 +292,7 @@
     {
         "name": "Rock On! Island",
         "num": "30",
+        "game_id":"44",
         "emoji": "<:rockonisland:1292612810710192241>",
         "alias": ["rockonisland", "rock on island", "rock on", "rock on! island", "rock-on island", "rock-on! island", "rockon!island"],
         "gift": "REACH THE SECOND VILLAGE",
@@ -272,6 +302,7 @@
     {
         "name": "Pingolf",
         "num": "31",
+        "game_id":"23",
         "emoji": "<:pingolf:1292610879602294864>",
         "alias": ["pingolf", "pin golf"],
         "gift": "GET A HOLE IN ONE",
@@ -281,6 +312,7 @@
     {
         "name": "Mortol II",
         "num": "32",
+        "game_id":"1",
         "emoji": "<:mortol2:1292610847503548437>",
         "alias": ["mortol2", "mortol 2", "mortolii", "mortol ii"],
         "gift": "ACTIVATE A SWITCH",
@@ -290,6 +322,7 @@
     {
         "name": "Fist Hell",
         "num": "33",
+        "game_id":"9",
         "emoji": "<:fisthell:1292610855900287007>",
         "alias": ["fisthell", "fist hell"],
         "gift": "SURVIVE 9 WAVES IN THE GYM",
@@ -299,6 +332,7 @@
     {
         "name": "Overbold",
         "num": "34",
+        "game_id":"30",
         "emoji": "<:overbold:1292612198723752067>",
         "alias": ["overbold", "over bold"],
         "gift": "WIN AT LEAST 500 IN ONE FIGHT",
@@ -308,6 +342,7 @@
     {
         "name": "Campanella 2",
         "num": "35",
+        "game_id":"38",
         "emoji": "<:campanella2:1292612205736624228>",
         "alias": ["campanella2", "campanella 2", "campanela 2", "campanela2"],
         "gift": "OBTAIN THE FRIENDSHIP BRACELET",
@@ -317,6 +352,7 @@
     {
         "name": "Hyper Contender",
         "num": "36",
+        "game_id":"42",
         "emoji": "<:hypercontender:1292612209200857131>",
         "alias": ["hypercontender", "hyper contender", "hyper", "contender"],
         "gift": "WIN A DRAFT BATTLE (ON DEFAULT RING SETTINGS)",
@@ -326,6 +362,7 @@
     {
         "name": "Valbrace",
         "num": "37",
+        "game_id":"35",
         "emoji": "<:valbrace:1292610900221624371>",
         "alias": ["valbrace", "val brace"],
         "gift": "OBTAIN 8 IN ANY STAT",
@@ -335,6 +372,7 @@
     {
         "name": "Rakshasa",
         "num": "38",
+        "game_id":"24",
         "emoji": "<:rakshasa:1292612805509513229>",
         "alias": ["rakshasa", "rashaka", "rakshaka", "rashasa"],
         "gift": "CHEAT DEATH 3 TIMES",
@@ -344,6 +382,7 @@
     {
         "name": "Star Waspir",
         "num": "39",
+        "game_id":"17",
         "emoji": "<:starwaspir:1292610868734988390>",
         "alias": ["starwaspir", "star waspir", "waspir"],
         "gift": "OBTAIN A 10X MULTIPLIER",
@@ -353,6 +392,7 @@
     {
         "name": "Grimstone",
         "num": "40",
+        "game_id":"12",
         "emoji": "<:grimstone:1292612188690714735>",
         "alias": ["grimstone", "grim stone"],
         "gift": "REACH EXP LEVEL 10",
@@ -362,6 +402,7 @@
     {
         "name": "Lords of Diskonia",
         "num": "41",
+        "game_id":"33",
         "emoji": "<:lordsofdiskonia:1292610896711127092>",
         "alias": ["lordsofdiskonia", "lords of diskonia", "diskonia"],
         "gift": "BEAT LEVEL 5 IN THE CAMPAIGN",
@@ -371,6 +412,7 @@
     {
         "name": "Night Manor",
         "num": "42",
+        "game_id":"39",
         "emoji": "<:nightmanor:1292610907154944012>",
         "alias": ["nightmanor", "night manor"],
         "gift": "ESCAPE THE KILLER",
@@ -380,6 +422,7 @@
     {
         "name": "Elfazar's Hat",
         "num": "43",
+        "game_id":"31",
         "emoji": "<:elfazarshat:1292610893200359516>",
         "alias": ["elfazarshat", "elfazar'shat", "elfazar", "elfazars hat", "elfazar's hat"],
         "gift": "EARN A CONTINUE IN THE BONUS ROUND",
@@ -389,6 +432,7 @@
     {
         "name": "Pilot Quest",
         "num": "44",
+        "game_id":"37",
         "emoji": "<:pilotquest:1292610903866347541>",
         "alias": ["pilotquest", "pilot quest", "pilot"],
         "gift": "DEFEAT UNKTOMI",
@@ -398,6 +442,7 @@
     {
         "name": "Mini & Max",
         "num": "45",
+        "game_id":"41",
         "emoji": "<:miniandmax:1292610910745264138>",
         "alias": ["miniandmax", "mini and max", "mini&max", "mini & max", "mini max"],
         "gift": "COLLECT AT LEAST 100 SHINIES",
@@ -407,6 +452,7 @@
     {
         "name": "Combatants",
         "num": "46",
+        "game_id":"25",
         "emoji": "<:combatants:1292610883008200784>",
         "alias": ["combatants"],
         "gift": "SLAY A SPIDER",
@@ -416,6 +462,7 @@
     {
         "name": "Quibble Race",
         "num": "47",
+        "game_id":"14",
         "emoji": "<:quibblerace:1292612189391425618>",
         "alias": ["quibblerace", "quibble", "quible"],
         "gift": "SPONSOR A QUIBBLE THAT WINS A RACE",
@@ -425,6 +472,7 @@
     {
         "name": "Seaside Drive",
         "num": "48",
+        "game_id":"47",
         "emoji": "<:seasidedrive:1292610921210052779>",
         "alias": ["seasidedrive", "seaside drive", "sunset drive", "sunsetdrive", "seaside"],
         "gift": "OBTAIN A COIN",
@@ -434,6 +482,7 @@
     {
         "name": "Campanella 3",
         "num": "49",
+        "game_id":"8",
         "emoji": "<:campanella3:1292612038375379025>",
         "alias": ["campanella3", "campanella 3", "campanela 3", "campanela3"],
         "gift": "CLEAR THE BONUS ROUND",
@@ -443,6 +492,7 @@
     {
         "name": "Cyber Owls",
         "num": "50",
+        "game_id":"45",
         "emoji": "<:cyberowls:1292610917821059183>",
         "alias": ["cyberowls", "cyber", "cyber owl", "cyber owls", "cyberowl"],
         "gift": "RESCUE AN OWL",
