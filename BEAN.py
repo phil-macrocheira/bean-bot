@@ -3,6 +3,7 @@ from discord.ext import commands
 import json
 import random
 from thefuzz import fuzz
+import base64
 
 # UFO 50 Discord server ID
 GUILD_ID = discord.Object(id=525973026429206530)
@@ -12,6 +13,10 @@ GUILD_ID = discord.Object(id=525973026429206530)
 game_list = []
 d = []
 counter = 0
+file_content = ""
+totalCherry = 0
+totalGold = 0
+totalGift = 0
 
 # create array of game names from json file as well as store json data
 with open('data.json') as f:
@@ -39,13 +44,71 @@ class Client(commands.Bot):
             return
         if "thanks bean" in message.content.lower().replace(',','').replace('!',''):
             await message.reply("NICE ROD, PAL.")
+        if not message.guild:
+            return
+        if not message.attachments:
+            return
+        
+        # # Uncomment for testing message related stuff exclusively in test server
+        # if not message.guild.id == 1292608815891480648:
+        #     return
+        
+        file_extension = message.attachments[0].filename.split(".")[-1].lower()
+        if file_extension == 'ufo':
+            print("UFO File attachment detected.")
+            try:
+                file_content = await message.attachments[0].read()
+                file_content = base64.b64decode(file_content).decode('utf-8')
+                file_content = json.loads(file_content)
+                totalCherry = []
+                totalGift = []
+                totalGold = []
+                cherryMsg = ""
+                goldMsg = ""
+                for x in range(1,51):
+                    target = [y for y in d if x == int(y["game_id"])]
+                    target = target[0]
+                    if f"game0_gameWin{x}" in file_content:
+                        if file_content[f"game0_gameWin{x}"] == 1.0:
+                            totalGold.append(int(target["num"]))
+                        elif file_content[f"game0_gameWin{x}"] == 2.0:
+                            totalCherry.append(int(target["num"]))
+                    if f"game0_gardenWin{x}" in file_content:
+                        if file_content[f"game0_gardenWin{x}"] == 1.0:
+                            totalGift.append(int(target["num"]))
+                totalGold.sort()
+                totalCherry.sort()
+                if len(totalCherry) > 0:
+                    for x in totalCherry:
+                        target = [y for y in d if x == int(y["num"])]
+                        target = target[0]
+                        cherryMsg += target["emoji"]
+                else:
+                    cherryMsg += "*Nothing to show here*"
+                if len(totalGold) > 0:
+                    for x in totalGold:
+                        target = [y for y in d if x == int(y["num"])]
+                        target = target[0]
+                        goldMsg += target["emoji"]
+                else:
+                    if len(totalCherry) > 0:
+                        goldMsg += ""
+                    else:
+                        goldMsg += "*Nothing to show here*"
+                if len(cherryMsg) > 0:
+                    cherryMsg = "\n" + cherryMsg
+                if len(goldMsg) > 0:
+                    goldMsg = "\n" + goldMsg
+                await message.reply(f"`Cherries:` **{len(totalCherry)}**{cherryMsg}\n`Golds:` **{len(totalGold)+len(totalCherry)}** ({len(totalGold)} non-cherried){goldMsg}\n`Gifts:` **{len(totalGift)}**")
+            except ValueError as e:
+                await message.reply(f"I was not able to parse the save file data.")
 
 # define client and intents
 intents = discord.Intents.default()
 intents.message_content = True
 client = Client(command_prefix="/",activity=discord.Game(name="UFO 50"),intents=intents)
 
-# once every 50 entered commands, change the bot's "Now playing" to the most recently specified game
+# # once every 50 entered commands, change the bot's "Now playing" to the most recently specified game
 async def change_presence(target):
     global counter
     if counter < 50:
