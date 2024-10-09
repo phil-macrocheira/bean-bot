@@ -14,6 +14,16 @@ game_list = []
 d = []
 counter = 0
 file_content = ""
+suggest = [
+    "You should **give yourself a break**.",
+    "You should play **UFO 50**.",
+    "You should **try for a new record** in **your favorite game**.",
+    "You should **hunt for some secrets**.",
+    "You should pick the random tab and select **the first result**.",
+    "You should pick the random tab and select **the last result**.",
+    "You should play your **most played game again**.",
+    "You should play more of your **least played game so far**."
+]
 
 # create array of game names from json file as well as store json data
 with open('data.json') as f:
@@ -39,7 +49,7 @@ class Client(commands.Bot):
         # ignore all messages from self or from another bot
         if message.author == self.user or message.author.bot:
             return
-        if "thanks bean" in message.content.lower().replace(',','').replace('!',''):
+        if "thanks bean" in message.content.replace(',','').replace('!',''):
             await message.reply("NICE ROD, PAL.")
         if not message.guild:
             return
@@ -135,7 +145,7 @@ async def get_game_value(interaction, game, number, type, emote):
         # number specified
         if game is None and not number is None:
             if number > 50 or number < 1:
-                return await interaction.response.send_message(f"input '{number}' is not valid.")
+                return await interaction.response.send_message(f"Your input is not valid.")
             else:
                 target = d[number-1]
                 await interaction.response.send_message(f"The {emote} **{type.capitalize()}** requirement for {target["emoji"]} **{target["name"]}** is...\n||{target[type]}||")
@@ -158,7 +168,7 @@ async def get_game_value(interaction, game, number, type, emote):
                     await interaction.response.send_message(f"The {emote} **{type.capitalize()}** requirement for {target["emoji"]} **{target["name"]}** is...\n||{target[type]}||")
                     await change_presence(target)
                 else:
-                    await interaction.response.send_message(f"input '{game}' not recognized")
+                    await interaction.response.send_message(f"Your input was not recognized.")
             # direct alias search succeeds
             else:
                 target = target[0]
@@ -178,6 +188,11 @@ async def ping(interaction: discord.Interaction):
 async def guides(interaction: discord.Interaction):
     await interaction.response.send_message('Check out UFO 50 guides here:\n<https://steamcommunity.com/app/1147860/guides/>')
 
+# link to steam page
+@client.tree.command(name="steam",description="Get a link to steam page for UFO 50!", guild=GUILD_ID)
+async def steam(interaction: discord.Interaction):
+    await interaction.response.send_message('Buy UFO 50 here:\n<https://store.steampowered.com/app/1147860/UFO_50/>')
+
 # link to tier list maker
 @client.tree.command(name="tierlist",description="Get a link to the Tier List Maker for UFO 50!", guild=GUILD_ID)
 async def tier(interaction: discord.Interaction):
@@ -196,7 +211,11 @@ async def music(interaction: discord.Interaction):
 # random game command
 @client.tree.command(name="random",description="Pick out a UFO 50 game at random.", guild=GUILD_ID)
 async def rnd(interaction: discord.Interaction):
-    response = random.choice(d)
+    if random.randint(1,200) == 50:
+        response = random.choice(suggest)
+    else:
+        response = random.choice(d)
+        change_presence(response)
     await interaction.response.send_message(f"You should play {response["emoji"]} **{response["name"]}**.")
 
 # gift command
