@@ -4,4 +4,3 @@ secret.txt
 .venv
 poetry.lock
 pyproject.toml
-Dockerfile
