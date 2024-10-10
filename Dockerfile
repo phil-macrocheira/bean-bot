@@ -11,7 +11,6 @@ RUN pip install poetry
 COPY . /app
 
 # Include files
-COPY token.txt /app/token.txt
 COPY data.json /app/data.json
 
 # Install dependencies using Poetry
