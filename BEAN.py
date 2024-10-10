@@ -4,6 +4,7 @@ import json
 import random
 from thefuzz import fuzz
 import base64
+import os
 
 # UFO 50 Discord server ID
 GUILD_ID = discord.Object(id=525973026429206530)
