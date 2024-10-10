@@ -242,8 +242,8 @@ async def fiftyclub(interaction: discord.Interaction):
     roleother = interaction.guild.get_role(1293958225644884068)
     await interaction.response.send_message(f"There are currently **{len(role2024.members)}** discord members who earned the 50 cherries role in 2024 and **{len(roleother.members)}** who earned it after 2024.")
 
-# Get token from github
-TOKEN = os.environ.get("BEAN_TOKEN")
+# Get token from fly.io
+TOKEN = os.getenv('BEAN_TOKEN')
 
 # initialize bot online
 client.run(TOKEN)
