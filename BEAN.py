@@ -108,11 +108,12 @@ class Client(commands.Bot):
                     goldMsg = "\n" + goldMsg
                 await message.reply(f"`Cherries:` **{len(totalCherry)}**{cherryMsg}\n`Golds:` **{len(totalGold)+len(totalCherry)}** ({len(totalGold)} non-cherried){goldMsg}\n`Gifts:` **{len(totalGift)}**")
             except ValueError as e:
-                await message.reply(f"I was not able to parse the save file data.")
+                await message.reply(content=f"I was not able to parse the save file data.", ephemeral=True)
 
 # define client and intents
 intents = discord.Intents.default()
 intents.message_content = True
+intents.members = True
 client = Client(command_prefix="/",activity=discord.Game(name="UFO 50"),intents=intents)
 
 # # once every 50 entered commands, change the bot's "Now playing" to the most recently specified game
@@ -132,20 +133,20 @@ async def get_game_value(interaction, game, number, type, emote):
         # check channel for number values to determine target game
         if interaction.channel.name[:1] in '0123456789' and interaction.channel.name[1:2] in '0123456789':
             if (int(interaction.channel.name[:2]) > 50 or int(interaction.channel.name[:2]) < 1):
-                return await interaction.response.send_message(f"Please specify a game or number to check {type} of.")
+                return await interaction.response.send_message(content=f"Please specify a game or number to check {type} of.", ephemeral=True)
             else:
                 target = d[int(interaction.channel.name[:2])-1]
                 await interaction.response.send_message(f"The {emote} **{type.capitalize()}** requirement for {target["emoji"]} **{target["name"]}** is...\n||{target[type]}||")
                 await change_presence(target)
         # no target game, give error
         else:
-            return await interaction.response.send_message(f"Please specify a game or number to check {type} requirement of.")
+            return await interaction.response.send_message(content=f"Please specify a game or number to check {type} requirement of.", ephemeral=True)
     # game and or number is specified
     else:
         # number specified
         if game is None and not number is None:
             if number > 50 or number < 1:
-                return await interaction.response.send_message(f"Your input is not valid.")
+                return await interaction.response.send_message(content=f"Your input is not valid.", ephemeral=True)
             else:
                 target = d[number-1]
                 await interaction.response.send_message(f"The {emote} **{type.capitalize()}** requirement for {target["emoji"]} **{target["name"]}** is...\n||{target[type]}||")
@@ -168,7 +169,7 @@ async def get_game_value(interaction, game, number, type, emote):
                     await interaction.response.send_message(f"The {emote} **{type.capitalize()}** requirement for {target["emoji"]} **{target["name"]}** is...\n||{target[type]}||")
                     await change_presence(target)
                 else:
-                    await interaction.response.send_message(f"Your input was not recognized.")
+                    await interaction.response.send_message(content=f"Your input was not recognized.", ephemeral=True)
             # direct alias search succeeds
             else:
                 target = target[0]
@@ -176,7 +177,7 @@ async def get_game_value(interaction, game, number, type, emote):
                 await change_presence(target)
         # error if both number and game are specified
         else:
-            await interaction.response.send_message("Please only specify the name or the number, not both.")
+            await interaction.response.send_message(content="Please only specify the name or the number, not both.", ephemeral=True)
 
 # ping test command
 @client.tree.command(name="ping",description="Check that I am online!", guild=GUILD_ID)
@@ -186,27 +187,27 @@ async def ping(interaction: discord.Interaction):
 # link to steam guides
 @client.tree.command(name="guides",description="Get a link to steam guides for UFO 50!", guild=GUILD_ID)
 async def guides(interaction: discord.Interaction):
-    await interaction.response.send_message('Check out UFO 50 guides here:\n<https://steamcommunity.com/app/1147860/guides/>')
+    await interaction.response.send_message(content='Check out UFO 50 guides here:\n<https://steamcommunity.com/app/1147860/guides/>', ephemeral=True)
 
 # link to steam page
 @client.tree.command(name="steam",description="Get a link to steam page for UFO 50!", guild=GUILD_ID)
 async def steam(interaction: discord.Interaction):
-    await interaction.response.send_message('Buy UFO 50 here:\n<https://store.steampowered.com/app/1147860/UFO_50/>')
+    await interaction.response.send_message(content='Buy UFO 50 here:\n<https://store.steampowered.com/app/1147860/UFO_50/>', ephemeral=True)
 
 # link to tier list maker
 @client.tree.command(name="tierlist",description="Get a link to the Tier List Maker for UFO 50!", guild=GUILD_ID)
 async def tier(interaction: discord.Interaction):
-    await interaction.response.send_message('Make your own UFO 50 Tier List here:\n<https://tiermaker.com/create/ufo-50-games-16603442>')
+    await interaction.response.send_message(content='Make your own UFO 50 Tier List here:\n<https://tiermaker.com/create/ufo-50-games-16603442>', ephemeral=True)
 
 # link to wiki
 @client.tree.command(name="wiki",description="Get a link to the UFO 50 wiki!", guild=GUILD_ID)
 async def wiki(interaction: discord.Interaction):
-    await interaction.response.send_message('Check out the UFO 50 wiki here:\n<https://ufo50.miraheze.org/wiki/Main_Page>')
+    await interaction.response.send_message(content='Check out the UFO 50 wiki here:\n<https://ufo50.miraheze.org/wiki/Main_Page>', ephemeral=True)
 
 # link to bandcamp music
 @client.tree.command(name="music",description="Get a link to UFO 50 music on Bandcamp!", guild=GUILD_ID)
 async def music(interaction: discord.Interaction):
-    await interaction.response.send_message('Check out the music for UFO 50 here:\n<https://phlogiston.bandcamp.com/album/ufo-50>')
+    await interaction.response.send_message(content='Check out the music for UFO 50 here:\n<https://phlogiston.bandcamp.com/album/ufo-50>', ephemeral=True)
 
 # random game command
 @client.tree.command(name="random",description="Pick out a UFO 50 game at random.", guild=GUILD_ID)
@@ -232,6 +233,13 @@ async def gold(interaction: discord.Interaction, game: str|None, number: int|Non
 @client.tree.command(name="cherry",description="Check cherry requirement for a game.", guild=GUILD_ID)
 async def cherry(interaction: discord.Interaction, game: str|None, number: int|None):
     await get_game_value(interaction, game, number, "cherry", "<:CherryGet:1291281262870528073>")
+
+# 50club command
+@client.tree.command(name="50club",description="Check number of people with the cherry collector role.", guild=GUILD_ID)
+async def fiftyclub(interaction: discord.Interaction):
+    role2024 = interaction.guild.get_role(1291962155469373451)
+    roleother = interaction.guild.get_role(1293958225644884068)
+    await interaction.response.send_message(f"There are currently **{len(role2024.members)}** discord members who earned the 50 cherries role in 2024 and **{len(roleother.members)}** who earned it after 2024.")
 
 # token in separate file
 with open("token.txt") as file:
