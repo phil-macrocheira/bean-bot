@@ -208,17 +208,17 @@ async def ping(interaction: discord.Interaction):
 # link to steam guides
 @client.tree.command(name="guides",description="Get a link to steam guides for UFO 50!", guild=GUILD_ID)
 async def guides(interaction: discord.Interaction):
-    await interaction.response.send_message(content='Check out UFO 50 guides here:\n<https://steamcommunity.com/app/1147860/guides/>', ephemeral=True)
+    await interaction.response.send_message(content='Check out UFO 50 guides here:\n<https://steamcommunity.com/app/1147860/guides/>')
 
 # link to steam guides
 @client.tree.command(name="speedruns",description="Get a link to speedrun.com page for UFO 50!", guild=GUILD_ID)
 async def speedruns(interaction: discord.Interaction):
-    await interaction.response.send_message(content='Check out or submit UFO 50 speedruns here:\n<https://www.speedrun.com/UFO_50>', ephemeral=True)
+    await interaction.response.send_message(content='Check out or submit UFO 50 speedruns here:\n<https://www.speedrun.com/UFO_50>')
 
 # link to steam page
 @client.tree.command(name="steam",description="Get a link to steam page for UFO 50!", guild=GUILD_ID)
 async def steam(interaction: discord.Interaction):
-    await interaction.response.send_message(content='Buy UFO 50 here:\n<https://store.steampowered.com/app/1147860/UFO_50/>', ephemeral=True)
+    await interaction.response.send_message(content='Buy UFO 50 here:\n<https://store.steampowered.com/app/1147860/UFO_50/>')
 
 # link to tier list maker
 @client.tree.command(name="tierlist",description="Get a link to the Tier List Maker for UFO 50!", guild=GUILD_ID)
@@ -228,7 +228,7 @@ async def tier(interaction: discord.Interaction):
 # link to wiki
 @client.tree.command(name="wiki",description="Get a link to the UFO 50 wiki!", guild=GUILD_ID)
 async def wiki(interaction: discord.Interaction):
-    await interaction.response.send_message(content='Check out the UFO 50 wiki here:\n<https://ufo50.miraheze.org/wiki/Main_Page>', ephemeral=True)
+    await interaction.response.send_message(content='Check out the UFO 50 wiki here:\n<https://ufo50.miraheze.org/wiki/Main_Page>')
 
 # link to bandcamp music
 @client.tree.command(name="music",description="Get a link to UFO 50 music on Bandcamp!", guild=GUILD_ID)
