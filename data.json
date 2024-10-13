@@ -5,7 +5,7 @@
         "game_id":"40",
         "emoji": "<:barbuta:1292612809682583564>",
         "alias": ["barbuta"],
-        "cheats":[],
+        "codes":[],
         "gift": "VISIT AT LEAST 25 ROOMS",
         "gold": "LIBERATE THE CASTLE",
         "cherry": "WIN WITH MAX EGGS"
@@ -16,7 +16,7 @@
         "game_id":"20",
         "emoji": "<:bughunter:1292612191748489267>",
         "alias": ["bughunter", "bug hunter", "bug hunt"],
-        "cheats": [
+        "codes": [
             ["ACES-RULE","Same as `ACES-SHOP` but for two players."],
             ["ACES-SHOP","Buying modules keeps them in the shop, instead of replacing them with new ones. So the shop you start with stays that way for the entire day."],
             ["GOOD-JOBS","Enter Seed to play seeded game."],
@@ -34,7 +34,7 @@
         "game_id":"34",
         "emoji": "<:ninpek:1292612202745958537>",
         "alias": ["ninpek", "nin pek"],
-        "cheats": [
+        "codes": [
             ["HARD-LOOP","Play with level difficulty increased."]
         ],
         "gift": "EAT 3 SANDWICHES",
@@ -47,7 +47,7 @@
         "game_id":"49",
         "emoji": "<:paintchase:1292610924632342608>",
         "alias": ["paintchase", "paint chase"],
-        "cheats": [
+        "codes": [
             ["EVEN-COAT","Start with a level select."],
             ["GOGO-GOGH","Play with no timer or enemies."]
         ],
@@ -61,7 +61,7 @@
         "game_id":"27",
         "emoji": "<:magicgarden:1292610886216974407>",
         "alias": ["magicgarden","magic garden"],
-        "cheats": [
+        "codes": [
             ["OVER-GROW","Play with no potions."]
         ],
         "gift": "SAVE AT LEAST 10 OPPIES AT ONCE",
@@ -74,7 +74,7 @@
         "game_id":"29",
         "emoji": "<:mortol:1292610889756704821>",
         "alias": ["mortol", "mortol 1"],
-        "cheats": [
+        "codes": [
             ["BENS-MODE","Start with 150 lives, but you can not gain extra lives."],
             ["FIRE-ARRO","Arrow sacrifice is always on fire."],
             ["GIVE-LIFE","Start with 40 lives."],
@@ -91,7 +91,7 @@
         "game_id":"15",
         "emoji": "<:velgress:1292610865333403669>",
         "alias": ["velgress","velgres"],
-        "cheats": [
+        "codes": [
             ["ALFA-BEST","Play with all upgrades + upgraded."]
         ],
         "gift": "COLLECT 2 KEYS",
@@ -104,7 +104,7 @@
         "game_id":"48",
         "emoji": "<:planetzoldath:1292624202029072385>",
         "alias": ["planetzoldath", "planet zoldath", "zoldath"],
-        "cheats": [
+        "codes": [
             ["LESS-HARM","Take less damage."],
             ["TROT-TERS","Enter Seed to play seeded game."]
         ],
@@ -118,7 +118,7 @@
         "game_id":"2",
         "emoji": "<:attactics:1292610848354734150>",
         "alias": ["attactics"],
-        "cheats": [
+        "codes": [
             ["SLOW-DOWN","Makes the game turn based."]
         ],
         "gift": "BEAT THE FIRST 12 LEVELS IN THE CAMPAIGN",
@@ -131,7 +131,7 @@
         "game_id":"5",
         "emoji": "<:devilition:1292610851756310639>",
         "alias": ["devilition", "devolution", "devillition", "devollution", "devolition"],
-        "cheats": [
+        "codes": [
             ["BOMB-HELP","Start with 25 pieces instead of 15."],
             ["FULL-RAND","All new pieces you draw will be fully random instead of normal piece-picking logic."],
             ["EVIL-EYES","Adds a visual indicator where pieces will blow up when placed on the board."],
@@ -147,7 +147,7 @@
         "game_id":"26",
         "emoji": "<:kickclub:1292612195577893026>",
         "alias": ["kickclub","kick club"],
-        "cheats": [
+        "codes": [
             ["F00T-B4LL","Two player vs. game mode."],
             ["FOOT-BALL","Two player vs. game mode."]
         ],
@@ -161,7 +161,7 @@
         "game_id":"50",
         "emoji": "<:avianos:1292612216193028176>",
         "alias": ["avianos"],
-        "cheats": [
+        "codes": [
             ["BLUE-BEAK","Allows you to choose any level to play, even if you haven't completed it."]
         ],
         "gift": "MAX OUT BLESSINGS FROM ONE ANCESTOR.",
@@ -174,7 +174,7 @@
         "game_id":"11",
         "emoji": "<:mooncat:1292610858299686974>",
         "alias": ["mooncat", "moon cat"],
-        "cheats":[],
+        "codes":[],
         "gift": "FIND A WARP",
         "gold": "FIND THE EGG",
         "cherry": "FIND ALL 3 EGGS"
@@ -185,7 +185,7 @@
         "game_id":"22",
         "emoji": "<:bushidoball:1292612193304580189>",
         "alias": ["bushidoball", "bushido ball", "bushido", "bush ball", "bushball"],
-        "cheats": [
+        "codes": [
             ["ZATO-1CHI","The ball will be invisible."]
         ],
         "gift": "DEFEAT 3 IN THE TOURNAMENT",
@@ -198,7 +198,7 @@
         "game_id":"18",
         "emoji": "<:blockkoala:1292612191375327313>",
         "alias": ["blockkoala", "block koala", "koala"],
-        "cheats": [
+        "codes": [
             ["WORM-1234","All levels will be unlocked."]
         ],
         "gift": "COMPLETE A CUSTOM LEVEL",
@@ -211,7 +211,7 @@
         "game_id":"4",
         "emoji": "<:camouflage:1292610850636566618>",
         "alias": ["camouflage"],
-        "cheats": [
+        "codes": [
             ["FORM-ELDA","All levels will be unlocked."]
         ],
         "gift": "EARN 30% COMPLETION",
@@ -224,7 +224,7 @@
         "game_id":"3",
         "emoji": "<:campanella:1292610849596248094>",
         "alias": ["campanella", "campanela", "campanela 1", "campanella 1"],
-        "cheats": [
+        "codes": [
             ["BEAN-DRIP","Play all bonus stages."]
         ],
         "gift": "AMASS 15 SPARE SHIPS",
@@ -237,7 +237,7 @@
         "game_id":"6",
         "emoji": "<:golfaria:1292610852620341382>",
         "alias": ["golfaria"],
-        "cheats": [
+        "codes": [
             ["FORE-EVER","Play without a stroke count."]
         ],
         "gift": "OBTAIN THE BLOCK BUSTER",
@@ -250,7 +250,7 @@
         "game_id":"28",
         "emoji": "<:thebigbellrace:1292612806641975386>",
         "alias": ["thebigbellrace", "bellrace", "bigbellrace", "bell race", "big bell race", "the big bell race"],
-        "cheats": [
+        "codes": [
             ["KIWI-AURA","New powerups appear instantly after the last powerup pickup instead of 5 seconds after."]
         ],
         "gift": "WIN FIRST PLACE IN AT LEAST 1 RACE",
@@ -263,7 +263,7 @@
         "game_id":"16",
         "emoji": "<:warptank:1292612190683267088>",
         "alias": ["warptank", "warp tank"],
-        "cheats": [
+        "codes": [
             ["SLIM-TANK","Play as a slime. Only Crust Sector, no other levels or hub."]
         ],
         "gift": "DEFEAT RENEGADE",
@@ -276,7 +276,7 @@
         "game_id":"21",
         "emoji": "<:waldorfsjourney:1292610875756249249>",
         "alias": ["waldorfsjourney", "waldorfs journey", "waldorf'sjourney", "waldorf's journey", "waldorf", "waldorfs"],
-        "cheats": [
+        "codes": [
             ["BLUB-BLUB","Start with 30 Shells."]
         ],
         "gift": "COMPLETE 50% OF THE JOURNEY",
@@ -289,7 +289,7 @@
         "game_id":"10",
         "emoji": "<:porgy:1292612187927478272>",
         "alias": ["porgy"],
-        "cheats": [
+        "codes": [
             ["CALM-SEAS","Bosses do not engage with you."],
             ["CHAN-DAR!","Start with all items and upgrades."]
         ],
@@ -303,7 +303,7 @@
         "game_id":"32",
         "emoji": "<:oniondelivery:1292612807547949148>",
         "alias": ["oniondelivery", "onion delivery", "onion"],
-        "cheats": [
+        "codes": [
             ["GOOF-ZOOM","Swaps the direction you turn when turning in reverse."],
             ["ROAD-RAGE","Take no damage while playing."]
         ],
@@ -317,7 +317,7 @@
         "game_id":"46",
         "emoji": "<:caramelcaramel:1292612212552106047>",
         "alias": ["caramelcaramel", "caramel", "caramel caramel"],
-        "cheats": [
+        "codes": [
             ["TEST-LENS","Select which stage to play on."]
         ],
         "gift": "BEAT THE EGG",
@@ -330,7 +330,7 @@
         "game_id":"36",
         "emoji": "<:partyhouse:1292612808529416262>",
         "alias": ["partyhouse", "party house", "party", "house party", "houseparty"],
-        "cheats": [
+        "codes": [
             ["MAKE-GLEE","Make a custom shop of guests to buy."],
             ["PLUS-ONES","Same as `VIPS-ONLY` but for two players."],
             ["RSVP-SOON","Same as `MAKE-GLEE` but for two players."],
@@ -346,7 +346,7 @@
         "game_id":"43",
         "emoji": "<:hotfoot:1292610914306228265>",
         "alias": ["hotfoot", "hot foot"],
-        "cheats": [
+        "codes": [
             ["DUAL-BAGS","Specify custom game settings."],
             ["GOGA-TOR!","Two Player Co-op as Monkey and Robot."],
             ["LEFT-FOOT","Swaps input for Pick Up, Throw, and Pass from the Switch Teammates button to the Jump Button."],
@@ -363,7 +363,7 @@
         "game_id":"19",
         "emoji": "<:divers:1292610872484560916>",
         "alias": ["divers", "diver"],
-        "cheats": [
+        "codes": [
             ["FREE-EGGS","Start with 3 eggs in inventory."]
         ],
         "gift": "COLLECT PARASITE HAMMER",
@@ -376,7 +376,7 @@
         "game_id":"13",
         "emoji": "<:railheist:1292610861835354183>",
         "alias": ["railheist", "rail heist", "heist"],
-        "cheats": [
+        "codes": [
             ["GOOD-SPUR","Start every stage with all power ups."],
             ["LAZY-COPS","Reduced time for Lawmen turns."]
         ],
@@ -390,7 +390,7 @@
         "game_id":"7",
         "emoji": "<:vainger:1292610853648072846>",
         "alias": ["vainger"],
-        "cheats": [
+        "codes": [
             ["GRAV-GUNS","Start with all upgrades."]
         ],
         "gift": "OBTAIN A MOD",
@@ -403,7 +403,7 @@
         "game_id":"44",
         "emoji": "<:rockonisland:1292612810710192241>",
         "alias": ["rockonisland", "rock on island", "rock on", "rock on! island", "rock-on island", "rock-on! island", "rockon!island"],
-        "cheats": [
+        "codes": [
             ["CLUB-PASS","All levels unlocked."]
         ],
         "gift": "REACH THE SECOND VILLAGE",
@@ -416,7 +416,7 @@
         "game_id":"23",
         "emoji": "<:pingolf:1292610879602294864>",
         "alias": ["pingolf", "pin golf"],
-        "cheats": [
+        "codes": [
             ["STAR-BALL","Play as Pilot or Waldorf."]
         ],
         "gift": "GET A HOLE IN ONE",
@@ -429,7 +429,7 @@
         "game_id":"1",
         "emoji": "<:mortol2:1292610847503548437>",
         "alias": ["mortol2", "mortol 2", "mortolii", "mortol ii"],
-        "cheats": [
+        "codes": [
             ["BENE-DIKT","Only play as Warrior, Engineer, and Gunner."]
         ],
         "gift": "ACTIVATE A SWITCH",
@@ -442,7 +442,7 @@
         "game_id":"9",
         "emoji": "<:fisthell:1292610855900287007>",
         "alias": ["fisthell", "fist hell"],
-        "cheats": [
+        "codes": [
             ["GOOD-GIRL","Start with a dog. The dog has 9999 HP."],
             ["HELL-FIST","Play with maxed out stats."],
             ["TEAM-FIST","Same as `HELL-FIST` but for two players."]
@@ -457,7 +457,7 @@
         "game_id":"30",
         "emoji": "<:overbold:1292612198723752067>",
         "alias": ["overbold", "over bold"],
-        "cheats": [
+        "codes": [
             ["CASH-BUMP","Higher Prize Payout."],
             ["FAUX-GONE","Two player chicken. Start with 2 threats but lots of gear. Betting stakes your gear in most rounds, instead of adding enemies."]
         ],
@@ -471,7 +471,7 @@
         "game_id":"38",
         "emoji": "<:campanella2:1292612205736624228>",
         "alias": ["campanella2", "campanella 2", "campanela 2", "campanela2"],
-        "cheats": [
+        "codes": [
             ["MEGA-BELL","Play with all upgrades."]
         ],
         "gift": "OBTAIN THE FRIENDSHIP BRACELET",
@@ -484,7 +484,7 @@
         "game_id":"42",
         "emoji": "<:hypercontender:1292612209200857131>",
         "alias": ["hypercontender", "hyper contender", "hyper", "contender"],
-        "cheats": [
+        "codes": [
             ["PAST-RULE","Play with no Rings. Instead, characters have health bars."]
         ],
         "gift": "WIN A DRAFT BATTLE (ON DEFAULT RING SETTINGS)",
@@ -497,7 +497,7 @@
         "game_id":"35",
         "emoji": "<:valbrace:1292610900221624371>",
         "alias": ["valbrace", "val brace"],
-        "cheats": [
+        "codes": [
             ["4RCH-M4GE","Start with 0 STR, 5 CON, and 15 WIS."],
             ["BUGG-BODY","Play as insect."]
         ],
@@ -511,7 +511,7 @@
         "game_id":"24",
         "emoji": "<:rakshasa:1292612805509513229>",
         "alias": ["rakshasa", "rashaka", "rakshaka", "rashasa"],
-        "cheats": [
+        "codes": [
             ["SOUL-LOOP","Death does not add more sould shards to collect. "]
         ],
         "gift": "CHEAT DEATH 3 TIMES",
@@ -524,7 +524,7 @@
         "game_id":"17",
         "emoji": "<:starwaspir:1292610868734988390>",
         "alias": ["starwaspir", "star waspir", "waspir"],
-        "cheats": [
+        "codes": [
             ["TRUE-BLUE","Play with infinite lives."]
         ],
         "gift": "OBTAIN A 10X MULTIPLIER",
@@ -537,7 +537,7 @@
         "game_id":"12",
         "emoji": "<:grimstone:1292612188690714735>",
         "alias": ["grimstone", "grim stone"],
-        "cheats": [
+        "codes": [
             ["WOLF-PACK","Play with a party of all dogs."]
         ],
         "gift": "REACH EXP LEVEL 10",
@@ -550,7 +550,7 @@
         "game_id":"33",
         "emoji": "<:lordsofdiskonia:1292610896711127092>",
         "alias": ["lordsofdiskonia", "lords of diskonia", "diskonia"],
-        "cheats": [
+        "codes": [
             ["BANK-SHOT","Bigger range indicator including bouncing off of surfaces."],
             ["BUMP-MORE","Increases knockback force."]
         ],
@@ -564,7 +564,7 @@
         "game_id":"39",
         "emoji": "<:nightmanor:1292610907154944012>",
         "alias": ["nightmanor", "night manor"],
-        "cheats": [
+        "codes": [
             ["OPEN-CAGE","Baddie is more terrifying!"]
         ],
         "gift": "ESCAPE THE KILLER",
@@ -577,7 +577,7 @@
         "game_id":"31",
         "emoji": "<:elfazarshat:1292610893200359516>",
         "alias": ["elfazarshat", "elfazar'shat", "elfazar", "elfazars hat", "elfazar's hat"],
-        "cheats": [
+        "codes": [
             ["SIDE-SHOW","Play the bonus stage."]
         ],
         "gift": "EARN A CONTINUE IN THE BONUS ROUND",
@@ -590,7 +590,7 @@
         "game_id":"37",
         "emoji": "<:pilotquest:1292610903866347541>",
         "alias": ["pilotquest", "pilot quest", "pilot"],
-        "cheats": [
+        "codes": [
             ["MORE-MEAT","Play starting with 10 meat."]
         ],
         "gift": "DEFEAT UNKTOMI",
@@ -603,7 +603,7 @@
         "game_id":"41",
         "emoji": "<:miniandmax:1292610910745264138>",
         "alias": ["miniandmax", "mini and max", "mini&max", "mini & max", "mini max"],
-        "cheats": [
+        "codes": [
             ["TINY-BUFF","Start with all items and powerups."]
         ],
         "gift": "COLLECT AT LEAST 100 SHINIES",
@@ -616,7 +616,7 @@
         "game_id":"25",
         "emoji": "<:combatants:1292610883008200784>",
         "alias": ["combatants"],
-        "cheats": [
+        "codes": [
             ["ANTS-ANTS","Unlock all levels."]
         ],
         "gift": "SLAY A SPIDER",
@@ -629,7 +629,7 @@
         "game_id":"14",
         "emoji": "<:quibblerace:1292612189391425618>",
         "alias": ["quibblerace", "quibble", "quible"],
-        "cheats": [
+        "codes": [
             ["BLAK-LITE","Play spectator mode. Watch with no input."],
             ["TUFF-RACE","One of 3 special events always occurs: Meteor, Garbage, or Pollution. Normally, they only have small a chance of happening."],
             ["WILD-BETS","No betting cap. "]
@@ -644,7 +644,7 @@
         "game_id":"47",
         "emoji": "<:seasidedrive:1292610921210052779>",
         "alias": ["seasidedrive", "seaside drive", "sunset drive", "sunsetdrive", "seaside"],
-        "cheats": [
+        "codes": [
             ["NEED-PIES","Play without losing lives."],
             ["WEAK-SHOT","No charging up."]
         ],
@@ -658,7 +658,7 @@
         "game_id":"8",
         "emoji": "<:campanella3:1292612038375379025>",
         "alias": ["campanella3", "campanella 3", "campanela 3", "campanela3"],
-        "cheats": [
+        "codes": [
             ["PACI-FIST","Play without weapons."]
         ],
         "gift": "CLEAR THE BONUS ROUND",
@@ -671,7 +671,7 @@
         "game_id":"45",
         "emoji": "<:cyberowls:1292610917821059183>",
         "alias": ["cyberowls", "cyber", "cyber owl", "cyber owls", "cyberowl"],
-        "cheats": [
+        "codes": [
             ["GETM-EOUT","Play only the escape levels."],
             ["HAWK-BASE","Skips to the base in cyber owls."],
             ["JOES-ERVO","Start with 100 lives."]
