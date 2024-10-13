@@ -263,7 +263,7 @@ async def cherry(interaction: discord.Interaction, game: str|None, number: int|N
 # terminal codes command
 @client.tree.command(name="codes",description="Check terminal codes for a game.", guild=GUILD_ID)
 async def codes(interaction: discord.Interaction, game: str|None, number: int|None):
-    await get_game_value(interaction, game, number, "codes", ":InfoBuddyOK:1291972595952123984>")
+    await get_game_value(interaction, game, number, "codes", "<:InfoBuddyOK:1291972595952123984>")
 
 
 # 50club command
