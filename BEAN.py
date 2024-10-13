@@ -38,7 +38,7 @@ class Client(commands.Bot):
         # display console log when starting bot
         print(f'Logged in as {self.user}!')
         # attempt to sync slash commands
-        test_channel = self.get_channel('1295089365097386014')
+        test_channel = self.get_channel(1295089365097386014)
         await test_channel.send("Restarted just now.")
         try:
             synced = await self.tree.sync(guild=GUILD_ID)
@@ -211,8 +211,8 @@ async def guides(interaction: discord.Interaction):
     await interaction.response.send_message(content='Check out UFO 50 guides here:\n<https://steamcommunity.com/app/1147860/guides/>')
 
 # link to steam guides
-@client.tree.command(name="speedruns",description="Get a link to speedrun.com page for UFO 50!", guild=GUILD_ID)
-async def speedruns(interaction: discord.Interaction):
+@client.tree.command(name="speedrun",description="Get a link to speedrun.com page for UFO 50!", guild=GUILD_ID)
+async def spdrun(interaction: discord.Interaction):
     await interaction.response.send_message(content='Check out or submit UFO 50 speedruns here:\n<https://www.speedrun.com/UFO_50>')
 
 # link to steam page
