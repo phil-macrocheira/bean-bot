@@ -38,7 +38,7 @@ class Client(commands.Bot):
         # display console log when starting bot
         print(f'Logged in as {self.user}!')
         # attempt to sync slash commands
-        test_channel = client.get_channel('1295089365097386014')
+        test_channel = self.get_channel('1295089365097386014')
         await test_channel.send("Restarted just now.")
         try:
             synced = await self.tree.sync(guild=GUILD_ID)
