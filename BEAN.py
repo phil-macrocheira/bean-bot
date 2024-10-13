@@ -50,8 +50,12 @@ class Client(commands.Bot):
         # ignore all messages from self or from another bot
         if message.author == self.user or message.author.bot:
             return
-        if "thanks bean" in message.content.replace(',','').replace('!',''):
-            await message.reply("NICE ROD, PAL.")
+        msg = message.content.replace(',','').replace('!','').lower()
+        if "thanks bean" in msg or "thank you bean" in msg or "thankyou bean" in msg:
+            if random.randint(1,4) == 3:
+                await message.reply("NICE SWORD, PAL.")
+            else:
+                await message.reply("NICE ROD, PAL.")
         if not message.guild:
             return
         if not message.attachments:
@@ -63,7 +67,7 @@ class Client(commands.Bot):
         
         file_extension = message.attachments[0].filename.split(".")[-1].lower()
         if file_extension == 'ufo':
-            print("UFO File attachment detected.")
+            print(f"UFO File attachment detected from {message.author.name} ({message.author.id})")
             try:
                 file_content = await message.attachments[0].read()
                 file_content = base64.b64decode(file_content).decode('utf-8')
@@ -117,15 +121,29 @@ intents.message_content = True
 intents.members = True
 client = Client(command_prefix="/",activity=discord.Game(name="UFO 50"),intents=intents)
 
-# # once every 50 entered commands, change the bot's "Now playing" to the most recently specified game
+# # once every 20 entered commands, change the bot's "Now playing" to the most recently specified game if there was one
 async def change_presence(target):
+    global client
     global counter
-    if counter < 50:
+    if counter < 20:
         counter += 1
     else:
         counter = 0
         activity = discord.Game(name=target["name"])
+        print(f"Changing status to {target["name"]}")
         await client.change_presence(status=discord.Status.Online,activity=activity)
+
+# format 2d array for codes
+def codes_output(codes):
+    if len(codes) == 0:
+        return '*No terminal codes available for this game.*'
+    return f"||{'||\n||'.join(': '.join(str(x) for x in row) for row in codes)}||"
+
+def game_value_output(type, target, emote):
+    if type == 'codes':
+        return f"The available {emote} **Terminal Codes** for {target["emoji"]} **{target["name"]}** are...\n{codes_output(target['codes'])}"
+    return f"The {emote} **{type.capitalize()}** requirement for {target["emoji"]} **{target["name"]}** is...\n||{target[type]}||"
+
 
 # shared function code used for grabbing cherry, gold, and gift values
 async def get_game_value(interaction, game, number, type, emote):
@@ -134,23 +152,23 @@ async def get_game_value(interaction, game, number, type, emote):
         # check channel for number values to determine target game
         if interaction.channel.name[:1] in '0123456789' and interaction.channel.name[1:2] in '0123456789':
             if (int(interaction.channel.name[:2]) > 50 or int(interaction.channel.name[:2]) < 1):
-                return await interaction.response.send_message(content=f"Please specify a game or number to check {type} of.", ephemeral=True)
+                return await interaction.response.send_message(content=f"Please specify a game or number to check the {type} for.", ephemeral=True)
             else:
                 target = d[int(interaction.channel.name[:2])-1]
-                await interaction.response.send_message(f"The {emote} **{type.capitalize()}** requirement for {target["emoji"]} **{target["name"]}** is...\n||{target[type]}||")
+                await interaction.response.send_message(game_value_output(type,target,emote))
                 await change_presence(target)
         # no target game, give error
         else:
-            return await interaction.response.send_message(content=f"Please specify a game or number to check {type} requirement of.", ephemeral=True)
+            return await interaction.response.send_message(content=f"Please specify a game or number to check the {type} for.", ephemeral=True)
     # game and or number is specified
     else:
         # number specified
         if game is None and not number is None:
             if number > 50 or number < 1:
-                return await interaction.response.send_message(content=f"Your input is not valid.", ephemeral=True)
+                return await interaction.response.send_message(content=f"Your input was not valid.", ephemeral=True)
             else:
                 target = d[number-1]
-                await interaction.response.send_message(f"The {emote} **{type.capitalize()}** requirement for {target["emoji"]} **{target["name"]}** is...\n||{target[type]}||")
+                await interaction.response.send_message(game_value_output(type,target,emote))
                 await change_presence(target)
         # game specified
         elif number is None and not game is None:
@@ -167,14 +185,14 @@ async def get_game_value(interaction, game, number, type, emote):
                 if (best_match >= 90):
                     target = [x for x in d if best_match_game.lower() == x["name"].lower()]
                     target = target[0]
-                    await interaction.response.send_message(f"The {emote} **{type.capitalize()}** requirement for {target["emoji"]} **{target["name"]}** is...\n||{target[type]}||")
+                    await interaction.response.send_message(game_value_output(type,target,emote))
                     await change_presence(target)
                 else:
                     await interaction.response.send_message(content=f"Your input was not recognized.", ephemeral=True)
             # direct alias search succeeds
             else:
                 target = target[0]
-                await interaction.response.send_message(f"The {emote} **{type.capitalize()}** requirement for {target["emoji"]} **{target["name"]}** is...\n||{target[type]}||")
+                await interaction.response.send_message(game_value_output(type,target,emote))
                 await change_presence(target)
         # error if both number and game are specified
         else:
@@ -213,7 +231,7 @@ async def music(interaction: discord.Interaction):
 # random game command
 @client.tree.command(name="random",description="Pick out a UFO 50 game at random.", guild=GUILD_ID)
 async def rnd(interaction: discord.Interaction):
-    if random.randint(1,200) == 50:
+    if random.randint(1,150) == 50:
         response = random.choice(suggest)
     else:
         response = random.choice(d)
@@ -234,6 +252,12 @@ async def gold(interaction: discord.Interaction, game: str|None, number: int|Non
 @client.tree.command(name="cherry",description="Check cherry requirement for a game.", guild=GUILD_ID)
 async def cherry(interaction: discord.Interaction, game: str|None, number: int|None):
     await get_game_value(interaction, game, number, "cherry", "<:CherryGet:1291281262870528073>")
+
+# terminal codes command
+@client.tree.command(name="codes",description="Check terminal codes for a game.", guild=GUILD_ID)
+async def codes(interaction: discord.Interaction, game: str|None, number: int|None):
+    await get_game_value(interaction, game, number, "codes", ":InfoBuddyOK:1291972595952123984>")
+
 
 # 50club command
 @client.tree.command(name="50club",description="Check number of people with the cherry collector role.", guild=GUILD_ID)
