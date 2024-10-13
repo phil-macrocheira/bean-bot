@@ -210,6 +210,11 @@ async def ping(interaction: discord.Interaction):
 async def guides(interaction: discord.Interaction):
     await interaction.response.send_message(content='Check out UFO 50 guides here:\n<https://steamcommunity.com/app/1147860/guides/>', ephemeral=True)
 
+# link to steam guides
+@client.tree.command(name="speedruns",description="Get a link to speedrun.com page for UFO 50!", guild=GUILD_ID)
+async def speedruns(interaction: discord.Interaction):
+    await interaction.response.send_message(content='Check out or submit UFO 50 speedruns here:\n<https://www.speedrun.com/UFO_50>', ephemeral=True)
+
 # link to steam page
 @client.tree.command(name="steam",description="Get a link to steam page for UFO 50!", guild=GUILD_ID)
 async def steam(interaction: discord.Interaction):
