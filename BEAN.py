@@ -8,7 +8,7 @@ import os
 
 # UFO 50 Discord server ID
 GUILD_ID = discord.Object(id=525973026429206530)
-TESTGUILD_ID = discord.Object(id=1292608815891480648)
+# TESTGUILD_ID = discord.Object(id=1292608815891480648)
 
 # globally reused variables
 game_list = []
