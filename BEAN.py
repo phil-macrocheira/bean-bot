@@ -8,7 +8,7 @@ import os
 
 # UFO 50 Discord server ID
 GUILD_ID = discord.Object(id=525973026429206530)
-# TESTGUILD_ID = discord.Object(id=1292608815891480648)
+TESTGUILD_ID = discord.Object(id=1292608815891480648)
 
 # globally reused variables
 game_list = []
@@ -38,6 +38,8 @@ class Client(commands.Bot):
         # display console log when starting bot
         print(f'Logged in as {self.user}!')
         # attempt to sync slash commands
+        test_channel = client.get_channel('1295089365097386014')
+        await test_channel.send("Restarted just now.")
         try:
             synced = await self.tree.sync(guild=GUILD_ID)
             print(f'Synced {len(synced)} commands to guild {GUILD_ID.id}')
