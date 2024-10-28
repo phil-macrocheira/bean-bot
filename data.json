@@ -510,7 +510,7 @@
         ],
         "sr_category": "9kvz4qod",
         "gift": "OBTAIN THE FRIENDSHIP BRACELET",
-        "gold": "ESCAPE WITH PILOT",
+        "gold": "ESCAPE WITH PILOT?",
         "cherry": "SAVE THE PLANETOID"
     },
     {
@@ -568,7 +568,7 @@
         "sr_category": "wdmjn95d",
         "gift": "OBTAIN A 10X MULTIPLIER",
         "gold": "BEAT 5 WAVES",
-        "cherry": "SCORE AT LEAST 300000 POINTS"
+        "cherry": "WIN WITH AT LEAST 300000 POINTS"
     },
     {
         "name": "Grimstone",
