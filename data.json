@@ -283,7 +283,7 @@
         "emoji": "<:warptank:1292612190683267088>",
         "alias": ["warptank", "warp tank"],
         "codes": [
-            ["SLIM-TANK","Play as a slime. Only Crust Sector, no other levels or hub."]
+            ["SLIM-TANK","Play as a slime. No hub. Select level with up/down when level name is displayed."]
         ],
         "sr_category": "mkemgl82",
         "gift": "DEFEAT RENEGADE",
@@ -355,10 +355,10 @@
         "emoji": "<:partyhouse:1292612808529416262>",
         "alias": ["partyhouse", "party house", "party", "house party", "houseparty"],
         "codes": [
-            ["MAKE-GLEE","Make a custom shop of guests to buy."],
-            ["PLUS-ONES","Same as `VIPS-ONLY` but for two players."],
-            ["RSVP-SOON","Same as `MAKE-GLEE` but for two players."],
-            ["VIPS-ONLY","Enter Seed to play seeded game."]
+            ["VIPS-ONLY","Enter a seed to play seeded game."],
+            ["MAKE-GLEE","Create a custom scenario."],
+            ["PLUS-ONES","Enter a seed to play a seeded game with two players."],
+            ["RSVP-SOON","Create a custom scenario with two players."]
         ],
         "sr_category": "xk97oe4d",
         "gift": "BEAT 1 SCENARIO",
