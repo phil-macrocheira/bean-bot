@@ -230,6 +230,11 @@ async def tier(interaction: discord.Interaction):
 async def wiki(interaction: discord.Interaction):
     await interaction.response.send_message(content='Check out the UFO 50 wiki here:\n<https://ufo50.miraheze.org/wiki/Main_Page>')
 
+# link to wiki
+@client.tree.command(name="whatsthatdemogame",description="for when people ask about that one demo preview game", guild=GUILD_ID)
+async def wiki(interaction: discord.Interaction):
+    await interaction.response.send_message(content='That one demo game is from <:elfazarshat:1292610893200359516> **Elfazar\'s Hat**.')
+
 # link to bandcamp music
 @client.tree.command(name="music",description="Get a link to UFO 50 music on Bandcamp!", guild=GUILD_ID)
 async def music(interaction: discord.Interaction):
