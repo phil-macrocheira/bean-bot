@@ -356,7 +356,7 @@
         "alias": ["partyhouse", "party house", "party", "house party", "houseparty"],
         "codes": [
             ["VIPS-ONLY / PLUS-ONES","Enter a seed to play seeded game with one or two players."],
-            ["MAKE-GLEE / RSVP-SOON","Create a custom scenario and play with one or two players."],
+            ["MAKE-GLEE / RSVP-SOON","Create a custom scenario and play with one or two players."]
         ],
         "sr_category": "xk97oe4d",
         "gift": "BEAT 1 SCENARIO",
