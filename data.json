@@ -355,10 +355,8 @@
         "emoji": "<:partyhouse:1292612808529416262>",
         "alias": ["partyhouse", "party house", "party", "house party", "houseparty"],
         "codes": [
-            ["VIPS-ONLY","Enter a seed to play seeded game."],
-            ["MAKE-GLEE","Create a custom scenario."],
-            ["PLUS-ONES","Enter a seed to play a seeded game with two players."],
-            ["RSVP-SOON","Create a custom scenario with two players."]
+            ["VIPS-ONLY / PLUS-ONES","Enter a seed to play seeded game with one or two players."],
+            ["MAKE-GLEE / RSVP-SOON","Create a custom scenario and play with one or two players."],
         ],
         "sr_category": "xk97oe4d",
         "gift": "BEAT 1 SCENARIO",
