@@ -18,12 +18,12 @@
         "emoji": "<:bughunter:1292612191748489267>",
         "alias": ["bughunter", "bug hunter", "bug hunt"],
         "codes": [
-            ["ACES-RULE","Same as `ACES-SHOP` but for two players."],
-            ["ACES-SHOP","Buying modules keeps them in the shop, instead of replacing them with new ones. So the shop you start with stays that way for the entire day."],
-            ["GOOD-JOBS","Enter Seed to play seeded game."],
-            ["TUNE-RACE","Custom two-player match settings."],
-            ["WORK-HARD","Starting moves are different."],
-            ["WORK-LESS","Start with a level select."]
+            ["WORK-HARD","Starting modules are randomized between RUN, HOP, SHOOT, or LOB. First module is either RUN or HOP to ensure player can move. Modules in the shop can be any module with none of the usual limitations."],
+            ["WORK-LESS","Select a Job from 1 to 15 to start from"],
+            ["GOOD-JOBS","Enter and play a seed from 0 to 999999"],
+            ["TUNE-RACE","Two player versus with two customizable rules: Kills To Win (5, 10, 15, 20, 25, or 30) and Actions/Turn (1 to 7)"],
+            ["ACES-SHOP","Purchased modules do not get replaced with new ones"],
+            ["ACES-RULE","Purchased modules do not get replaced with new ones (Two player versus)"]
         ],
         "sr_category": "wkpzw1wd",
         "gift": "COMPLETE YOUR FIRST JOB",
@@ -37,7 +37,7 @@
         "emoji": "<:ninpek:1292612202745958537>",
         "alias": ["ninpek", "nin pek"],
         "codes": [
-            ["HARD-LOOP","Play with level difficulty increased."]
+            ["HARD-LOOP","Begins the game at the second loop"]
         ],
         "sr_category": "mkem1962",
         "gift": "EAT 3 SANDWICHES",
@@ -51,8 +51,8 @@
         "emoji": "<:paintchase:1292610924632342608>",
         "alias": ["paintchase", "paint chase"],
         "codes": [
-            ["EVEN-COAT","Start with a level select."],
-            ["GOGO-GOGH","Play with no timer or enemies."]
+            ["EVEN-COAT","Select a Course from 1 to 26 to start from"],
+            ["GOGO-GOGH","Play without a time limit or enemies"]
         ],
         "sr_category": "5dwz34ld",
         "gift": "PASS THE FIRST 12 COURSES",
@@ -66,7 +66,7 @@
         "emoji": "<:magicgarden:1292610886216974407>",
         "alias": ["magicgarden","magic garden"],
         "codes": [
-            ["OVER-GROW","Play with no potions."]
+            ["OVER-GROW","Potions do not appear"]
         ],
         "sr_category": "wk6yqnxd",
         "gift": "SAVE AT LEAST 10 OPPIES AT ONCE",
@@ -80,11 +80,11 @@
         "emoji": "<:mortol:1292610889756704821>",
         "alias": ["mortol", "mortol 1"],
         "codes": [
-            ["BENS-MODE","Start with 150 lives, but you can not gain extra lives."],
-            ["FIRE-ARRO","Arrow sacrifice is always on fire."],
-            ["GIVE-LIFE","Start with 40 lives."],
-            ["LEAF-HEAD","Dying (not sacrifice) spawns tall vines."],
-            ["OPEN-TOMB","Play with all levels unlocked and 20 starting lives."]
+            ["GIVE-LIFE","Start with 40 lives"],
+            ["BENS-MODE","Start with 150 lives, but extra lives do not spawn and extra lives are not rewarded for defeating enemies or burning enemy spawners"],
+            ["OPEN-TOMB","All levels completed with 20 lives"],
+            ["FIRE-ARRO","Player is always on fire while performing Arrow ritual"],
+            ["LEAF-HEAD","Player always spawns a plantvine on death from hazards like spikes, drowning, or enemies"]
         ],
         "sr_category": "n2yzlo8k",
         "gift": "BEAT LEVEL 2-C",
@@ -98,7 +98,7 @@
         "emoji": "<:velgress:1292610865333403669>",
         "alias": ["velgress","velgres"],
         "codes": [
-            ["ALFA-BEST","Play with all upgrades + upgraded."]
+            ["ALFA-BEST","Start with all shop upgrades: Recovery 2, Power 2, Lightfoot 2, Magnet, Lightning, and Double Jump"]
         ],
         "sr_category": "7kjw03xd",
         "gift": "COLLECT 2 KEYS",
@@ -112,8 +112,8 @@
         "emoji": "<:planetzoldath:1292624202029072385>",
         "alias": ["planetzoldath", "planet zoldath", "zoldath"],
         "codes": [
-            ["LESS-HARM","Take less damage."],
-            ["TROT-TERS","Enter Seed to play seeded game."]
+            ["TROT-TERS","Enter and play a seed from 0 to 999999"],
+            ["LESS-HARM","Always take exactly 0.5 damage from enemies, projectiles, and explosions"]
         ],
         "sr_category": "xk97zvyd",
         "gift": "FIND 1 MAP PART(S)",
@@ -127,7 +127,7 @@
         "emoji": "<:attactics:1292610848354734150>",
         "alias": ["attactics"],
         "codes": [
-            ["SLOW-DOWN","Makes the game turn based."]
+            ["SLOW-DOWN","Play a \"Test Mode\" where there is no timer and turns are ended either when the move limit is hit or the player presses Button 1 (B). Begin by selecting Moves Per Turn from 1 to 9 or Unlimited as well as Challenge type, which can be Ranked mode from 0 to 300 or Survival."]
         ],
         "sr_category": "z27jz1g2",
         "gift": "BEAT THE FIRST 12 LEVELS IN THE CAMPAIGN",
@@ -141,10 +141,10 @@
         "emoji": "<:devilition:1292610851756310639>",
         "alias": ["devilition", "devolution", "devillition", "devollution", "devolition"],
         "codes": [
-            ["BOMB-HELP","Start with 25 pieces instead of 15."],
-            ["FULL-RAND","All new pieces you draw will be fully random instead of normal piece-picking logic."],
-            ["EVIL-EYES","Adds a visual indicator where pieces will blow up when placed on the board."],
-            ["WEAK-TOWN","Start the game with no villagers."]
+            ["BOMB-HELP","Start with 25 pieces instead of 15"],
+            ["WEAK-TOWN","Start with 0 townies instead of 2"],
+            ["FULL-RAND","New pieces can be any piece with none of the usual limitations."],
+            ["EVIL-EYES","Tiles that will be detonated remain colored orange"]
         ],
         "sr_category": "zdn9g8q2",
         "gift": "SURVIVE FOR 5 ROUNDS",
@@ -158,8 +158,8 @@
         "emoji": "<:kickclub:1292612195577893026>",
         "alias": ["kickclub","kick club"],
         "codes": [
-            ["F00T-B4LL","Two player vs. game mode."],
-            ["FOOT-BALL","Two player vs. game mode."]
+            ["FOOT-BALL","Two player versus with 10 points to win"],
+            ["F00T-B4LL","Two player versus with 50 points to win"]
         ],
         "sr_category": "q256zm8k",
         "gift": "BEAT TRACK WORLD",
@@ -173,7 +173,7 @@
         "emoji": "<:avianos:1292612216193028176>",
         "alias": ["avianos"],
         "codes": [
-            ["BLUE-BEAK","Allows you to choose any level to play, even if you haven't completed it."]
+            ["BLUE-BEAK","Play any scenario"]
         ],
         "sr_category": "jdr4ylx2",
         "gift": "MAX OUT BLESSINGS FROM ONE ANCESTOR.",
@@ -199,7 +199,7 @@
         "emoji": "<:bushidoball:1292612193304580189>",
         "alias": ["bushidoball", "bushido ball", "bushido", "bush ball", "bushball"],
         "codes": [
-            ["ZATO-1CHI","The ball will be invisible."]
+            ["ZATO-1CHI","Ball is invisible"]
         ],
         "sr_category": "02qz6vp2",
         "gift": "DEFEAT 3 IN THE TOURNAMENT",
@@ -213,7 +213,7 @@
         "emoji": "<:blockkoala:1292612191375327313>",
         "alias": ["blockkoala", "block koala", "koala"],
         "codes": [
-            ["WORM-1234","All levels will be unlocked."]
+            ["WORM-1234","All overworld gates unlocked"]
         ],
         "sr_category": "8244z0g2",
         "gift": "COMPLETE A CUSTOM LEVEL",
@@ -227,7 +227,7 @@
         "emoji": "<:camouflage:1292610850636566618>",
         "alias": ["camouflage"],
         "codes": [
-            ["FORM-ELDA","All levels will be unlocked."]
+            ["FORM-ELDA","All levels unlocked"]
         ],
         "sr_category": "wdmjnv5d",
         "gift": "EARN 30% COMPLETION",
@@ -241,7 +241,7 @@
         "emoji": "<:campanella:1292610849596248094>",
         "alias": ["campanella", "campanela", "campanela 1", "campanella 1"],
         "codes": [
-            ["BEAN-DRIP","Play all bonus stages."]
+            ["BEAN-DRIP","Play through all 5 bonus stages. The crystals are worth 100 points instead of 200."]
         ],
         "sr_category": "vdo7rxy2",
         "gift": "AMASS 15 SPARE SHIPS",
@@ -255,7 +255,7 @@
         "emoji": "<:golfaria:1292610852620341382>",
         "alias": ["golfaria"],
         "codes": [
-            ["FORE-EVER","Play without a stroke count."]
+            ["FORE-EVER","Stroke count never decreases"]
         ],
         "sr_category": "wkpz80gd",
         "gift": "OBTAIN THE BLOCK BUSTER",
@@ -269,7 +269,7 @@
         "emoji": "<:thebigbellrace:1292612806641975386>",
         "alias": ["thebigbellrace", "bellrace", "bigbellrace", "bell race", "big bell race", "the big bell race"],
         "codes": [
-            ["KIWI-AURA","New powerups appear instantly after the last powerup pickup instead of 5 seconds after."]
+            ["KIWI-AURA","New powerups spawn immediately after the current one is collected instead of having a delay between 3.5 and 6.5 seconds"]
         ],
         "sr_category": "7dgpw07d",
         "gift": "WIN FIRST PLACE IN AT LEAST 1 RACE",
@@ -283,7 +283,7 @@
         "emoji": "<:warptank:1292612190683267088>",
         "alias": ["warptank", "warp tank"],
         "codes": [
-            ["SLIM-TANK","Play as a slime. No hub. Select level with up/down when level name is displayed."]
+            ["SLIM-TANK","No overworld hub. Select level with up/down when level name is displayed. Play as a slime."]
         ],
         "sr_category": "mkemgl82",
         "gift": "DEFEAT RENEGADE",
@@ -297,7 +297,7 @@
         "emoji": "<:waldorfsjourney:1292610875756249249>",
         "alias": ["waldorfsjourney", "waldorfs journey", "waldorf'sjourney", "waldorf's journey", "waldorf", "waldorfs"],
         "codes": [
-            ["BLUB-BLUB","Start with 30 Shells."]
+            ["BLUB-BLUB","Start with 30 shells"]
         ],
         "sr_category": "5dwzm6ed",
         "gift": "COMPLETE 50% OF THE JOURNEY",
@@ -311,8 +311,8 @@
         "emoji": "<:porgy:1292612187927478272>",
         "alias": ["porgy"],
         "codes": [
-            ["CALM-SEAS","Bosses do not engage with you."],
-            ["CHAN-DAR!","Start with all items and upgrades."]
+            ["CHAN-DAR!","Start with all items and upgrades"],
+            ["CALM-SEAS","Bosses never attack the player"]
         ],
         "sr_category": "wk6yxeqd",
         "gift": "DEFEAT LAMIA",
@@ -326,8 +326,8 @@
         "emoji": "<:oniondelivery:1292612807547949148>",
         "alias": ["oniondelivery", "onion delivery", "onion"],
         "codes": [
-            ["GOOF-ZOOM","Swaps the direction you turn when turning in reverse."],
-            ["ROAD-RAGE","Take no damage while playing."]
+            ["ROAD-RAGE","Endless mode. Player is invincible."],
+            ["GOOF-ZOOM","Inverted controls for turning in reverse"]
         ],
         "sr_category": "n2yzp9zk",
         "gift": "COMPLETE 2 DAYS OF DELIVERIES",
@@ -341,7 +341,7 @@
         "emoji": "<:caramelcaramel:1292612212552106047>",
         "alias": ["caramelcaramel", "caramel", "caramel caramel"],
         "codes": [
-            ["TEST-LENS","Select which stage to play on."]
+            ["TEST-LENS","\"Practice Mode\" – Play any level"]
         ],
         "sr_category": "7kjwj8nd",
         "gift": "BEAT THE EGG",
@@ -355,7 +355,7 @@
         "emoji": "<:partyhouse:1292612808529416262>",
         "alias": ["partyhouse", "party house", "party", "house party", "houseparty"],
         "codes": [
-            ["VIPS-ONLY / PLUS-ONES","Enter a seed to play seeded game with one or two players."],
+            ["VIPS-ONLY / PLUS-ONES","Enter a seed to play a seeded game with one or two players."],
             ["MAKE-GLEE / RSVP-SOON","Create a custom scenario and play with one or two players."]
         ],
         "sr_category": "xk97oe4d",
