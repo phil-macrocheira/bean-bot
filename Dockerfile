@@ -14,7 +14,7 @@ COPY . /app
 COPY data.json /app/data.json
 
 # Install dependencies using Poetry
-RUN poetry install --no-dev
+RUN poetry install
 
 # Make port 8080 available to the world outside this container
 EXPOSE 8080
