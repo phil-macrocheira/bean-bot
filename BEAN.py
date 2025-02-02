@@ -342,7 +342,7 @@ async def get_game_value(interaction, game, number, type, emote):
     else:
         # number specified
         if game is None and not number is None:
-            if number > 50 or number < 1:
+            if number > 51 or number < 0:
                 return await interaction.response.send_message(content=f"Your input was not valid.", ephemeral=True)
             else:
                 target = d[number-1]
