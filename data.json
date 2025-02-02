@@ -370,11 +370,11 @@
         "emoji": "<:hotfoot:1292610914306228265>",
         "alias": ["hotfoot", "hot foot"],
         "codes": [
-            ["DUAL-BAGS","Specify custom game settings."],
-            ["GOGA-TOR!","Two Player Co-op as Monkey and Robot."],
-            ["LEFT-FOOT","Swaps input for Pick Up, Throw, and Pass from the Switch Teammates button to the Jump Button."],
-            ["PLAY-FAIR","Let's you build a team with characters who aren't normally on the menu."],
-            ["TEST-BAGS","Same as `DUAL-BAGS`."]
+            ["PLAY-FAIR","Play "Build Team" mode with 2 added characters, Zobo and Blorg"],
+            ["GOGA-TOR!","Two player co-op where player 1 is Zobo and player 2 is Blorg"],
+            ["LEFT-FOOT","Remaps controls so that Button 1 (B) is Switch Teammates and Button 2 (A) is Pick Up, Throw, Pass, Jump, and Special Action"],
+            ["TEST-BAGS","Play with customizable rules: Point Goal (5 - 30), Max Bags (1 - 7), Special Cost (1 - 2), Teammate AI (Get Bags Only or Full Auto), and Teammate Jump (Synchronous or Independent)"],
+            ["DUAL-BAGS","Play two player versus with customizable rules: Point Goal (5 - 30), Max Bags (1 - 7), Special Cost (1 - 2), Teammate AI (Get Bags Only or Full Auto), and Teammate Jump (Synchronous or Independent)"]
         ],
         "sr_category": "z27j0402",
         "gift": "WIN 3 MATCHES",
@@ -388,7 +388,7 @@
         "emoji": "<:divers:1292610872484560916>",
         "alias": ["divers", "diver"],
         "codes": [
-            ["FREE-EGGS","Start with 3 eggs in inventory."]
+            ["FREE-EGGS","Start with 3 eggs"]
         ],
         "sr_category": "zdn95le2",
         "gift": "COLLECT PARASITE HAMMER",
@@ -402,8 +402,8 @@
         "emoji": "<:railheist:1292610861835354183>",
         "alias": ["railheist", "rail heist", "heist"],
         "codes": [
-            ["GOOD-SPUR","Start every stage with all power ups."],
-            ["LAZY-COPS","Reduced time for Lawmen turns."]
+            ["LAZY-COPS","All levels unlocked"],
+            ["GOOD-SPUR","Start with all powerups and max bullets. In the end credits, "GOOD-SPUR" is replaced with "MR. N. SAVED MY LIFE""]
         ],
         "sr_category": "q256leyk",
         "gift": "BEAT LEVEL 10",
@@ -417,7 +417,7 @@
         "emoji": "<:vainger:1292610853648072846>",
         "alias": ["vainger"],
         "codes": [
-            ["GRAV-GUNS","Start with all upgrades."]
+            ["GRAV-GUNS","Start with all upgrades"]
         ],
         "sr_category": "jdzzge3d",
         "gift": "OBTAIN A MOD",
@@ -431,7 +431,7 @@
         "emoji": "<:rockonisland:1292612810710192241>",
         "alias": ["rockonisland", "rock on island", "rock on", "rock on! island", "rock-on island", "rock-on! island", "rockon!island"],
         "codes": [
-            ["CLUB-PASS","All levels unlocked."]
+            ["CLUB-PASS","All levels beaten"]
         ],
         "sr_category": "02qz19j2",
         "gift": "REACH THE SECOND VILLAGE",
@@ -445,7 +445,7 @@
         "emoji": "<:pingolf:1292610879602294864>",
         "alias": ["pingolf", "pin golf"],
         "codes": [
-            ["STAR-BALL","Play as Pilot or Waldorf."]
+            ["STAR-BALL","Character select only has Pilot and Waldorf"]
         ],
         "sr_category": "8244vlm2",
         "gift": "GET A HOLE IN ONE",
@@ -459,7 +459,7 @@
         "emoji": "<:mortol2:1292610847503548437>",
         "alias": ["mortol2", "mortol 2", "mortolii", "mortol ii"],
         "codes": [
-            ["BENE-DIKT","Remove two characters from being selectable at random."]
+            ["BENE-DIKT","2 random character classes are omitted from the game, leaving 3 to choose from"]
         ],
         "sr_category": "9d89mo62",
         "gift": "ACTIVATE A SWITCH",
@@ -473,9 +473,9 @@
         "emoji": "<:fisthell:1292610855900287007>",
         "alias": ["fisthell", "fist hell"],
         "codes": [
-            ["GOOD-GIRL","Start with a dog. The dog has 9999 HP."],
-            ["HELL-FIST","Play with maxed out stats."],
-            ["TEAM-FIST","Same as `HELL-FIST` but for two players."]
+            ["HELL-FIST","All characters have level 3 Power, Recovery, Tough, and Throw"],
+            ["TEAM-FIST","All characters have level 3 Power, Recovery, Tough, and Throw (Two player co-op)"],
+            ["GOOD-GIRL","Start with a dog that has 9999 HP"]
         ],
         "sr_category": "xd1p817d",
         "gift": "SURVIVE 9 WAVES IN THE GYM",
@@ -489,8 +489,8 @@
         "emoji": "<:overbold:1292612198723752067>",
         "alias": ["overbold", "over bold"],
         "codes": [
-            ["CASH-BUMP","Higher Prize Payout."],
-            ["FAUX-GONE","Two player chicken. Start with 2 threats but lots of gear. Betting stakes your gear in most rounds, instead of adding enemies."]
+            ["CASH-BUMP","First fight has a prize of 600 instead of 100"],
+            ["FAUX-GONE","Play an alternate version of two player versus. Each round starts with 14 random upgrades and 2 threats instead of a random number of upgrades and 1 threat. Raising the stakes can remove 2 upgrades at random even before reaching maximum threats. The level of each upgrade is not shown."]
         ],
         "sr_category": "zd3e3v8k",
         "gift": "WIN AT LEAST 500 IN ONE FIGHT",
@@ -504,7 +504,7 @@
         "emoji": "<:campanella2:1292612205736624228>",
         "alias": ["campanella2", "campanella 2", "campanela 2", "campanela2"],
         "codes": [
-            ["MEGA-BELL","Play with all upgrades."]
+            ["MEGA-BELL","Start with all upgrades, 16 lives instead of 8, and 1600 fuel instead of 800"]
         ],
         "sr_category": "9kvz4qod",
         "gift": "OBTAIN THE FRIENDSHIP BRACELET",
@@ -518,7 +518,7 @@
         "emoji": "<:hypercontender:1292612209200857131>",
         "alias": ["hypercontender", "hyper contender", "hyper", "contender"],
         "codes": [
-            ["PAST-RULE","Play with no Rings. Instead, characters have health bars."]
+            ["PAST-RULE","Instead of collecting rings, the objective is to KO the opponent or have more HP than the opponent when time runs. Each contender has 4 HP. The timer starts at 63 in tournaments and 126 in draft battles."]
         ],
         "sr_category": "rkly79rd",
         "gift": "WIN A DRAFT BATTLE (ON DEFAULT RING SETTINGS)",
@@ -532,8 +532,8 @@
         "emoji": "<:valbrace:1292610900221624371>",
         "alias": ["valbrace", "val brace"],
         "codes": [
-            ["4RCH-M4GE","Start with 0 STR, 5 CON, and 15 WIS."],
-            ["BUGG-BODY","Play as insect."]
+            ["BUGG-BODY","Play as an insect. Insect starts with 10 attack power and 4 stamina cost. Insect has 4 defense and a shield with 99,999 durability. Equipping items has no effect."],
+            ["4RCH-M4GE","Start with 0 STR, 15 WIS, and 32 HP instead of 5 STR, 5 WIS, and 64 HP"]
         ],
         "sr_category": "ndxqoe5k",
         "gift": "OBTAIN 8 IN ANY STAT",
@@ -547,7 +547,7 @@
         "emoji": "<:rakshasa:1292612805509513229>",
         "alias": ["rakshasa", "rashaka", "rakshaka", "rashasa"],
         "codes": [
-            ["SOUL-LOOP","Death does not add more sould shards to collect. "]
+            ["SOUL-LOOP","Death counter does not increase on death"]
         ],
         "sr_category": "w20or882",
         "gift": "CHEAT DEATH 3 TIMES",
@@ -561,7 +561,7 @@
         "emoji": "<:starwaspir:1292610868734988390>",
         "alias": ["starwaspir", "star waspir", "waspir"],
         "codes": [
-            ["TRUE-BLUE","Play with infinite lives."]
+            ["TRUE-BLUE","Play with infinite lives"]
         ],
         "sr_category": "wdmjn95d",
         "gift": "OBTAIN A 10X MULTIPLIER",
@@ -575,7 +575,7 @@
         "emoji": "<:grimstone:1292612188690714735>",
         "alias": ["grimstone", "grim stone"],
         "codes": [
-            ["WOLF-PACK","Play with a party of all dogs."]
+            ["WOLF-PACK","Play with a party of 4 dogs named Luna, Fang, Misty, and Dingo. Each is identical to Rufus."]
         ],
         "sr_category": "vdo7rzy2",
         "gift": "REACH EXP LEVEL 10",
@@ -589,8 +589,8 @@
         "emoji": "<:lordsofdiskonia:1292610896711127092>",
         "alias": ["lordsofdiskonia", "lords of diskonia", "diskonia"],
         "codes": [
-            ["BANK-SHOT","Bigger range indicator including bouncing off of surfaces."],
-            ["BUMP-MORE","Increases knockback force."]
+            ["BANK-SHOT","Start with the Aiming upgrade"],
+            ["BUMP-MORE","Healing Fountains, Gold Boulders, and Big Crystals are destroyed after 99,999 hits instead of 3-5 hits"]
         ],
         "sr_category": "wkpz89gd",
         "gift": "BEAT LEVEL 5 IN THE CAMPAIGN",
@@ -604,7 +604,7 @@
         "emoji": "<:nightmanor:1292610907154944012>",
         "alias": ["nightmanor", "night manor"],
         "codes": [
-            ["OPEN-CAGE","Baddie is more terrifying!"]
+            ["OPEN-CAGE","The killer is a giant hamster"]
         ],
         "sr_category": "7dgpwx7d",
         "gift": "ESCAPE THE KILLER",
@@ -618,7 +618,7 @@
         "emoji": "<:elfazarshat:1292610893200359516>",
         "alias": ["elfazarshat", "elfazar'shat", "elfazar", "elfazars hat", "elfazar's hat"],
         "codes": [
-            ["SIDE-SHOW","Play the bonus stage."]
+            ["SIDE-SHOW","Play the bonus minigame"]
         ],
         "sr_category": "mkemgv82",
         "gift": "EARN A CONTINUE IN THE BONUS ROUND",
@@ -632,7 +632,7 @@
         "emoji": "<:pilotquest:1292610903866347541>",
         "alias": ["pilotquest", "pilot quest", "pilot"],
         "codes": [
-            ["MORE-MEAT","Play starting with 10 meat."]
+            ["MORE-MEAT","Start with 10 meat"]
         ],
         "sr_category": "5dwzm9ed",
         "gift": "DEFEAT UNKTOMI",
@@ -646,7 +646,7 @@
         "emoji": "<:miniandmax:1292610910745264138>",
         "alias": ["miniandmax", "mini and max", "mini&max", "mini & max", "mini max"],
         "codes": [
-            ["TINY-BUFF","Start with all items and powerups."]
+            ["TINY-BUFF","Start with all upgrades"]
         ],
         "sr_category": "wk6yx0qd",
         "gift": "COLLECT AT LEAST 100 SHINIES",
@@ -660,7 +660,7 @@
         "emoji": "<:combatants:1292610883008200784>",
         "alias": ["combatants"],
         "codes": [
-            ["ANTS-ANTS","Unlock all levels."]
+            ["ANTS-ANTS","All levels unlocked"]
         ],
         "sr_category": "n2yzpezk",
         "gift": "SLAY A SPIDER",
@@ -674,9 +674,9 @@
         "emoji": "<:quibblerace:1292612189391425618>",
         "alias": ["quibblerace", "quibble", "quible"],
         "codes": [
-            ["BLAK-LITE","Play spectator mode. Watch with no input."],
-            ["TUFF-RACE","One of 3 special events always occurs: Meteor, Garbage, or Pollution. Normally, they only have small a chance of happening."],
-            ["WILD-BETS","No betting cap. "]
+            ["TUFF-RACE","A special event (Meteors, Garbage, or Pollution) occurs every round instead of having a 50% chance of occurring"],
+            ["BLAK-LITE",""Spectator Mode" – Watch random races"],
+            ["WILD-BETS","Maximum bet is 99,999,999 in all rounds"]
         ],
         "sr_category": "7kjwjond",
         "gift": "SPONSOR A QUIBBLE THAT WINS A RACE",
@@ -690,8 +690,8 @@
         "emoji": "<:seasidedrive:1292610921210052779>",
         "alias": ["seasidedrive", "seaside drive", "sunset drive", "sunsetdrive", "seaside"],
         "codes": [
-            ["NEED-PIES","Play without losing lives."],
-            ["WEAK-SHOT","No charging up."]
+            ["NEED-PIES","Player does not lose a life on death"],
+            ["WEAK-SHOT","Player cannot drift and therefore cannot increase the charge meter"]
         ],
         "sr_category": "xk97op4d",
         "gift": "OBTAIN A COIN",
@@ -705,7 +705,7 @@
         "emoji": "<:campanella3:1292612038375379025>",
         "alias": ["campanella3", "campanella 3", "campanela 3", "campanela3"],
         "codes": [
-            ["PACI-FIST","Play without weapons."]
+            ["PACI-FIST","Player cannot attack, only move"]
         ],
         "sr_category": "z27j0m02",
         "gift": "CLEAR THE BONUS ROUND",
@@ -719,13 +719,49 @@
         "emoji": "<:cyberowls:1292610917821059183>",
         "alias": ["cyberowls", "cyber", "cyber owl", "cyber owls", "cyberowl"],
         "codes": [
-            ["GETM-EOUT","Play only the escape levels."],
-            ["HAWK-BASE","Skips to the base in cyber owls."],
-            ["JOES-ERVO","Start with 100 lives."]
+            ["GETM-EOUT","Play a random rescue mission"],
+            ["HAWK-BASE","Skip to the 2nd half of the game, H.A.W.K.'s secret base"],
+            ["JOES-ERVO","Start each mission with 106 lives instead of 2"]
         ],
         "sr_category": "zdn95ne2",
         "gift": "RESCUE AN OWL",
         "gold": "SAVE THE WORLD",
         "cherry": "SAVE THE WORLD WITH NO DEATHS"
+    },
+    {
+        "name": "MT",
+        "num": "51",
+        "game_id":"51",
+        "emoji": "<:Campanella:1283100776918552688>",
+        "alias": ["Miasma Tower", "miasma tower", "miasmatower", "miasma", "ufotower", "meta"],
+        "codes": [
+            ["GREG-MILK","Outputs a binary sequence to the terminal that hints to the beginning of the Miasma Tower clue hunt"],
+            ["EXEC-MIAS","Boots up Part 1 of Miasma Tower"],
+            ["HIDE-HOLE","Boots up Part 2 of Miasma Tower"],
+            ["SOAP-STOP","Boots up Part 3 of Miasma Tower"],
+            ["0229-1988","Boots up Part 4 of Miasma Tower"],
+            ["EXEC-COLO","Play the Paint Chase prototype, \"Color Racer\""],
+            ["EXEC-HOVR","Play the Campenalla prototype, \"Hover\""],
+            ["EXEC-GODB","Play the cut prototype, \"Godsblood\""]
+        ]
+    },
+    {
+        "name": "The Terminal",
+        "num": "0",
+        "game_id":"0",
+        "emoji": "<:InfoBuddyOK:1291972595952123984>",
+        "alias": ["Terminal", "terminal", "commands"],
+        "codes": [
+            ["HELP-xxxx","Displays a list of terminal commands for the number that was entered. Accepts 0000 to 0051, 0229, 1986, and 8377."],
+            ["LIST-xxxx","Lists 17 games in chronological order with their number and terminal ID starting with the game entered by their number or terminal ID."],
+            ["INFO-xxxx","Displays info of the game entered by their number or terminal ID as seen in the game's info. Accepts 0000 to 0051, 0229, 1986, and 8377."],
+            ["DESC-xxxx","Displays the description of the game entered by their number or terminal ID as seen in the game's info. Accepts 0000 to 0050."],
+            ["HIST-xxxx","Displays the history of the game entered by their number or terminal ID as seen in the game's info. Accepts 0000 to 0050."],
+            ["EXEC-xxxx","Executes a game given the game's numeric ID or terminal ID. EXEC-RAND boots up a random game."],
+            ["READ-PGxx","Displays a chosen page of the terminal from 00 to 15, which normally displays Pg 0 when opened. Terminal is initially populated with random characters, but the current game's terminal ID is inserted to the top of Pg 0 and meta messages are inserted into random locations on random pages from 1 to 15 while playing certain games."],
+            ["LANC-EL0T","Outputs \"MEOW\""],
+            ["STEN-MURZ","Outputs ufo icons in a 10x5 grid that serve as the first hint to discovering the randomly generated code that leads to the Miasma Tower capsule room"],
+            ["TGGL-CNFG","Enables the settings menu in the arcade mode that can be activated with the -arcade launch option"]
+        ]
     }
 ]
