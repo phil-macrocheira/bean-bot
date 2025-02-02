@@ -675,7 +675,7 @@
         "alias": ["quibblerace", "quibble", "quible"],
         "codes": [
             ["TUFF-RACE","A special event (Meteors, Garbage, or Pollution) occurs every round instead of having a 50% chance of occurring"],
-            ["BLAK-LITE",""Spectator Mode" – Watch random races"],
+            ["BLAK-LITE","\"Spectator Mode\" – Watch random races"],
             ["WILD-BETS","Maximum bet is 99,999,999 in all rounds"]
         ],
         "sr_category": "7kjwjond",
