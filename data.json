@@ -504,7 +504,7 @@
         "emoji": "<:campanella2:1292612205736624228>",
         "alias": ["campanella2", "campanella 2", "campanela 2", "campanela2"],
         "codes": [
-            ["MEGA-BELL","Start with all upgrades, 16 lives instead of 8, and 1600 fuel instead of 800"]
+            ["MEGA-BELL","Start with 8 out of 16 specific upgrades, 16 HP instead of 8, and 1600 fuel instead of 800. Start each level with full health."]
         ],
         "sr_category": "9kvz4qod",
         "gift": "OBTAIN THE FRIENDSHIP BRACELET",
@@ -733,7 +733,7 @@
         "num": "51",
         "game_id":"51",
         "emoji": "<:Campanella:1283100776918552688>",
-        "alias": ["Miasma Tower", "miasma tower", "miasmatower", "miasma", "ufotower", "meta"],
+        "alias": ["Miasma Tower", "miasma tower", "miasmatower", "miasma", "ufotower", "meta", "MT", "mt"],
         "codes": [
             ["GREG-MILK","Outputs a binary sequence to the terminal that hints to the beginning of the Miasma Tower clue hunt"],
             ["EXEC-MIAS","Boots up Part 1 of Miasma Tower"],
