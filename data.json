@@ -370,7 +370,7 @@
         "emoji": "<:hotfoot:1292610914306228265>",
         "alias": ["hotfoot", "hot foot"],
         "codes": [
-            ["PLAY-FAIR","Play "Build Team" mode with 2 added characters, Zobo and Blorg"],
+            ["PLAY-FAIR","Play \"Build Team\" mode with 2 added characters, Zobo and Blorg"],
             ["GOGA-TOR!","Two player co-op where player 1 is Zobo and player 2 is Blorg"],
             ["LEFT-FOOT","Remaps controls so that Button 1 (B) is Switch Teammates and Button 2 (A) is Pick Up, Throw, Pass, Jump, and Special Action"],
             ["TEST-BAGS","Play with customizable rules: Point Goal (5 - 30), Max Bags (1 - 7), Special Cost (1 - 2), Teammate AI (Get Bags Only or Full Auto), and Teammate Jump (Synchronous or Independent)"],
@@ -403,7 +403,7 @@
         "alias": ["railheist", "rail heist", "heist"],
         "codes": [
             ["LAZY-COPS","All levels unlocked"],
-            ["GOOD-SPUR","Start with all powerups and max bullets. In the end credits, "GOOD-SPUR" is replaced with "MR. N. SAVED MY LIFE""]
+            ["GOOD-SPUR","Start with all powerups and max bullets. In the end credits, \"GOOD-SPUR\" is replaced with \"MR. N. SAVED MY LIFE\""]
         ],
         "sr_category": "q256leyk",
         "gift": "BEAT LEVEL 10",
