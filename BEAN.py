@@ -431,6 +431,8 @@ async def rnd(interaction: discord.Interaction):
         response = random.choice(suggest)
     else:
         response = random.choice(d)
+        while response["name"] == "The Terminal" or response["name"] == "MT":
+            response = random.choice(d)
         change_presence(response)
     await interaction.response.send_message(f"You should play {response["emoji"]} **{response["name"]}**.")
 
