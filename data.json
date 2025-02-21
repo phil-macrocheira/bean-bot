@@ -518,7 +518,7 @@
         "emoji": "<:hypercontender:1292612209200857131>",
         "alias": ["hypercontender", "hyper contender", "hyper", "contender"],
         "codes": [
-            ["PAST-RULE","Instead of collecting rings, the objective is to KO the opponent or have more HP than the opponent when time runs. Each contender has 4 HP. The timer starts at 63 in tournaments and 126 in draft battles."]
+            ["PAST-RULE","Instead of collecting rings, the objective is to KO the opponent or have more HP than the opponent when time runs out. Each contender has 4 HP. The timer starts at 63 in tournaments and 126 in draft battles."]
         ],
         "sr_category": "rkly79rd",
         "gift": "WIN A DRAFT BATTLE (ON DEFAULT RING SETTINGS)",
