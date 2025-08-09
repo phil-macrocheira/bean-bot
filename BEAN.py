@@ -376,14 +376,6 @@ async def get_game_value(interaction, game, number, type, emote):
         else:
             await interaction.response.send_message(content="Please only specify the name or the number, not both.", ephemeral=True)
 
-
-
-
-
-
-
-
-
 # ping test command
 @client.tree.command(name="ping",description="Check that I am online!", guild=GUILD_ID)
 async def ping(interaction: discord.Interaction):
@@ -465,9 +457,18 @@ async def getphseed(interaction: discord.Interaction, seed: int|None):
 # 50club command
 @client.tree.command(name="50club",description="Check number of people with the cherry collector role.", guild=GUILD_ID)
 async def fiftyclub(interaction: discord.Interaction):
-    role2024 = interaction.guild.get_role(1291962155469373451)
-    roleother = interaction.guild.get_role(1293958225644884068)
-    await interaction.response.send_message(f"There are currently **{len(role2024.members)}** discord members who earned the 50 cherries role in 2024 and **{len(roleother.members)}** who earned it after 2024.")
+    role50_pc_legacy = interaction.guild.get_role(1291962155469373451)
+    role50_pc = interaction.guild.get_role(1293958225644884068)
+    role50_switch_legacy = interaction.guild.get_role(1403267685932077117)
+    role50_switch = interaction.guild.get_role(1403268500709048422)
+
+    role_message = "Here are the number of discord members who currently hold the 50 cherries role:\n\n"
+    role_message += f"**{len(role50_pc_legacy.members)}** members on PC in 2024\n"
+    role_message += f"**{len(role50_pc.members)}** members on PC after 2024\n"
+    role_message += f"**{len(role50_switch_legacy.members)}** members on Switch in 2025\n"
+    role_message += f"**{len(role50_switch.members)}** members on Switch after 2025\n"
+
+    await interaction.response.send_message(role_message)
 
 # Get token from fly.io
 TOKEN = os.getenv('BEAN_TOKEN')
