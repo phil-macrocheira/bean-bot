@@ -419,7 +419,7 @@ async def music(interaction: discord.Interaction):
 # random game command
 @client.tree.command(name="random",description="Pick out a UFO 50 game at random.", guild=GUILD_ID)
 async def rnd(interaction: discord.Interaction):
-    if random.randint(1,50) == 50:
+    if True:
         response = random.choice(suggest)
     else:
         response = random.choice(d)
