@@ -298,18 +298,18 @@ class Client(commands.Bot):
 intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
-client = Client(command_prefix="/",activity=discord.Game(name="UFO 50"),intents=intents)
+client = Client(command_prefix="/", intents=intents)
 
-# # once every 20 entered commands, change the bot's "Now playing" to the most recently specified game if there was one
+# Once every 10 entered commands, change the bot's "Now playing" to the most recently specified game if there was one
 async def change_presence(target):
     global client
     global counter
-    if counter < 20:
+    if counter < 10:
         counter += 1
     else:
         counter = 0
         activity = discord.Game(name=target["name"])
-        print(f"Changing status to {target["name"]}")
+        print(f'Changing status to {target["name"]}')
         await client.change_presence(status=discord.Status.Online,activity=activity)
 
 # format 2d array for codes
