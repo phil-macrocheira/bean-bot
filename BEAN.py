@@ -425,7 +425,7 @@ async def rnd(interaction: discord.Interaction):
         game = random.choice(d)
         while game["name"] == "The Terminal" or game["name"] == "MT":
             game = random.choice(d)
-        change_presence(game)
+        await change_presence(game)
         response = f'You should play {game["emoji"]} **{game["name"]}**.'
     await interaction.response.send_message(response)
 
