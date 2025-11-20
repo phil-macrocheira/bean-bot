@@ -419,14 +419,15 @@ async def music(interaction: discord.Interaction):
 # random game command
 @client.tree.command(name="random",description="Pick out a UFO 50 game at random.", guild=GUILD_ID)
 async def rnd(interaction: discord.Interaction):
-    if True:
+    if random.randint(1,100) >= 2:
         response = random.choice(suggest)
     else:
-        response = random.choice(d)
-        while response["name"] == "The Terminal" or response["name"] == "MT":
-            response = random.choice(d)
-        change_presence(response)
-    await interaction.response.send_message(f"You should play {response["emoji"]} **{response["name"]}**.")
+        game = random.choice(d)
+        while game["name"] == "The Terminal" or game["name"] == "MT":
+            game = random.choice(d)
+        change_presence(game)
+        response = f'You should play {game["emoji"]} **{game["name"]}**.'
+    await interaction.response.send_message(response)
 
 # gift command
 @client.tree.command(name="gift",description="Check gift requirement for a game.", guild=GUILD_ID)
