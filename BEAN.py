@@ -18,10 +18,10 @@ d = []
 counter = 0
 file_content = ""
 suggest = [
-    "You should **give yourself a break**.",
-    "You should play **UFO 50**.",
+    "You should play <:bingo:1406508535579279451> **UFO 50 Bingo**.",
+    "You should play a **UFO 50 Mod**.",
+    "You should play <:railheist:1292610861835354183> **Rail Heist** Blindfolded.",
     "You should **try for a new record** in **your favorite game**.",
-    "You should **hunt for some secrets**.",
     "You should pick the random tab and select **the first result**.",
     "You should pick the random tab and select **the last result**.",
     "You should play your **most played game again**.",
@@ -419,7 +419,7 @@ async def music(interaction: discord.Interaction):
 # random game command
 @client.tree.command(name="random",description="Pick out a UFO 50 game at random.", guild=GUILD_ID)
 async def rnd(interaction: discord.Interaction):
-    if random.randint(1,150) == 50:
+    if random.randint(1,50) == 50:
         response = random.choice(suggest)
     else:
         response = random.choice(d)
