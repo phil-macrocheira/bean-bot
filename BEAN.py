@@ -7,6 +7,7 @@ import re
 from thefuzz import fuzz
 import base64
 import os
+import requests
 
 # UFO 50 Discord server ID
 GUILD_ID = discord.Object(id=525973026429206530)
@@ -298,19 +299,7 @@ class Client(commands.Bot):
 intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
-client = Client(command_prefix="/", intents=intents)
-
-# Once every 10 entered commands, change the bot's "Now playing" to the most recently specified game if there was one
-async def change_presence(target):
-    global client
-    global counter
-    if counter < 10:
-        counter += 1
-    else:
-        counter = 0
-        activity = discord.Game(name=target["name"])
-        print(f'Changing status to {target["name"]}')
-        await client.change_presence(status=discord.Status.Online,activity=activity)
+client = Client(command_prefix="/",activity=discord.Game(name="UFO 50"),intents=intents)
 
 # format 2d array for codes
 def codes_output(codes):
@@ -320,8 +309,8 @@ def codes_output(codes):
 
 def game_value_output(type, target, emote):
     if type == 'codes':
-        return f"The available {emote} **Terminal Codes** for {target["emoji"]} **{target["name"]}** are...\n{codes_output(target['codes'])}"
-    return f"The {emote} **{type.capitalize()}** requirement for {target["emoji"]} **{target["name"]}** is...\n||{target[type]}||"
+        return f"The available {emote} **Terminal Codes** for {target['emoji']} **{target['name']}** are...\n{codes_output(target['codes'])}"
+    return f"The {emote} **{type.capitalize()}** requirement for {target['emoji']} **{target['name']}** is...\n||{target[type]}||"
 
 # shared function code used for grabbing cherry, gold, and gift values
 async def get_game_value(interaction, game, number, type, emote):
@@ -429,6 +418,33 @@ async def rnd(interaction: discord.Interaction):
         response = f'You should play {game["emoji"]} **{game["name"]}**.'
     await interaction.response.send_message(response)
 
+# ask command
+@client.tree.command(name="ask",description="Ask me anything.", guild=GUILD_ID)
+async def ask(interaction: discord.Interaction):
+    num = random.randint(1,13)
+    if num == 1 or num == 2 or num == 3:
+        response = 'YES'
+    elif num == 4 or num == 5 or num == 6:
+        response = 'NO'
+    elif num == 7:
+        response = 'MOST LIKELY'
+    elif num == 8:
+        response = 'IT IS POSSIBLE'
+    elif num == 9:
+        response = 'DON\'T COUNT ON IT'
+    elif num == 10:
+        response = 'PROBABLY NOT'
+    elif num == 11:
+        response = 'I DO NOT UNDERSTAND'
+    elif num == 12:
+        response = 'I DON\'T KNOW'
+    elif num == 13:
+        response = 'BETTER NOT TELL YOU NOW'
+    elif num == 14:
+        response = f'Ask me again in <:barbuta:1292612809682583564> **Barbuta**.'
+
+    await interaction.response.send_message(response)
+
 # gift command
 @client.tree.command(name="gift",description="Check gift requirement for a game.", guild=GUILD_ID)
 async def gift(interaction: discord.Interaction, game: str|None, number: int|None):
@@ -454,22 +470,115 @@ async def codes(interaction: discord.Interaction, game: str|None, number: int|No
 async def getphseed(interaction: discord.Interaction, seed: int|None):
     await get_scenario_result(interaction, seed)
 
-
 # 50club command
-@client.tree.command(name="50club",description="Check number of people with the cherry collector role.", guild=GUILD_ID)
+@client.tree.command(name="50club",description="Check number of people with the cherry collector roles.", guild=GUILD_ID)
 async def fiftyclub(interaction: discord.Interaction):
     role50_pc_legacy = interaction.guild.get_role(1291962155469373451)
     role50_pc = interaction.guild.get_role(1293958225644884068)
     role50_switch_legacy = interaction.guild.get_role(1403267685932077117)
     role50_switch = interaction.guild.get_role(1403268500709048422)
+    pc_legacy_members = len(role50_pc_legacy.members)
+    pc_2025_members = len(role50_pc.members)
+    pc_members = pc_legacy_members + pc_2025_members
+    switch_legacy_members = len(role50_switch_legacy.members)
+    switch_2025_members = len(role50_switch.members)
+    switch_members = switch_legacy_members + switch_2025_members
 
     role_message = "Here are the number of discord members who currently hold the 50 cherries role:\n\n"
-    role_message += f"**{len(role50_pc_legacy.members)}** members on PC in 2024\n"
-    role_message += f"**{len(role50_pc.members)}** members on PC after 2024\n"
-    role_message += f"**{len(role50_switch_legacy.members)}** members on Switch in 2025\n"
-    role_message += f"**{len(role50_switch.members)}** members on Switch after 2025\n"
+    role_message += f"**{pc_members}** members on **PC**\n"
+    role_message += f"**{switch_members}** members on **Switch**"
 
     await interaction.response.send_message(role_message)
+
+API = "https://www.speedrun.com/api/v1"
+UFO50_GAME_ID = "UFO_50"
+UFO50_CATEGORIES = None
+
+def safe_get(url):
+    try:
+        return requests.get(url, timeout=5)
+    except Exception:
+        return None
+
+def fmt_time(seconds):
+    seconds = int(seconds)
+    minutes, sec = divmod(seconds, 60)
+    hours, minutes = divmod(minutes, 60)
+    if hours:
+        return f"{hours}:{minutes:02d}:{sec:02d}"
+    return f"{minutes}:{sec:02d}"
+
+def get_ufo50_categories():
+    global UFO50_CATEGORIES
+
+    if UFO50_CATEGORIES is not None:
+        return UFO50_CATEGORIES
+
+    r = safe_get(f"{API}/games/{UFO50_GAME_ID}/categories")
+    if r is None or r.status_code != 200:
+        UFO50_CATEGORIES = {}
+        return UFO50_CATEGORIES
+
+    try:
+        data = r.json().get("data", [])
+    except Exception:
+        UFO50_CATEGORIES = {}
+        return UFO50_CATEGORIES
+
+    UFO50_CATEGORIES = {
+        c["name"].lower(): c["id"]
+        for c in data
+        if c.get("type") == "per-game"
+    }
+
+    return UFO50_CATEGORIES
+
+def get_world_record(category_id):
+    r = safe_get(f"{API}/leaderboards/{UFO50_GAME_ID}/category/{category_id}?top=1")
+    if r is None or r.status_code != 200:
+        return None
+
+    try:
+        runs = r.json().get("data", {}).get("runs", [])
+    except Exception:
+        return None
+
+    if not runs:
+        return None
+
+    run = runs[0]["run"]
+    player = run["players"][0]
+
+    if player["rel"] == "user":
+        name = player["names"]["international"]
+    else:
+        name = player["name"]
+
+    return name, run["times"]["primary_t"]
+
+# world record command
+@client.tree.command(name="worldrecord",description="Check the speedrun world records for a game.", guild=GUILD_ID)
+async def worldrecord(interaction: discord.Interaction, category: str):
+    categories = get_ufo50_categories()
+    key = category.lower()
+
+    if key not in categories:
+        await interaction.response.send_message(
+            "Category not found.",
+            ephemeral=True
+        )
+        return
+
+    result = get_world_record(categories[key])
+    if result is None:
+        await interaction.response.send_message(
+            "API unavailable or no data.",
+            ephemeral=True
+        )
+        return
+
+    name, time = result
+    await interaction.response.send_message(f"WR for **{category}**: {fmt_time(time)} by **{name}**")
 
 # Get token from fly.io
 TOKEN = os.getenv('BEAN_TOKEN')
