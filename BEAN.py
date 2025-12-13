@@ -240,10 +240,7 @@ with open('data.json') as f:
 # define client class
 class Client(commands.Bot):
     async def on_ready(self):
-        try:
-            synced = await self.tree.sync(guild=GUILD_ID)
-        except Exception as e:
-            print(f'Error syncing commands: {e}')
+        synced = await self.tree.sync(guild=GUILD_ID)
 
     # message replies
     async def on_message(self, message):
@@ -423,7 +420,7 @@ def game_value_output(type, target, emote, players):
     return f"The {emote} **{type.capitalize()}** requirement for {target['emoji']} **{target['name']}** is...\n||{target[type]}||"
 
 # shared function code used for grabbing cherry, gold, and gift values
-async def get_game_value(interaction, game, number, type, emote, players=None):
+async def get_game_value(interaction, game, number, type, emote, players=1):
     # no game or number specified
     if game is None and number is None:
         # check channel for number values to determine target game
@@ -433,10 +430,7 @@ async def get_game_value(interaction, game, number, type, emote, players=None):
             else:
                 target = d[int(interaction.channel.name[:2])-1]
                 output = game_value_output(type,target,emote,players)
-                if output is None:
-                    await interaction.followup.send("Speedrun.com API did not respond in time.", ephemeral=True)
-                else:
-                    await interaction.followup.send(output)
+                await interaction.followup.send(output)
         # no target game, give error
         else:
             return await interaction.followup.send(content=f"Please specify a game or number to check the {type} for.", ephemeral=True)
@@ -451,10 +445,7 @@ async def get_game_value(interaction, game, number, type, emote, players=None):
                     return await interaction.followup.send(content=f"Your input was not valid.", ephemeral=True)
                 target = d[number-1]
                 output = game_value_output(type,target,emote,players)
-                if output is None:
-                    await interaction.followup.send("Speedrun.com API did not respond in time.", ephemeral=True)
-                else:
-                    await interaction.followup.send(output)
+                await interaction.followup.send(output)
         # game specified
         elif number is None and not game is None:
             target = [x for x in d if game.lower() in x["alias"]]
@@ -471,20 +462,14 @@ async def get_game_value(interaction, game, number, type, emote, players=None):
                     target = [x for x in d if best_match_game.lower() == x["name"].lower()]
                     target = target[0]
                     output = game_value_output(type,target,emote,players)
-                    if output is None:
-                        await interaction.followup.send("Speedrun.com API did not respond in time.", ephemeral=True)
-                    else:
-                        await interaction.followup.send(output)
+                    await interaction.followup.send(output)
                 else:
                     await interaction.followup.send(content=f"Your input was not recognized.", ephemeral=True)
             # direct alias search succeeds
             else:
                 target = target[0]
                 output = game_value_output(type,target,emote,players)
-                if output is None:
-                    await interaction.followup.send("Speedrun.com API did not respond in time.", ephemeral=True)
-                else:
-                    await interaction.followup.send(output)
+                await interaction.followup.send(output)
         # error if both number and game are specified
         else:
             await interaction.followup.send(content="Please only specify the name or the number, not both.", ephemeral=True)
