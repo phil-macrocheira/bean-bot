@@ -341,7 +341,6 @@ def get_world_records(target):
     game = target['name']
     category_id = target['sr_category']
     r = requests.get(f"https://www.speedrun.com/api/v1/categories/{category_id}/records", timeout=5)
-
     if r.status_code != 200:
         return "Could not connect to speedrun.com API"
 
@@ -349,7 +348,7 @@ def get_world_records(target):
     wr_entry = records[0]["runs"][0]["run"]
     time_sec = wr_entry["times"]["primary_t"]
     m, s = divmod(time_sec, 60)
-    ms = int((s % 1) * 1000)
+    ms = int((time_sec - int(time_sec)) * 1000)
     m = int(m)
     s = int(s)
     time = f"{m}m{s}s{ms:03d}ms"
@@ -375,22 +374,22 @@ async def get_game_value(interaction, game, number, type, emote):
         # check channel for number values to determine target game
         if interaction.channel.name[:1] in '0123456789' and interaction.channel.name[1:2] in '0123456789':
             if (int(interaction.channel.name[:2]) > 50 or int(interaction.channel.name[:2]) < 1):
-                return await interaction.response.send_message(content=f"Please specify a game or number to check the {type} for.", ephemeral=True)
+                return await interaction.followup.send(content=f"Please specify a game or number to check the {type} for.", ephemeral=True)
             else:
                 target = d[int(interaction.channel.name[:2])-1]
-                await interaction.response.send_message(game_value_output(type,target,emote))
+                await interaction.followup.send(game_value_output(type,target,emote))
         # no target game, give error
         else:
-            return await interaction.response.send_message(content=f"Please specify a game or number to check the {type} for.", ephemeral=True)
+            return await interaction.followup.send(content=f"Please specify a game or number to check the {type} for.", ephemeral=True)
     # game and or number is specified
     else:
         # number specified
         if game is None and not number is None:
             if number > 51 or number < 0:
-                return await interaction.response.send_message(content=f"Your input was not valid.", ephemeral=True)
+                return await interaction.followup.send(content=f"Your input was not valid.", ephemeral=True)
             else:
                 target = d[number-1]
-                await interaction.response.send_message(game_value_output(type,target,emote))
+                await interaction.followup.send(game_value_output(type,target,emote))
         # game specified
         elif number is None and not game is None:
             target = [x for x in d if game.lower() in x["alias"]]
@@ -406,16 +405,16 @@ async def get_game_value(interaction, game, number, type, emote):
                 if (best_match >= 90):
                     target = [x for x in d if best_match_game.lower() == x["name"].lower()]
                     target = target[0]
-                    await interaction.response.send_message(game_value_output(type,target,emote))
+                    await interaction.followup.send(game_value_output(type,target,emote))
                 else:
-                    await interaction.response.send_message(content=f"Your input was not recognized.", ephemeral=True)
+                    await interaction.followup.send(content=f"Your input was not recognized.", ephemeral=True)
             # direct alias search succeeds
             else:
                 target = target[0]
-                await interaction.response.send_message(game_value_output(type,target,emote))
+                await interaction.followup.send(game_value_output(type,target,emote))
         # error if both number and game are specified
         else:
-            await interaction.response.send_message(content="Please only specify the name or the number, not both.", ephemeral=True)
+            await interaction.followup.send(content="Please only specify the name or the number, not both.", ephemeral=True)
 
 # ping test command
 @client.tree.command(name="ping",description="Check that I am online!", guild=GUILD_ID)
@@ -497,6 +496,7 @@ async def getphseed(interaction: discord.Interaction, seed: int|None):
 # world record command
 @client.tree.command(name="worldrecord",description="Check the speedrun world records for a game.", guild=GUILD_ID)
 async def worldrecord(interaction: discord.Interaction, game: str|None, number: int|None):
+    await interaction.response.defer()
     await get_game_value(interaction, game, number, "worldrecord", "")
 
 # 50club command
