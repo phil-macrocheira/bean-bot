@@ -340,18 +340,19 @@ def codes_output(codes):
 def get_world_records(target):
     game = target['name']
     category_id = target['sr_category']
-    r = requests.get(f"api/v1/categories/{category_id}/records", timeout=5)
+    r = requests.get(f"https://www.speedrun.com/api/v1/categories/{category_id}/records", timeout=5)
 
     if r.status_code != 200:
-        return None
+        return "Could not connect to speedrun.com API"
 
     records = r.json()["data"]
     wr_entry = records[0]["runs"][0]["run"]
-    time_total_sec = wr_entry["times"]["primary_t"]
-    time_min = time_total_sec / 60
-    time_sec = time_total_sec - (time_min*60)
-    time_ms = int((28.9 % 1) * 1000)
-    time = f"{time_min}m {time_sec}s {time_ms}ms"
+    time_sec = wr_entry["times"]["primary_t"]
+    m, s = divmod(time_sec, 60)
+    m = int(m)
+    s = int(s)
+    ms = int((s % 1) * 1000)
+    time = f"{m}m {s}s {ms:03d}ms"
 
     player = wr_entry["players"][0]
     if player["rel"] == "user":
@@ -380,7 +381,6 @@ async def get_game_value(interaction, game, number, type, emote):
             else:
                 target = d[int(interaction.channel.name[:2])-1]
                 await interaction.response.send_message(game_value_output(type,target,emote))
-                await change_presence(target)
         # no target game, give error
         else:
             return await interaction.response.send_message(content=f"Please specify a game or number to check the {type} for.", ephemeral=True)
@@ -393,7 +393,6 @@ async def get_game_value(interaction, game, number, type, emote):
             else:
                 target = d[number-1]
                 await interaction.response.send_message(game_value_output(type,target,emote))
-                await change_presence(target)
         # game specified
         elif number is None and not game is None:
             target = [x for x in d if game.lower() in x["alias"]]
@@ -410,14 +409,12 @@ async def get_game_value(interaction, game, number, type, emote):
                     target = [x for x in d if best_match_game.lower() == x["name"].lower()]
                     target = target[0]
                     await interaction.response.send_message(game_value_output(type,target,emote))
-                    await change_presence(target)
                 else:
                     await interaction.response.send_message(content=f"Your input was not recognized.", ephemeral=True)
             # direct alias search succeeds
             else:
                 target = target[0]
                 await interaction.response.send_message(game_value_output(type,target,emote))
-                await change_presence(target)
         # error if both number and game are specified
         else:
             await interaction.response.send_message(content="Please only specify the name or the number, not both.", ephemeral=True)
@@ -471,7 +468,6 @@ async def rnd(interaction: discord.Interaction):
         game = random.choice(d)
         while game["name"] == "The Terminal" or game["name"] == "MT":
             game = random.choice(d)
-        await change_presence(game)
         response = f'You should play {game["emoji"]} **{game["name"]}**.'
     await interaction.response.send_message(response)
 
@@ -500,6 +496,11 @@ async def codes(interaction: discord.Interaction, game: str|None, number: int|No
 async def getphseed(interaction: discord.Interaction, seed: int|None):
     await get_scenario_result(interaction, seed)
 
+# world record command
+@client.tree.command(name="worldrecord",description="Check the speedrun world records for a game.", guild=GUILD_ID)
+async def worldrecord(interaction: discord.Interaction, game: str|None, number: int|None):
+    await get_game_value(interaction, game, number, "worldrecord", "")
+
 # 50club command
 @client.tree.command(name="50club",description="Check number of people with the cherry collector roles.", guild=GUILD_ID)
 async def fiftyclub(interaction: discord.Interaction):
@@ -519,11 +520,6 @@ async def fiftyclub(interaction: discord.Interaction):
     role_message += f"**{switch_members}** members on **Switch**"
 
     await interaction.response.send_message(role_message)
-
-# world record command
-@client.tree.command(name="worldrecord",description="Check the speedrun world records for a game.", guild=GUILD_ID)
-async def worldrecord(interaction: discord.Interaction, game: str|None, number: int|None):
-    await get_game_value(interaction, game, number, "worldrecord", "")
 
 # Get token from fly.io
 TOKEN = os.getenv('BEAN_TOKEN')
