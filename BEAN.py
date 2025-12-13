@@ -400,7 +400,7 @@ def get_world_records(target, players=1):
                 name1 = user1["names"]["international"]
                 user1_link = user1["weblink"]
                 player1 = f"**[{name1}]({user1_link})**"
-                if len(player_data) > 1
+                if len(player_data) > 1:
                     player2_data = wr_entry["players"][1]
                     user2 = requests.get(player2_data["uri"], timeout=5).json()["data"]
                     name2 = user2["names"]["international"]
