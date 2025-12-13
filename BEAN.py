@@ -367,7 +367,7 @@ def get_world_records(target, players):
                 try:
                     r = requests.get(f"https://www.speedrun.com/api/v1/leaderboards/v1pl7876/category/{category_id}?var-{subcat_var_id}={subcat_id}{player_var}&top=1", timeout=5)
                     r.raise_for_status()
-                except requests.exception.Timeout:
+                except requests.exceptions.Timeout:
                     return f"Speedrun.com API timed out when grabbing leaderboard for {subcat_name}"
                 if r.status_code != 200:
                     return f"Error: Status code {v.status_code} from speedrun.com API"
@@ -406,7 +406,7 @@ def get_world_records(target, players):
                 try:
                     user1 = requests.get(user1_data["uri"], timeout=5).json()["data"]
                     user1.raise_for_status()
-                except requests.exception.Timeout:
+                except requests.exceptions.Timeout:
                     return f"Speedrun.com API timed out when grabbing user data at {user1_data["uri"]}"
                 username1 = user1["names"]["international"]
                 user1_link = user1["weblink"]
@@ -416,7 +416,7 @@ def get_world_records(target, players):
                     try:
                         user2 = requests.get(user2_data["uri"], timeout=5).json()["data"]
                         user2.raise_for_status()
-                    except requests.exception.Timeout:
+                    except requests.exceptions.Timeout:
                         return f"Speedrun.com API timed out when grabbing user2 data at {user2_data["uri"]}"
                     username2 = user2["names"]["international"]
                     user2_link = user2["weblink"]
