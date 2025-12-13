@@ -363,12 +363,12 @@ def get_world_records(target, players=1):
                     return "Could not connect to speedrun.com API"
 
                 data = r.json()["data"]
-                game_link = data[0]["weblink"]
+                game_link = data["weblink"]
                 if not init:
                     response += f"The current world records for **[{game}]({game_link})** are:\n"
 
                 for i, subcat in enumerate(data):
-                    wr_entry = data[0]["runs"][0]["run"]
+                    wr_entry = data["runs"][0]["run"]
 
                     date = wr_entry["date"]
 
