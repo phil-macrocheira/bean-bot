@@ -339,6 +339,7 @@ def codes_output(codes):
 
 def get_world_records(target, players=1):
     game = target['name']
+    emoji = target['emoji']
     category_id = target['sr_category']
     response = ""
     init = False
@@ -365,7 +366,7 @@ def get_world_records(target, players=1):
                 data = r.json()["data"]
                 game_link = data["weblink"]
                 if not init:
-                    response += f"The current world records for **[{game}]({game_link})** are:\n"
+                    response += f"The current world records for {emoji} **[{game}]({game_link})** are:\n"
                     init = True
 
                 wr_entry = data["runs"][0]["run"]
