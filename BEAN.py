@@ -404,8 +404,9 @@ def get_world_records(target, players):
                 user_data = wr_entry["players"]
                 user1_data = user_data[0]
                 try:
-                    user1 = requests.get(user1_data["uri"], timeout=5).json()["data"]
-                    user1.raise_for_status()
+                    user1_response = requests.get(user1_data["uri"], timeout=5)
+                    user1_response.raise_for_status()
+                    user1 = resp.json()["data"]
                 except requests.exceptions.Timeout:
                     return f"Speedrun.com API timed out when grabbing user data at {user1_data["uri"]}"
                 username1 = user1["names"]["international"]
@@ -414,8 +415,9 @@ def get_world_records(target, players):
                 if len(user_data) > 1:
                     user2_data = wr_entry["players"][1]
                     try:
-                        user2 = requests.get(user2_data["uri"], timeout=5).json()["data"]
-                        user2.raise_for_status()
+                        user2_response = requests.get(user2_data["uri"], timeout=5)
+                        user2_response.raise_for_status()
+                        user2 = resp.json()["data"]
                     except requests.exceptions.Timeout:
                         return f"Speedrun.com API timed out when grabbing user2 data at {user2_data["uri"]}"
                     username2 = user2["names"]["international"]
