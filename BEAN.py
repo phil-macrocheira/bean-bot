@@ -252,20 +252,24 @@ class Client(commands.Bot):
             # print(f'Synced {len(synced)} commands to guild {TESTGUILD_ID.id}')
         except Exception as e:
             print(f'Error syncing commands: {e}')
-    # easter egg message replies
+
+    # message replies
     async def on_message(self, message):
         # ignore all messages from self or from another bot
         if message.author == self.user or message.author.bot:
             return
-        msg = message.content.lower()
-        if ("bean," in msg and msg.endswith("?")) or msg.endswith("bean?"):
-            await message.reply(get_answer())
-        msg = msg.replace(',','').replace('!','')
-        if "thanks bean" in msg or "thank you bean" in msg or "thankyou bean" in msg:
+        msg_ask = message.content.lower().replace(' ','')
+        if ("bean," in msg_ask and msg_ask.endswith("?")) or msg_ask.endswith("bean?"):
+            if (msg_ask != 'bean,?' and msg_ask != 'bean?'):
+                await message.reply(get_answer())
+                return
+        msg = message.content.lower().replace(',','').replace('!','')
+        if "thanks bean" in msg or "thank you bean" in msg:
             if random.randint(1,4) == 3:
                 await message.reply("NICE SWORD, PAL.")
             else:
                 await message.reply("NICE ROD, PAL.")
+            return
         if not message.guild:
             return
         if not message.attachments:
@@ -350,16 +354,21 @@ def get_world_records(target, players):
 
     variable_data = v.json()["data"]
 
+    # VAR OUTLIERS: Mini & Max, Camp 2, Hyper Contender, Bushido Ball, Velgress, Star Waspir
+
+    for var in variable_data:
+        if var["name"] == 'Player Count':
+            player_var_id = var["id"]
+            player_var = ""
+            if players == 2:
+                player2_id, player2_data = list(var["values"]["values"].items())[1]
+                player_var = f"&var-{player_var_id}={player2_id}"
+
     for var in variable_data:
         if var["name"] == 'Subcategory':
             subcat_var_id = var["id"]
             for subcat_id, subcat_data in var["values"]["values"].items():
                 subcat_name = subcat_data["label"]
-
-                # NOTE: ALSO DO RESTRICTIONS VAR?
-
-                #player_var = f"&var-{var_id}={player_id}"
-                player_var = ""
 
                 r = requests.get(f"https://www.speedrun.com/api/v1/leaderboards/v1pl7876/category/{category_id}?var-{subcat_var_id}={subcat_id}{player_var}&top=1", timeout=5)
                 if r.status_code != 200:
@@ -369,7 +378,7 @@ def get_world_records(target, players):
 
                 player_num_text = ""
                 if players == 2:
-                    player_num_text = f" (2 Players)"
+                    player_num_text = f" (2 Player)"
                 
                 if not init:
                     game_link_id = data["weblink"].split('#')[1]
@@ -394,18 +403,18 @@ def get_world_records(target, players):
                 else:
                     time_and_video = time
 
-                player_data = wr_entry["players"]
-                player1_data = player_data[0]
-                user1 = requests.get(player1_data["uri"], timeout=5).json()["data"]
-                name1 = user1["names"]["international"]
+                user_data = wr_entry["players"]
+                user1_data = user_data[0]
+                user1 = requests.get(user1_data["uri"], timeout=5).json()["data"]
+                username1 = user1["names"]["international"]
                 user1_link = user1["weblink"]
-                player1 = f"**[{name1}]({user1_link})**"
-                if len(player_data) > 1:
-                    player2_data = wr_entry["players"][1]
-                    user2 = requests.get(player2_data["uri"], timeout=5).json()["data"]
-                    name2 = user2["names"]["international"]
+                player1 = f"**[{username1}]({user1_link})**"
+                if len(user_data) > 1:
+                    user2_data = wr_entry["players"][1]
+                    user2 = requests.get(user2_data["uri"], timeout=5).json()["data"]
+                    username2 = user2["names"]["international"]
                     user2_link = user2["weblink"]
-                    player2 = f" and **[{name2}]({user2_link})**"
+                    player2 = f" and **[{username2}]({user2_link})**"
                 else:
                     player2 = ""
 
