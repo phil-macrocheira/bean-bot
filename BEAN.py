@@ -386,6 +386,8 @@ def get_world_records(target, players):
                     response += f"The current world records for {emoji} **[{game}]({game_link})**{player_num_text} are:\n"
                     init = True
 
+                if len(data["runs"]) == 0:
+                    continue
                 wr_entry = data["runs"][0]["run"]
 
                 date = wr_entry["date"]
