@@ -204,6 +204,33 @@ async def get_scenario_result(interaction, seed):
     deck_names = [character_types[index] for index in deck]
     return await interaction.response.send_message(f"**SEED {str(seed).zfill(6)}**\n\n{" ".join(deck_names)}")
 
+def get_answer:
+    barbuta_response = random.randint(1,50)
+    if barbuta_response == 50:
+        return f'Ask me again in <:barbuta:1292612809682583564> **Barbuta**.'
+
+    num = random.randint(1,13)
+    if num == 1 or num == 2 or num == 3:
+        response = 'YES'
+    elif num == 4 or num == 5 or num == 6:
+        response = 'NO'
+    elif num == 7:
+        response = 'MOST LIKELY'
+    elif num == 8:
+        response = 'IT IS POSSIBLE'
+    elif num == 9:
+        response = 'DON\'T COUNT ON IT'
+    elif num == 10:
+        response = 'PROBABLY NOT'
+    elif num == 11:
+        response = 'I DO NOT UNDERSTAND'
+    elif num == 12:
+        response = 'I DON\'T KNOW'
+    elif num == 13:
+        response = 'BETTER NOT TELL YOU NOW'
+
+    return response
+
 # create array of game names from json file as well as store json data
 with open('data.json') as f:
     d = json.load(f)
@@ -230,7 +257,10 @@ class Client(commands.Bot):
         # ignore all messages from self or from another bot
         if message.author == self.user or message.author.bot:
             return
-        msg = message.content.replace(',','').replace('!','').lower()
+        msg = message.content.lower()
+        if "bean," in msg and msg.endswith("?"):
+            await message.reply(get_answer())
+        msg = msg.replace(',','').replace('!','')
         if "thanks bean" in msg or "thank you bean" in msg or "thankyou bean" in msg:
             if random.randint(1,4) == 3:
                 await message.reply("NICE SWORD, PAL.")
@@ -307,9 +337,36 @@ def codes_output(codes):
         return '*No terminal codes available for this game.*'
     return f"||{'||\n||'.join(': '.join(str(x) for x in row) for row in codes)}||"
 
+def get_world_records(target):
+    game = target['name']
+    category_id = target['sr_category']
+    r = requests.get(f"api/v1/categories/{category_id}/records", timeout=5)
+
+    if r.status_code != 200:
+        return None
+
+    records = r.json()["data"]
+    wr_entry = records[0]["runs"][0]["run"]
+    time_total_sec = wr_entry["times"]["primary_t"]
+    time_min = time_total_sec / 60
+    time_sec = time_total_sec - (time_min*60)
+    time_ms = int((28.9 % 1) * 1000)
+    time = f"{time_min}m {time_sec}s {time_ms}ms"
+
+    player = wr_entry["players"][0]
+    if player["rel"] == "user":
+        user = requests.get(player["uri"], timeout=5).json()["data"]
+        name = user["names"]["international"]
+    else:
+        name = player["name"]
+
+    return f"The current world record for {game} is {time} by {name}."
+
 def game_value_output(type, target, emote):
     if type == 'codes':
         return f"The available {emote} **Terminal Codes** for {target['emoji']} **{target['name']}** are...\n{codes_output(target['codes'])}"
+    if type == 'worldrecord'
+        return get_world_records(target)
     return f"The {emote} **{type.capitalize()}** requirement for {target['emoji']} **{target['name']}** is...\n||{target[type]}||"
 
 # shared function code used for grabbing cherry, gold, and gift values
@@ -418,33 +475,6 @@ async def rnd(interaction: discord.Interaction):
         response = f'You should play {game["emoji"]} **{game["name"]}**.'
     await interaction.response.send_message(response)
 
-# ask command
-@client.tree.command(name="ask",description="Ask me anything.", guild=GUILD_ID)
-async def ask(interaction: discord.Interaction):
-    num = random.randint(1,13)
-    if num == 1 or num == 2 or num == 3:
-        response = 'YES'
-    elif num == 4 or num == 5 or num == 6:
-        response = 'NO'
-    elif num == 7:
-        response = 'MOST LIKELY'
-    elif num == 8:
-        response = 'IT IS POSSIBLE'
-    elif num == 9:
-        response = 'DON\'T COUNT ON IT'
-    elif num == 10:
-        response = 'PROBABLY NOT'
-    elif num == 11:
-        response = 'I DO NOT UNDERSTAND'
-    elif num == 12:
-        response = 'I DON\'T KNOW'
-    elif num == 13:
-        response = 'BETTER NOT TELL YOU NOW'
-    elif num == 14:
-        response = f'Ask me again in <:barbuta:1292612809682583564> **Barbuta**.'
-
-    await interaction.response.send_message(response)
-
 # gift command
 @client.tree.command(name="gift",description="Check gift requirement for a game.", guild=GUILD_ID)
 async def gift(interaction: discord.Interaction, game: str|None, number: int|None):
@@ -490,95 +520,10 @@ async def fiftyclub(interaction: discord.Interaction):
 
     await interaction.response.send_message(role_message)
 
-API = "https://www.speedrun.com/api/v1"
-UFO50_GAME_ID = "UFO_50"
-UFO50_CATEGORIES = None
-
-def safe_get(url):
-    try:
-        return requests.get(url, timeout=5)
-    except Exception:
-        return None
-
-def fmt_time(seconds):
-    seconds = int(seconds)
-    minutes, sec = divmod(seconds, 60)
-    hours, minutes = divmod(minutes, 60)
-    if hours:
-        return f"{hours}:{minutes:02d}:{sec:02d}"
-    return f"{minutes}:{sec:02d}"
-
-def get_ufo50_categories():
-    global UFO50_CATEGORIES
-
-    if UFO50_CATEGORIES is not None:
-        return UFO50_CATEGORIES
-
-    r = safe_get(f"{API}/games/{UFO50_GAME_ID}/categories")
-    if r is None or r.status_code != 200:
-        UFO50_CATEGORIES = {}
-        return UFO50_CATEGORIES
-
-    try:
-        data = r.json().get("data", [])
-    except Exception:
-        UFO50_CATEGORIES = {}
-        return UFO50_CATEGORIES
-
-    UFO50_CATEGORIES = {
-        c["name"].lower(): c["id"]
-        for c in data
-        if c.get("type") == "per-game"
-    }
-
-    return UFO50_CATEGORIES
-
-def get_world_record(category_id):
-    r = safe_get(f"{API}/leaderboards/{UFO50_GAME_ID}/category/{category_id}?top=1")
-    if r is None or r.status_code != 200:
-        return None
-
-    try:
-        runs = r.json().get("data", {}).get("runs", [])
-    except Exception:
-        return None
-
-    if not runs:
-        return None
-
-    run = runs[0]["run"]
-    player = run["players"][0]
-
-    if player["rel"] == "user":
-        name = player["names"]["international"]
-    else:
-        name = player["name"]
-
-    return name, run["times"]["primary_t"]
-
 # world record command
 @client.tree.command(name="worldrecord",description="Check the speedrun world records for a game.", guild=GUILD_ID)
-async def worldrecord(interaction: discord.Interaction, category: str):
-    categories = get_ufo50_categories()
-    key = category.lower()
-
-    if key not in categories:
-        await interaction.response.send_message(
-            "Category not found.",
-            ephemeral=True
-        )
-        return
-
-    result = get_world_record(categories[key])
-    if result is None:
-        await interaction.response.send_message(
-            "API unavailable or no data.",
-            ephemeral=True
-        )
-        return
-
-    name, time = result
-    await interaction.response.send_message(f"WR for **{category}**: {fmt_time(time)} by **{name}**")
+async def worldrecord(interaction: discord.Interaction, game: str|None, number: int|None):
+    await get_game_value(interaction, game, number, "worldrecord", "")
 
 # Get token from fly.io
 TOKEN = os.getenv('BEAN_TOKEN')
