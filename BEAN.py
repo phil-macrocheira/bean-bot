@@ -333,11 +333,16 @@ def get_world_records(target, players):
     emoji = target['emoji']
     category_id = target['sr_category']
     response = ""
+    player_var = ""
     init = False
 
-    v = requests.get(f"https://www.speedrun.com/api/v1/categories/{category_id}/variables", timeout=5)
+    try:
+        v = requests.get(f"https://www.speedrun.com/api/v1/categories/{category_id}/variables", timeout=5)
+        v.raise_for_status()
+    except requests.exceptions.Timeout:
+        return f"Speedrun.com API timed out when grabbing category variables"
     if v.status_code != 200:
-        return None
+        return f"Error: Status code {v.status_code} from speedrun.com API"
 
     variable_data = v.json()["data"]
 
@@ -346,7 +351,6 @@ def get_world_records(target, players):
     for var in variable_data:
         if var["name"] == 'Player Count':
             player_var_id = var["id"]
-            player_var = ""
             if players == 2:
                 player2_id, player2_data = list(var["values"]["values"].items())[1]
                 player_var = f"&var-{player_var_id}={player2_id}"
@@ -360,9 +364,13 @@ def get_world_records(target, players):
             for subcat_id, subcat_data in var["values"]["values"].items():
                 subcat_name = subcat_data["label"]
 
-                r = requests.get(f"https://www.speedrun.com/api/v1/leaderboards/v1pl7876/category/{category_id}?var-{subcat_var_id}={subcat_id}{player_var}&top=1", timeout=5)
+                try:
+                    r = requests.get(f"https://www.speedrun.com/api/v1/leaderboards/v1pl7876/category/{category_id}?var-{subcat_var_id}={subcat_id}{player_var}&top=1", timeout=5)
+                    r.raise_for_status()
+                except requests.exception.Timeout:
+                    return f"Speedrun.com API timed out when grabbing leaderboard for {subcat_name}"
                 if r.status_code != 200:
-                    return None
+                    return f"Error: Status code {v.status_code} from speedrun.com API"
 
                 data = r.json()["data"]
 
@@ -395,13 +403,21 @@ def get_world_records(target, players):
 
                 user_data = wr_entry["players"]
                 user1_data = user_data[0]
-                user1 = requests.get(user1_data["uri"], timeout=5).json()["data"]
+                try:
+                    user1 = requests.get(user1_data["uri"], timeout=5).json()["data"]
+                    user1.raise_for_status()
+                except requests.exception.Timeout:
+                    return f"Speedrun.com API timed out when grabbing user data at {user1_data["uri"]}"
                 username1 = user1["names"]["international"]
                 user1_link = user1["weblink"]
                 player1 = f"**[{username1}]({user1_link})**"
                 if len(user_data) > 1:
                     user2_data = wr_entry["players"][1]
-                    user2 = requests.get(user2_data["uri"], timeout=5).json()["data"]
+                    try:
+                        user2 = requests.get(user2_data["uri"], timeout=5).json()["data"]
+                        user2.raise_for_status()
+                    except requests.exception.Timeout:
+                        return f"Speedrun.com API timed out when grabbing user2 data at {user2_data["uri"]}"
                     username2 = user2["names"]["international"]
                     user2_link = user2["weblink"]
                     player2 = f" and **[{username2}]({user2_link})**"
@@ -553,7 +569,7 @@ async def getphseed(interaction: discord.Interaction, seed: int|None):
 
 # world record command
 @client.tree.command(name="wr",description="Check the speedrun world records for a game.", guild=GUILD_ID)
-async def worldrecord(interaction: discord.Interaction, game: str|None, number: int|None, players: int|None):
+async def worldrecord(interaction: discord.Interaction, game: str|None, number: int|None, players: int = 1):
     await interaction.response.defer()
     await get_game_value(interaction, game, number, "world record", "", players)
 
