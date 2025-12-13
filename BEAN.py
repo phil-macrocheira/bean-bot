@@ -366,6 +366,7 @@ def get_world_records(target, players=1):
                 game_link = data["weblink"]
                 if not init:
                     response += f"The current world records for **[{game}]({game_link})** are:\n"
+                    init = True
 
                 wr_entry = data["runs"][0]["run"]
 
@@ -380,7 +381,7 @@ def get_world_records(target, players=1):
 
                 video_link = wr_entry["videos"]["links"][0]["uri"]
                 if video_link:
-                    time_and_video = f"[{time}]({video_link})"
+                    time_and_video = f"[{time}](<{video_link}>)"
                 else:
                     time_and_video = time
 
