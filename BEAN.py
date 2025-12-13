@@ -380,7 +380,7 @@ def get_world_records(target, players):
             subcat_var_id = var["id"]
             for subcat_id, subcat_data in var["values"]["values"].items():
                 subcat_name = subcat_data["label"]
-                if subcat_name == 'Blindfolded':
+                if subcat_name == 'Blindfolded' or subcat_name == 'GETM-EOUT':
                     continue
 
                 try:
