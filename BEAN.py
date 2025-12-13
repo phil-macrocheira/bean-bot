@@ -575,7 +575,6 @@ async def worldrecord(interaction: discord.Interaction, game: str|None, number: 
         await get_game_value(interaction, game, number, "world record", "", players)
     except Exception as e:
         await interaction.followup.send("An error occurred while fetching world record data.", ephemeral=True)
-    raise
 
 # 50club command
 @client.tree.command(name="50club",description="Check number of people with the cherry collector roles.", guild=GUILD_ID)
