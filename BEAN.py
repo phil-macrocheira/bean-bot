@@ -365,7 +365,7 @@ def get_world_records(target):
 def game_value_output(type, target, emote):
     if type == 'codes':
         return f"The available {emote} **Terminal Codes** for {target['emoji']} **{target['name']}** are...\n{codes_output(target['codes'])}"
-    if type == 'worldrecord'
+    if type == 'worldrecord':
         return get_world_records(target)
     return f"The {emote} **{type.capitalize()}** requirement for {target['emoji']} **{target['name']}** is...\n||{target[type]}||"
 
