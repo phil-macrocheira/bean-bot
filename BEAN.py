@@ -258,7 +258,7 @@ class Client(commands.Bot):
         if message.author == self.user or message.author.bot:
             return
         msg = message.content.lower()
-        if "bean," in msg and msg.endswith("?"):
+        if ("bean," in msg and msg.endswith("?")) or msg.endswith("bean?"):
             await message.reply(get_answer())
         msg = msg.replace(',','').replace('!','')
         if "thanks bean" in msg or "thank you bean" in msg or "thankyou bean" in msg:
@@ -374,9 +374,9 @@ def get_world_records(target, players=1):
 
                 time_sec = wr_entry["times"]["primary_t"]
                 m, s = divmod(time_sec, 60)
-                ms = int((s - int(s)) * 1000)
                 m = int(m)
                 s = int(s)
+                ms = int((time_sec - (m*60) - s)*1000)
                 time = f"{m}m {s}s {ms:03d}ms"
 
                 video_link = wr_entry["videos"]["links"][0]["uri"]
@@ -393,7 +393,7 @@ def get_world_records(target, players=1):
                 player_num_text = f" ({players} Players)"
                 player_num_text = ""
 
-                response += f"\n{subcat_name}{player_num_text}: **{time_and_video}** by **[{name1}]({user1_link})** ({date})"
+                response += f"\n**{subcat_name}{player_num_text}:** {time_and_video} by [{name1}]({user1_link}) ({date})"
 
     return response
 
