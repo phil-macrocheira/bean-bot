@@ -352,7 +352,7 @@ def get_world_records(target, players):
     for var in variable_data:
         var_name = var["name"]
 
-        if var_name == 'Player Count':
+        if var_name == 'Player Count' and game != 'Fist Hell':
             player_var_id = var["id"]
             if players == 2:
                 player2_id, player2_data = list(var["values"]["values"].items())[1]
@@ -380,6 +380,8 @@ def get_world_records(target, players):
             subcat_var_id = var["id"]
             for subcat_id, subcat_data in var["values"]["values"].items():
                 subcat_name = subcat_data["label"]
+                if subcat_name == 'Blindfolded':
+                    continue
 
                 try:
                     r = requests.get(f"https://www.speedrun.com/api/v1/leaderboards/v1pl7876/category/{category_id}?var-{subcat_var_id}={subcat_id}{player_var}&top=1", timeout=5)
