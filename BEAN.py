@@ -418,7 +418,7 @@ def get_world_records(target, players):
 def game_value_output(type, target, emote, players):
     if type == 'codes':
         return f"The available {emote} **Terminal Codes** for {target['emoji']} **{target['name']}** are...\n{codes_output(target['codes'])}"
-    if type == 'worldrecord':
+    if type == 'world record':
         return get_world_records(target, players)
     return f"The {emote} **{type.capitalize()}** requirement for {target['emoji']} **{target['name']}** is...\n||{target[type]}||"
 
@@ -447,7 +447,7 @@ async def get_game_value(interaction, game, number, type, emote, players):
             if number > 51 or number < 0:
                 return await interaction.followup.send(content=f"Your input was not valid.", ephemeral=True)
             else:
-                if number == 51 and type == 'worldrecord':
+                if number == 51 and type == 'world record':
                     return await interaction.followup.send(content=f"Your input was not valid.", ephemeral=True)
                 target = d[number-1]
                 output = game_value_output(type,target,emote,players)
@@ -570,7 +570,7 @@ async def getphseed(interaction: discord.Interaction, seed: int|None):
 @client.tree.command(name="wr",description="Check the speedrun world records for a game.", guild=GUILD_ID)
 async def worldrecord(interaction: discord.Interaction, game: str|None, number: int|None, players: int|None):
     await interaction.response.defer()
-    await get_game_value(interaction, game, number, "worldrecord", "", players)
+    await get_game_value(interaction, game, number, "world record", "", players)
 
 # 50club command
 @client.tree.command(name="50club",description="Check number of people with the cherry collector roles.", guild=GUILD_ID)
