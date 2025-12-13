@@ -337,7 +337,7 @@ def codes_output(codes):
         return '*No terminal codes available for this game.*'
     return f"||{'||\n||'.join(': '.join(str(x) for x in row) for row in codes)}||"
 
-def get_world_records(target, players=1):
+def get_world_records(target, players):
     game = target['name']
     emoji = target['emoji']
     category_id = target['sr_category']
@@ -368,8 +368,8 @@ def get_world_records(target, players=1):
                 data = r.json()["data"]
 
                 player_num_text = ""
-                if players != 1:
-                    player_num_text = f" ({players} Players)"
+                if players == 2:
+                    player_num_text = f" (2 Players)"
                 
                 if not init:
                     game_link_id = data["weblink"].split('#')[1]
@@ -413,7 +413,7 @@ def get_world_records(target, players=1):
 
     return response
 
-def game_value_output(type, target, emote, players=1):
+def game_value_output(type, target, emote, players):
     if type == 'codes':
         return f"The available {emote} **Terminal Codes** for {target['emoji']} **{target['name']}** are...\n{codes_output(target['codes'])}"
     if type == 'worldrecord':
@@ -421,7 +421,7 @@ def game_value_output(type, target, emote, players=1):
     return f"The {emote} **{type.capitalize()}** requirement for {target['emoji']} **{target['name']}** is...\n||{target[type]}||"
 
 # shared function code used for grabbing cherry, gold, and gift values
-async def get_game_value(interaction, game, number, type, emote, players=1):
+async def get_game_value(interaction, game, number, type, emote, players):
     # no game or number specified
     if game is None and number is None:
         # check channel for number values to determine target game
