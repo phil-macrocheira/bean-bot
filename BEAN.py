@@ -348,79 +348,84 @@ def get_world_records(target, players):
     response = ""
     init = False
 
-    v = requests.get(f"https://www.speedrun.com/api/v1/categories/{category_id}/variables")
-    if v.status_code != 200:
-        return "Could not connect to speedrun.com API"
+    try:
+        v = requests.get(f"https://www.speedrun.com/api/v1/categories/{category_id}/variables", timeout=5)
+        if v.status_code != 200:
+            return "Could not connect to speedrun.com API"
 
-    variable_data = v.json()["data"]
+        variable_data = v.json()["data"]
 
-    # VAR OUTLIERS: Mini & Max, Camp 2, Hyper Contender, Bushido Ball, Velgress, Star Waspir
+        # VAR OUTLIERS: Mini & Max, Camp 2, Hyper Contender, Bushido Ball, Velgress, Star Waspir
 
-    for var in variable_data:
-        if var["name"] == 'Player Count':
-            player_var_id = var["id"]
-            player_var = ""
-            if players == 2:
-                player2_id, player2_data = list(var["values"]["values"].items())[1]
-                player_var = f"&var-{player_var_id}={player2_id}"
-
-    for var in variable_data:
-        if var["name"] == 'Subcategory':
-            subcat_var_id = var["id"]
-            for subcat_id, subcat_data in var["values"]["values"].items():
-                subcat_name = subcat_data["label"]
-
-                r = requests.get(f"https://www.speedrun.com/api/v1/leaderboards/v1pl7876/category/{category_id}?var-{subcat_var_id}={subcat_id}{player_var}&top=1", timeout=5)
-                if r.status_code != 200:
-                    return "Could not connect to speedrun.com API"
-
-                data = r.json()["data"]
-
-                player_num_text = ""
+        for var in variable_data:
+            if var["name"] == 'Player Count':
+                player_var_id = var["id"]
+                player_var = ""
                 if players == 2:
-                    player_num_text = f" (2 Player)"
-                
-                if not init:
-                    game_link_id = data["weblink"].split('#')[1]
-                    game_link = f"https://www.speedrun.com/UFO_50?h={game_link_id}-gold&x={category_id}-{subcat_var_id}.{subcat_id}"
-                    response += f"The current world records for {emoji} **[{game}]({game_link})**{player_num_text} are:\n"
-                    init = True
+                    player2_id, player2_data = list(var["values"]["values"].items())[1]
+                    player_var = f"&var-{player_var_id}={player2_id}"
 
-                wr_entry = data["runs"][0]["run"]
+        for var in variable_data:
+            if var["name"] == 'Subcategory':
+                subcat_var_id = var["id"]
+                for subcat_id, subcat_data in var["values"]["values"].items():
+                    subcat_name = subcat_data["label"]
 
-                date = wr_entry["date"]
+                    r = requests.get(f"https://www.speedrun.com/api/v1/leaderboards/v1pl7876/category/{category_id}?var-{subcat_var_id}={subcat_id}{player_var}&top=1", timeout=5)
+                    if r.status_code != 200:
+                        return None
 
-                time_sec = wr_entry["times"]["primary_t"]
-                m, s = divmod(time_sec, 60)
-                m = int(m)
-                s = int(s)
-                ms = round((time_sec - (m*60) - s)*1000)
-                time = f"{m}m {s}s {ms:03d}ms"
+                    data = r.json()["data"]
 
-                video_link = wr_entry["videos"]["links"][0]["uri"]
-                if video_link:
-                    time_and_video = f"[{time}](<{video_link}>)"
-                else:
-                    time_and_video = time
+                    player_num_text = ""
+                    if players == 2:
+                        player_num_text = f" (2 Player)"
+                    
+                    if not init:
+                        game_link_id = data["weblink"].split('#')[1]
+                        game_link = f"https://www.speedrun.com/UFO_50?h={game_link_id}-gold&x={category_id}-{subcat_var_id}.{subcat_id}"
+                        response += f"The current world records for {emoji} **[{game}]({game_link})**{player_num_text} are:\n"
+                        init = True
 
-                user_data = wr_entry["players"]
-                user1_data = user_data[0]
-                user1 = requests.get(user1_data["uri"], timeout=5).json()["data"]
-                username1 = user1["names"]["international"]
-                user1_link = user1["weblink"]
-                player1 = f"**[{username1}]({user1_link})**"
-                if len(user_data) > 1:
-                    user2_data = wr_entry["players"][1]
-                    user2 = requests.get(user2_data["uri"], timeout=5).json()["data"]
-                    username2 = user2["names"]["international"]
-                    user2_link = user2["weblink"]
-                    player2 = f" and **[{username2}]({user2_link})**"
-                else:
-                    player2 = ""
+                    wr_entry = data["runs"][0]["run"]
 
-                response += f"\n**{subcat_name}: {time_and_video}** by {player1}{player2} ({date})"
+                    date = wr_entry["date"]
 
-    return response
+                    time_sec = wr_entry["times"]["primary_t"]
+                    m, s = divmod(time_sec, 60)
+                    m = int(m)
+                    s = int(s)
+                    ms = round((time_sec - (m*60) - s)*1000)
+                    time = f"{m}m {s}s {ms:03d}ms"
+
+                    video_link = wr_entry["videos"]["links"][0]["uri"]
+                    if video_link:
+                        time_and_video = f"[{time}](<{video_link}>)"
+                    else:
+                        time_and_video = time
+
+                    user_data = wr_entry["players"]
+                    user1_data = user_data[0]
+                    user1 = requests.get(user1_data["uri"], timeout=5).json()["data"]
+                    username1 = user1["names"]["international"]
+                    user1_link = user1["weblink"]
+                    player1 = f"**[{username1}]({user1_link})**"
+                    if len(user_data) > 1:
+                        user2_data = wr_entry["players"][1]
+                        user2 = requests.get(user2_data["uri"], timeout=5).json()["data"]
+                        username2 = user2["names"]["international"]
+                        user2_link = user2["weblink"]
+                        player2 = f" and **[{username2}]({user2_link})**"
+                    else:
+                        player2 = ""
+
+                    response += f"\n**{subcat_name}: {time_and_video}** by {player1}{player2} ({date})"
+
+        return response
+    except requests.exceptions.Timeout:
+        return None
+    except requests.exceptions.RequestException:
+        return None
 
 def game_value_output(type, target, emote, players):
     if type == 'codes':
