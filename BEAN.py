@@ -365,7 +365,7 @@ def get_world_records(target, players):
         # Upgrades: Campanella 2
         # Difficulty: Hyper Contender
         # Cave Extensions: Mini & Max
-        elif var_name == 'Restrictions' or var_name == 'Upgrades' or var_name == 'Difficulty':
+        elif var_name == 'Restrictions' or var_name == 'Upgrades' or var_name == 'Difficulty' or var_name == 'Cave Extensions':
             other_var_id = var["id"]
             other_id, other_data = list(var["values"]["values"].items())[0]
             other_var_name = f" **({other_data["label"]})**"
