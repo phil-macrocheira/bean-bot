@@ -367,31 +367,34 @@ def get_world_records(target, players=1):
                 if not init:
                     response += f"The current world records for **[{game}]({game_link})** are:\n"
 
-                for i, subcat in enumerate(data):
-                    wr_entry = data["runs"][0]["run"]
+                wr_entry = data["runs"][0]["run"]
 
-                    date = wr_entry["date"]
+                date = wr_entry["date"]
 
-                    time_sec = wr_entry["times"]["primary_t"]
-                    m, s = divmod(time_sec, 60)
-                    ms = int((s - int(s)) * 1000)
-                    m = int(m)
-                    s = int(s)
-                    time = f"{m}m {s}s {ms:03d}ms"
+                time_sec = wr_entry["times"]["primary_t"]
+                m, s = divmod(time_sec, 60)
+                ms = int((s - int(s)) * 1000)
+                m = int(m)
+                s = int(s)
+                time = f"{m}m {s}s {ms:03d}ms"
 
-                    player = wr_entry["players"][0]
-                    user = requests.get(player["uri"], timeout=5).json()["data"]
-                    name = user["names"]["international"]
-                    user_link = user["weblink"]
+                video_link = wr_entry["videos"]["links"][0]["uri"]
+                if video_link:
+                    time_and_video = f"[{time}]({video_link})"
+                else:
+                    time_and_video = time
 
-                    video_link = wr_entry["videos"]["links"][0]["uri"]
+                player1 = wr_entry["players"][0]
+                user1 = requests.get(player1["uri"], timeout=5).json()["data"]
+                name1 = user1["names"]["international"]
+                user1_link = user1["weblink"]
 
-                    player_num_text = f" ({players} Players)"
-                    player_num_text = ""
+                player_num_text = f" ({players} Players)"
+                player_num_text = ""
 
-                    response += f"\n{subcat_name}{player_num_text}: **[{time}]({video_link})** by **[{name}]({user_link})** ({date})"
+                response += f"\n{subcat_name}{player_num_text}: **{time_and_video}** by **[{name1}]({user1_link})** ({date})"
 
-            return response
+    return response
 
 def game_value_output(type, target, emote, players=1):
     if type == 'codes':
