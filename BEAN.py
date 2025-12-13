@@ -341,7 +341,7 @@ def get_world_records(target, players=1):
     game = target['name']
     category_id = target['sr_category']
     response = ""
-    init = false
+    init = False
 
     v = requests.get(f"https://www.speedrun.com/api/v1/categories/{category_id}/variables")
     if v.status_code != 200:
