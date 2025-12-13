@@ -394,13 +394,14 @@ def get_world_records(target, players=1):
                 else:
                     time_and_video = time
 
-                player1_data = wr_entry["players"][0]
-                player2_data = wr_entry["players"][1]
+                player_data = wr_entry["players"]
+                player1_data = player_data[0]
                 user1 = requests.get(player1_data["uri"], timeout=5).json()["data"]
                 name1 = user1["names"]["international"]
                 user1_link = user1["weblink"]
                 player1 = f"**[{name1}]({user1_link})**"
-                if player2_data:
+                if len(player_data) > 1
+                    player2_data = wr_entry["players"][1]
                     user2 = requests.get(player2_data["uri"], timeout=5).json()["data"]
                     name2 = user2["names"]["international"]
                     user2_link = user2["weblink"]
