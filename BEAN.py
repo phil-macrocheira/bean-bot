@@ -334,6 +334,8 @@ def get_world_records(target, players):
     category_id = target['sr_category']
     response = ""
     player_var = ""
+    other_var_name = ""
+    other_var_name2 = ""
     mode_2p = False
     init = False
 
@@ -347,10 +349,10 @@ def get_world_records(target, players):
 
     variable_data = v.json()["data"]
 
-    # VAR OUTLIERS: Mini & Max, Camp 2, Hyper Contender, Bushido Ball, Velgress, Star Waspir
-
     for var in variable_data:
-        if var["name"] == 'Player Count':
+        var_name = var["name"]
+
+        if var_name == 'Player Count':
             player_var_id = var["id"]
             if players == 2:
                 player2_id, player2_data = list(var["values"]["values"].items())[1]
@@ -359,6 +361,19 @@ def get_world_records(target, players):
             else:
                 player1_id, player1_data = list(var["values"]["values"].items())[0]
                 player_var = f"&var-{player_var_id}={player1_id}"
+        # Restrictions: Velgress, Bushido Ball, and Star Waspir
+        # Upgrades: Campanella 2
+        # Difficulty: Hyper Contender
+        # Cave Extensions: Mini & Max
+        elif var_name == 'Restrictions' or var_name == 'Upgrades' or var_name == 'Difficulty':
+            other_var_id = var["id"]
+            other_id, other_data = list(var["values"]["values"].items())[0]
+            other_var_name = f" **({other_data["label"]})**"
+        # Item Restrictions: Mini & Max
+        elif var_name == 'Item Restrictions':
+            other_var_id2 = var["id"]
+            other_id2, other_data2 = list(var["values"]["values"].items())[0]
+            other_var_name2 = f" **({other_data2["label"]})**"
 
     for var in variable_data:
         if var["name"] == 'Subcategory':
@@ -378,12 +393,12 @@ def get_world_records(target, players):
 
                 player_num_text = ""
                 if mode_2p:
-                    player_num_text = f" (2 Player)"
+                    player_num_text = f" **(2 Player)**"
                     
                 if not init:
                     game_link_id = data["weblink"].split('#')[1]
                     game_link = f"https://www.speedrun.com/UFO_50?h={game_link_id}-gold&x={category_id}-{subcat_var_id}.{subcat_id}"
-                    response += f"The current world records for {emoji} **[{game}]({game_link})**{player_num_text} are:\n"
+                    response += f"The current world records for {emoji} **[{game}]({game_link})**{other_var_name}{other_var_name2}{player_num_text} are:\n"
                     init = True
 
                 if len(data["runs"]) == 0:
