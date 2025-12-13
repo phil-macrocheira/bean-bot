@@ -431,7 +431,7 @@ def get_world_records(target, players):
                         user2_link = user2["weblink"]
                         player2 = f" and **[{username2}]({user2_link})**"
                     elif user2_data["rel"] == 'guest':
-                        player2 = f"**{user2_data["name"]}**"
+                        player2 = f" and **{user2_data["name"]}**"
                 else:
                     player2 = ""
 
