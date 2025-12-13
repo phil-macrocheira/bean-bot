@@ -334,6 +334,7 @@ def get_world_records(target, players):
     category_id = target['sr_category']
     response = ""
     player_var = ""
+    mode_2p = False
     init = False
 
     try:
@@ -354,6 +355,7 @@ def get_world_records(target, players):
             if players == 2:
                 player2_id, player2_data = list(var["values"]["values"].items())[1]
                 player_var = f"&var-{player_var_id}={player2_id}"
+                mode_2p = True
             else:
                 player1_id, player1_data = list(var["values"]["values"].items())[0]
                 player_var = f"&var-{player_var_id}={player1_id}"
@@ -375,7 +377,7 @@ def get_world_records(target, players):
                 data = r.json()["data"]
 
                 player_num_text = ""
-                if players == 2:
+                if mode_2p:
                     player_num_text = f" (2 Player)"
                     
                 if not init:
@@ -403,26 +405,33 @@ def get_world_records(target, players):
 
                 user_data = wr_entry["players"]
                 user1_data = user_data[0]
-                try:
-                    user1_response = requests.get(user1_data["uri"], timeout=5)
-                    user1_response.raise_for_status()
-                    user1 = user1_response.json()["data"]
-                except requests.exceptions.Timeout:
-                    return f"Speedrun.com API timed out when grabbing user data at {user1_data["uri"]}"
-                username1 = user1["names"]["international"]
-                user1_link = user1["weblink"]
-                player1 = f"**[{username1}]({user1_link})**"
+                if user1_data["rel"] == 'user':
+                    try:
+                        user1_response = requests.get(user1_data["uri"], timeout=5)
+                        user1_response.raise_for_status()
+                        user1 = user1_response.json()["data"]
+                    except requests.exceptions.Timeout:
+                        return f"Speedrun.com API timed out when grabbing user data at {user1_data["uri"]}"
+                    username1 = user1["names"]["international"]
+                    user1_link = user1["weblink"]
+                    player1 = f"**[{username1}]({user1_link})**"
+                elif user1_data["rel"] == 'guest':
+                    player1 = f"**{user1_data["name"]}**"
+
                 if len(user_data) > 1:
                     user2_data = wr_entry["players"][1]
-                    try:
-                        user2_response = requests.get(user2_data["uri"], timeout=5)
-                        user2_response.raise_for_status()
-                        user2 = user2_response.json()["data"]
-                    except requests.exceptions.Timeout:
-                        return f"Speedrun.com API timed out when grabbing user2 data at {user2_data["uri"]}"
-                    username2 = user2["names"]["international"]
-                    user2_link = user2["weblink"]
-                    player2 = f" and **[{username2}]({user2_link})**"
+                    if user2_data["rel"] == 'user':
+                        try:
+                            user2_response = requests.get(user2_data["uri"], timeout=5)
+                            user2_response.raise_for_status()
+                            user2 = user2_response.json()["data"]
+                        except requests.exceptions.Timeout:
+                            return f"Speedrun.com API timed out when grabbing user2 data at {user2_data["uri"]}"
+                        username2 = user2["names"]["international"]
+                        user2_link = user2["weblink"]
+                        player2 = f" and **[{username2}]({user2_link})**"
+                    elif user2_data["rel"] == 'guest':
+                        player2 = f"**{user2_data["name"]}**"
                 else:
                     player2 = ""
 
