@@ -354,13 +354,13 @@ def get_world_records(target):
     ms = int((s % 1) * 1000)
     time = f"{m}m {s}s {ms:03d}ms"
 
-#    player = wr_entry["players"][0]
-#    if player["rel"] == "user":
-#        user = requests.get(player["uri"], timeout=5).json()["data"]
-#        name = user["names"]["international"]
-#    else:
-#        name = player["name"]
-name = 'test'
+    #    player = wr_entry["players"][0]
+    #    if player["rel"] == "user":
+    #        user = requests.get(player["uri"], timeout=5).json()["data"]
+    #        name = user["names"]["international"]
+    #    else:
+    #        name = player["name"]
+    name = 'test'
 
     return f"The current world record for {game} is {time} by {name}."
 
