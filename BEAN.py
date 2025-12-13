@@ -385,7 +385,7 @@ def get_world_records(target, players):
                 m, s = divmod(time_sec, 60)
                 m = int(m)
                 s = int(s)
-                ms = int((time_sec - (m*60) - s)*1000)
+                ms = round((time_sec - (m*60) - s)*1000)
                 time = f"{m}m {s}s {ms:03d}ms"
 
                 video_link = wr_entry["videos"]["links"][0]["uri"]
