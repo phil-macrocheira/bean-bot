@@ -204,7 +204,7 @@ async def get_scenario_result(interaction, seed):
     deck_names = [character_types[index] for index in deck]
     return await interaction.response.send_message(f"**SEED {str(seed).zfill(6)}**\n\n{" ".join(deck_names)}")
 
-def get_answer:
+def get_answer():
     barbuta_response = random.randint(1,50)
     if barbuta_response == 50:
         return f'Ask me again in <:barbuta:1292612809682583564> **Barbuta**.'
