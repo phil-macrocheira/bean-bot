@@ -423,7 +423,7 @@ def game_value_output(type, target, emote, players):
     return f"The {emote} **{type.capitalize()}** requirement for {target['emoji']} **{target['name']}** is...\n||{target[type]}||"
 
 # shared function code used for grabbing cherry, gold, and gift values
-async def get_game_value(interaction, game, number, type, emote, players):
+async def get_game_value(interaction, game, number, type, emote, players=None):
     # no game or number specified
     if game is None and number is None:
         # check channel for number values to determine target game
