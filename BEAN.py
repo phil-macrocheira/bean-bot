@@ -356,6 +356,8 @@ def get_world_records(target, players=1):
             for subcat_id, subcat_data in var["values"]["values"].items():
                 subcat_name = subcat_data["label"]
 
+                # NOTE: ALSO DO RESTRICTIONS VAR?
+
                 #player_var = f"&var-{var_id}={player_id}"
                 player_var = ""
 
@@ -364,9 +366,15 @@ def get_world_records(target, players=1):
                     return "Could not connect to speedrun.com API"
 
                 data = r.json()["data"]
-                game_link = data["weblink"]
+
+                player_num_text = ""
+                if players != 1:
+                    player_num_text = f" ({players} Players)"
+                
                 if not init:
-                    response += f"The current world records for {emoji} **[{game}]({game_link})** are:\n"
+                    game_link_id = data["weblink"].split('#')[1]
+                    game_link = f"https://www.speedrun.com/UFO_50?h={game_link_id}-gold&x={category_id}-{subcat_var_id}.{subcat_id}"
+                    response += f"The current world records for {emoji} **[{game}]({game_link})**{player_num_text} are:\n"
                     init = True
 
                 wr_entry = data["runs"][0]["run"]
@@ -386,15 +394,21 @@ def get_world_records(target, players=1):
                 else:
                     time_and_video = time
 
-                player1 = wr_entry["players"][0]
-                user1 = requests.get(player1["uri"], timeout=5).json()["data"]
+                player1_data = wr_entry["players"][0]
+                player2_data = wr_entry["players"][1]
+                user1 = requests.get(player1_data["uri"], timeout=5).json()["data"]
                 name1 = user1["names"]["international"]
                 user1_link = user1["weblink"]
+                player1 = f"**[{name1}]({user1_link})**"
+                if player2_data:
+                    user2 = requests.get(player2_data["uri"], timeout=5).json()["data"]
+                    name2 = user2["names"]["international"]
+                    user2_link = user2["weblink"]
+                    player2 = f" and **[{name2}]({user2_link})**"
+                else:
+                    player2 = ""
 
-                player_num_text = f" ({players} Players)"
-                player_num_text = ""
-
-                response += f"\n**{subcat_name}{player_num_text}:** {time_and_video} by [{name1}]({user1_link}) ({date})"
+                response += f"\n**{subcat_name}: {time_and_video}** by {player1}{player2} ({date})"
 
     return response
 
