@@ -337,38 +337,71 @@ def codes_output(codes):
         return '*No terminal codes available for this game.*'
     return f"||{'||\n||'.join(': '.join(str(x) for x in row) for row in codes)}||"
 
-def get_world_records(target):
+def get_world_records(target, players=1):
     game = target['name']
     category_id = target['sr_category']
-    r = requests.get(f"https://www.speedrun.com/api/v1/categories/{category_id}/records", timeout=5)
-    if r.status_code != 200:
+    response = ""
+    init = false
+
+    v = requests.get(f"https://www.speedrun.com/api/v1/categories/{category_id}/variables")
+    if v.status_code != 200:
         return "Could not connect to speedrun.com API"
 
-    records = r.json()["data"]
-    wr_entry = records[0]["runs"][0]["run"]
-    time_sec = wr_entry["times"]["primary_t"]
-    m, s = divmod(time_sec, 60)
-    ms = int((time_sec - int(time_sec)) * 1000)
-    m = int(m)
-    s = int(s)
-    time = f"{m}m{s}s{ms:03d}ms"
+    variable_data = v.json()["data"]
 
-    player = wr_entry["players"][0]
-    user = requests.get(player["uri"], timeout=5).json()["data"]
-    name = user["names"]["international"]
-    user_link = user["weblink"]
+    for var in variable_data:
+        if var["name"] == 'Subcategory':
+            subcat_var_id = var["id"]
+            for subcat_id, subcat_data in var["values"]["values"].items():
+                subcat_name = subcat_data["label"]
 
-    return f"The current world record for **{game}** is **{time}** by **[{name}]({user_link})**."
+                player_var = f"&var-{var_id}={player_id}"
+                player_var = ""
 
-def game_value_output(type, target, emote):
+                r = requests.get(f"https://www.speedrun.com/api/v1/leaderboards/v1pl7876/category/{category_id}?var-{subcat_var_id}={subcat_id}{player_var}&top=1", timeout=5)
+                if r.status_code != 200:
+                    return "Could not connect to speedrun.com API"
+
+                data = r.json()["data"]
+                game_link = data[0]["weblink"]
+                if not init:
+                    response += f"The current world records for **[{game}]({game_link})** are:\n"
+
+                for i, subcat in enumerate(data):
+                    wr_entry = data[0]["runs"][0]["run"]
+
+                    date = wr_entry["date"]
+
+                    time_sec = wr_entry["times"]["primary_t"]
+                    m, s = divmod(time_sec, 60)
+                    ms = int((s - int(s)) * 1000)
+                    m = int(m)
+                    s = int(s)
+                    time = f"{m}m {s}s {ms:03d}ms"
+
+                    player = wr_entry["players"][0]
+                    user = requests.get(player["uri"], timeout=5).json()["data"]
+                    name = user["names"]["international"]
+                    user_link = user["weblink"]
+
+                    video_link = wr_entry["videos"]["links"][0]["uri"]
+
+                    player_num_text = f" ({players} Players)"
+                    player_num_text = ""
+
+                    response += f"\n{subcat_name}{player_num_text}: **[{time}]({video_link})** by **[{name}]({user_link})** ({date})"
+
+            return response
+
+def game_value_output(type, target, emote, players=1):
     if type == 'codes':
         return f"The available {emote} **Terminal Codes** for {target['emoji']} **{target['name']}** are...\n{codes_output(target['codes'])}"
     if type == 'worldrecord':
-        return get_world_records(target)
+        return get_world_records(target, players)
     return f"The {emote} **{type.capitalize()}** requirement for {target['emoji']} **{target['name']}** is...\n||{target[type]}||"
 
 # shared function code used for grabbing cherry, gold, and gift values
-async def get_game_value(interaction, game, number, type, emote):
+async def get_game_value(interaction, game, number, type, emote, players=1):
     # no game or number specified
     if game is None and number is None:
         # check channel for number values to determine target game
@@ -377,7 +410,7 @@ async def get_game_value(interaction, game, number, type, emote):
                 return await interaction.followup.send(content=f"Please specify a game or number to check the {type} for.", ephemeral=True)
             else:
                 target = d[int(interaction.channel.name[:2])-1]
-                await interaction.followup.send(game_value_output(type,target,emote))
+                await interaction.followup.send(game_value_output(type,target,emote,players))
         # no target game, give error
         else:
             return await interaction.followup.send(content=f"Please specify a game or number to check the {type} for.", ephemeral=True)
@@ -389,7 +422,7 @@ async def get_game_value(interaction, game, number, type, emote):
                 return await interaction.followup.send(content=f"Your input was not valid.", ephemeral=True)
             else:
                 target = d[number-1]
-                await interaction.followup.send(game_value_output(type,target,emote))
+                await interaction.followup.send(game_value_output(type,target,emote,players))
         # game specified
         elif number is None and not game is None:
             target = [x for x in d if game.lower() in x["alias"]]
@@ -405,13 +438,13 @@ async def get_game_value(interaction, game, number, type, emote):
                 if (best_match >= 90):
                     target = [x for x in d if best_match_game.lower() == x["name"].lower()]
                     target = target[0]
-                    await interaction.followup.send(game_value_output(type,target,emote))
+                    await interaction.followup.send(game_value_output(type,target,emote,players))
                 else:
                     await interaction.followup.send(content=f"Your input was not recognized.", ephemeral=True)
             # direct alias search succeeds
             else:
                 target = target[0]
-                await interaction.followup.send(game_value_output(type,target,emote))
+                await interaction.followup.send(game_value_output(type,target,emote,players))
         # error if both number and game are specified
         else:
             await interaction.followup.send(content="Please only specify the name or the number, not both.", ephemeral=True)
@@ -494,10 +527,10 @@ async def getphseed(interaction: discord.Interaction, seed: int|None):
     await get_scenario_result(interaction, seed)
 
 # world record command
-@client.tree.command(name="worldrecord",description="Check the speedrun world records for a game.", guild=GUILD_ID)
-async def worldrecord(interaction: discord.Interaction, game: str|None, number: int|None):
+@client.tree.command(name="wr",description="Check the speedrun world records for a game.", guild=GUILD_ID)
+async def worldrecord(interaction: discord.Interaction, game: str|None, number: int|None, players: int|None):
     await interaction.response.defer()
-    await get_game_value(interaction, game, number, "worldrecord", "")
+    await get_game_value(interaction, game, number, "worldrecord", "", players)
 
 # 50club command
 @client.tree.command(name="50club",description="Check number of people with the cherry collector roles.", guild=GUILD_ID)
