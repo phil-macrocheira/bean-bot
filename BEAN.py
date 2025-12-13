@@ -349,20 +349,17 @@ def get_world_records(target):
     wr_entry = records[0]["runs"][0]["run"]
     time_sec = wr_entry["times"]["primary_t"]
     m, s = divmod(time_sec, 60)
+    ms = int((s % 1) * 1000)
     m = int(m)
     s = int(s)
-    ms = int((s % 1) * 1000)
-    time = f"{m}m {s}s {ms:03d}ms"
+    time = f"{m}m{s}s{ms:03d}ms"
 
-    #    player = wr_entry["players"][0]
-    #    if player["rel"] == "user":
-    #        user = requests.get(player["uri"], timeout=5).json()["data"]
-    #        name = user["names"]["international"]
-    #    else:
-    #        name = player["name"]
-    name = 'test'
+    player = wr_entry["players"][0]
+    user = requests.get(player["uri"], timeout=5).json()["data"]
+    name = user["names"]["international"]
+    user_link = user["weblink"]
 
-    return f"The current world record for {game} is {time} by {name}."
+    return f"The current world record for **{game}** is **{time}** by **[{name}]({user_link})**."
 
 def game_value_output(type, target, emote):
     if type == 'codes':
