@@ -445,8 +445,7 @@ async def get_game_value(interaction, game, number, type, emote, players=1):
                 return await interaction.followup.send(content=f"Please specify a game or number to check the {type} for.", ephemeral=True)
             else:
                 target = d[int(interaction.channel.name[:2])-1]
-                output = game_value_output(type,target,emote,players)
-                await interaction.followup.send(output)
+                await interaction.followup.send(game_value_output(type,target,emote,players))
         # no target game, give error
         else:
             return await interaction.followup.send(content=f"Please specify a game or number to check the {type} for.", ephemeral=True)
@@ -460,8 +459,7 @@ async def get_game_value(interaction, game, number, type, emote, players=1):
                 if number == 51 and type == 'world record':
                     return await interaction.followup.send(content=f"Your input was not valid.", ephemeral=True)
                 target = d[number-1]
-                output = game_value_output(type,target,emote,players)
-                await interaction.followup.send(output)
+                await interaction.followup.send(game_value_output(type,target,emote,players))
         # game specified
         elif number is None and not game is None:
             target = [x for x in d if game.lower() in x["alias"]]
@@ -477,15 +475,13 @@ async def get_game_value(interaction, game, number, type, emote, players=1):
                 if (best_match >= 90):
                     target = [x for x in d if best_match_game.lower() == x["name"].lower()]
                     target = target[0]
-                    output = game_value_output(type,target,emote,players)
-                    await interaction.followup.send(output)
+                    await interaction.followup.send(game_value_output(type,target,emote,players))
                 else:
                     await interaction.followup.send(content=f"Your input was not recognized.", ephemeral=True)
             # direct alias search succeeds
             else:
                 target = target[0]
-                output = game_value_output(type,target,emote,players)
-                await interaction.followup.send(output)
+                await interaction.followup.send(game_value_output(type,target,emote,players))
         # error if both number and game are specified
         else:
             await interaction.followup.send(content="Please only specify the name or the number, not both.", ephemeral=True)
