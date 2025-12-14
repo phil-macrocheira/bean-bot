@@ -463,7 +463,7 @@ def game_value_output(type, target, emote, players):
         return f"The available {emote} **Terminal Codes** for {target['emoji']} **{target['name']}** are...\n{codes_output(target['codes'])}"
     if type == 'mods':
         url_name = target['name'].replace(' ','+')
-        return f"**Mods** for {target['emoji']} **{target['name']}:**\nhttps://gamebanana.com/search?_sModelName=Mod&_sOrder=best_match&_sSearchString={url_name}&_idGameRow=23000&_csvFields=attribs"
+        return f"Check out mods for {target['emoji']} **{target['name']} here:**\n<https://gamebanana.com/search?_sModelName=Mod&_sOrder=best_match&_sSearchString={url_name}&_idGameRow=23000&_csvFields=attribs>"
     if type == 'world record':
         return get_world_records(target, players)
     return f"The {emote} **{type.capitalize()}** requirement for {target['emoji']} **{target['name']}** is...\n||{target[type]}||"
@@ -552,7 +552,7 @@ async def music(interaction: discord.Interaction):
 # link to gamebanana
 @client.tree.command(name="moddinginfo",description="Get links for UFO 50 modding", guild=GUILD_ID)
 async def moddinginfo(interaction: discord.Interaction):
-    await interaction.response.send_message(content='UFO 50 GameBanana: <https://gamebanana.com/games/23000>\nUFO 50 Mod Loader: <https://gamebanana.com/tools/20160>\nModding Guide: <https://ufo50.miraheze.org/wiki/Guide_to_Modding_UFO_50#INSTALLING_MODS>', ephemeral=True)
+    await interaction.response.send_message(content='UFO 50 GameBanana: <https://gamebanana.com/games/23000>\nUFO 50 Mod Loader: <https://gamebanana.com/tools/20160>\nModding Guide: <https://ufo50.miraheze.org/wiki/Guide_to_Modding_UFO_50#INSTALLING_MODS>')
 
 # link to a game's mods
 @client.tree.command(name="mods",description="Get a link to a UFO 50 game's mods", guild=GUILD_ID)
