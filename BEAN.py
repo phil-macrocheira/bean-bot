@@ -463,7 +463,7 @@ def game_value_output(type, target, emote, players):
         return f"The available {emote} **Terminal Codes** for {target['emoji']} **{target['name']}** are...\n{codes_output(target['codes'])}"
     if type == 'mods':
         url_name = target['name'].replace(' ','+')
-        return f"Check out mods for {target['emoji']} **{target['name']} here:**\n<https://gamebanana.com/search?_sModelName=Mod&_sOrder=best_match&_sSearchString={url_name}&_idGameRow=23000&_csvFields=attribs>"
+        return f"Check out mods for {target['emoji']} **{target['name']}** here:\n<https://gamebanana.com/search?_sModelName=Mod&_sOrder=best_match&_sSearchString={url_name}&_idGameRow=23000&_csvFields=attribs>"
     if type == 'world record':
         return get_world_records(target, players)
     return f"The {emote} **{type.capitalize()}** requirement for {target['emoji']} **{target['name']}** is...\n||{target[type]}||"
