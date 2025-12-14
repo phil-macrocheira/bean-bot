@@ -461,6 +461,9 @@ def get_world_records(target, players):
 def game_value_output(type, target, emote, players):
     if type == 'codes':
         return f"The available {emote} **Terminal Codes** for {target['emoji']} **{target['name']}** are...\n{codes_output(target['codes'])}"
+    if type == 'mods':
+        url_name = target['name'].replace(' ','+')
+        return f"**Mods** for {target['emoji']} **{target['name']}:**\nhttps://gamebanana.com/search?_sModelName=Mod&_sOrder=best_match&_sSearchString={url_name}&_idGameRow=23000&_csvFields=attribs"
     if type == 'world record':
         return get_world_records(target, players)
     return f"The {emote} **{type.capitalize()}** requirement for {target['emoji']} **{target['name']}** is...\n||{target[type]}||"
@@ -526,38 +529,39 @@ async def ping(interaction: discord.Interaction):
 async def guides(interaction: discord.Interaction):
     await interaction.response.send_message(content='Check out UFO 50 guides here:\n<https://steamcommunity.com/app/1147860/guides/>')
 
-# link to steam guides
-@client.tree.command(name="speedrun",description="Get a link to speedrun.com page for UFO 50!", guild=GUILD_ID)
-async def spdrun(interaction: discord.Interaction):
-    await interaction.response.send_message(content='Check out or submit UFO 50 speedruns here:\n<https://www.speedrun.com/UFO_50>')
-
-# link to steam page
-@client.tree.command(name="steam",description="Get a link to steam page for UFO 50!", guild=GUILD_ID)
-async def steam(interaction: discord.Interaction):
-    await interaction.response.send_message(content='Buy UFO 50 here:\n<https://store.steampowered.com/app/1147860/UFO_50/>')
-
 # link to tier list maker
-@client.tree.command(name="tierlist",description="Get a link to the Tier List Maker for UFO 50!", guild=GUILD_ID)
+@client.tree.command(name="tierlist",description="Get a link to the Tier List Maker for UFO 50", guild=GUILD_ID)
 async def tier(interaction: discord.Interaction):
     await interaction.response.send_message(content='Make your own UFO 50 Tier List here:\n<https://tiermaker.com/create/ufo-50-games-16603442>', ephemeral=True)
 
 # since people ask so much
-@client.tree.command(name="whatsthatdemogame",description="for when people ask about that one demo preview game", guild=GUILD_ID)
+@client.tree.command(name="whatsthatdemogame",description="for when people ask about that one demo game", guild=GUILD_ID)
 async def whatsthatdemogame(interaction: discord.Interaction):
     await interaction.response.send_message(content='That one demo game is from <:elfazarshat:1292610893200359516> **Elfazar\'s Hat**.')
 
 # link to wiki
-@client.tree.command(name="wiki",description="Get a link to the UFO 50 wiki!", guild=GUILD_ID)
+@client.tree.command(name="wiki",description="Get a link to the UFO 50 wiki", guild=GUILD_ID)
 async def wiki(interaction: discord.Interaction):
     await interaction.response.send_message(content='Check out the UFO 50 wiki here:\n<https://ufo50.miraheze.org/wiki/Main_Page>')
 
 # link to bandcamp music
-@client.tree.command(name="music",description="Get a link to UFO 50 music on Bandcamp!", guild=GUILD_ID)
+@client.tree.command(name="music",description="Get a link to UFO 50 music on Bandcamp", guild=GUILD_ID)
 async def music(interaction: discord.Interaction):
     await interaction.response.send_message(content='Check out the music for UFO 50 here:\n<https://phlogiston.bandcamp.com/album/ufo-50>', ephemeral=True)
 
+# link to gamebanana
+@client.tree.command(name="moddinginfo",description="Get links for UFO 50 modding", guild=GUILD_ID)
+async def moddinginfo(interaction: discord.Interaction):
+    await interaction.response.send_message(content='UFO 50 GameBanana: <https://gamebanana.com/games/23000>\nUFO 50 Mod Loader: <https://gamebanana.com/tools/20160>\nModding Guide: <https://ufo50.miraheze.org/wiki/Guide_to_Modding_UFO_50#INSTALLING_MODS>', ephemeral=True)
+
+# link to a game's mods
+@client.tree.command(name="mods",description="Get a link to a UFO 50 game's mods", guild=GUILD_ID)
+async def mods(interaction: discord.Interaction, game: str|None, number: int|None):
+    await interaction.response.defer()
+    await get_game_value(interaction, game, number, "mods", "")
+
 # random game command
-@client.tree.command(name="random",description="Pick out a UFO 50 game at random.", guild=GUILD_ID)
+@client.tree.command(name="random",description="Get a random UFO 50 game suggestion", guild=GUILD_ID)
 async def rnd(interaction: discord.Interaction):
     if random.randint(1,50) == 50:
         response = random.choice(suggest)
@@ -569,36 +573,36 @@ async def rnd(interaction: discord.Interaction):
     await interaction.response.send_message(response)
 
 # gift command
-@client.tree.command(name="gift",description="Check gift requirement for a game.", guild=GUILD_ID)
+@client.tree.command(name="gift",description="Check gift requirement for a game", guild=GUILD_ID)
 async def gift(interaction: discord.Interaction, game: str|None, number: int|None):
     await interaction.response.defer()
     await get_game_value(interaction, game, number, "gift", "<:GiftGet:1292627978601365636>")
 
 # gold command
-@client.tree.command(name="gold",description="Check gold requirement for a game.", guild=GUILD_ID)
+@client.tree.command(name="gold",description="Check gold requirement for a game", guild=GUILD_ID)
 async def gold(interaction: discord.Interaction, game: str|None, number: int|None):
     await interaction.response.defer()
     await get_game_value(interaction, game, number, "gold", "<:TrophyGet:1291281233254289460>")
 
 # cherry command
-@client.tree.command(name="cherry",description="Check cherry requirement for a game.", guild=GUILD_ID)
+@client.tree.command(name="cherry",description="Check cherry requirement for a game", guild=GUILD_ID)
 async def cherry(interaction: discord.Interaction, game: str|None, number: int|None):
     await interaction.response.defer()
     await get_game_value(interaction, game, number, "cherry", "<:CherryGet:1291281262870528073>")
 
 # terminal codes command
-@client.tree.command(name="codes",description="Check terminal codes for a game.", guild=GUILD_ID)
+@client.tree.command(name="codes",description="Check the terminal codes for a game", guild=GUILD_ID)
 async def codes(interaction: discord.Interaction, game: str|None, number: int|None):
     await interaction.response.defer()
     await get_game_value(interaction, game, number, "codes", "<:InfoBuddyOK:1291972595952123984>")
 
 # gift command
-@client.tree.command(name="partyhouseseed",description="check a seed for Party House, or get a random one.", guild=GUILD_ID)
+@client.tree.command(name="partyhouseseed",description="Check a seed for Party House or get a random one", guild=GUILD_ID)
 async def getphseed(interaction: discord.Interaction, seed: int|None):
     await get_scenario_result(interaction, seed)
 
 # world record command
-@client.tree.command(name="wr",description="Check the speedrun world records for a game.", guild=GUILD_ID)
+@client.tree.command(name="wr",description="Check the speedrun world records for a game", guild=GUILD_ID)
 async def worldrecord(interaction: discord.Interaction, game: str|None, number: int|None, players: int = 1):
     await interaction.response.defer()
     try:
@@ -608,7 +612,7 @@ async def worldrecord(interaction: discord.Interaction, game: str|None, number: 
         raise
 
 # 50club command
-@client.tree.command(name="50club",description="Check number of people with the cherry collector roles.", guild=GUILD_ID)
+@client.tree.command(name="50club",description="Check number of people with the cherry collector roles", guild=GUILD_ID)
 async def fiftyclub(interaction: discord.Interaction):
     role50_pc_legacy = interaction.guild.get_role(1291962155469373451)
     role50_pc = interaction.guild.get_role(1293958225644884068)
