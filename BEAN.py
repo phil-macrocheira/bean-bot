@@ -490,7 +490,7 @@ async def get_game_value(interaction, game, number, type, emote, players=1):
             if number > 51 or number < 0:
                 return await interaction.followup.send(content=f"Your input was not valid.", ephemeral=True)
             else:
-                if (number == 51 or number == 0) and (type == 'world record' or type == 'mods'):
+                if (number == 0 or number == 51) and (type == 'world record' or type == 'mods'):
                     return await interaction.followup.send(content=f"Your input was not valid.", ephemeral=True)
                 target = d[number-1]
                 await interaction.followup.send(game_value_output(type,target,emote,players))
@@ -509,7 +509,7 @@ async def get_game_value(interaction, game, number, type, emote, players=1):
                 if (best_match >= 90):
                     target = [x for x in d if best_match_game.lower() == x["name"].lower()]
                     target = target[0]
-                    if (target['name'] == 'The Terminal' or target['name'] == 'MT') and (type == 'world record' or type == 'mods'):
+                    if (target['name'] == 'The Terminal' or target['num'] == '51') and (type == 'world record' or type == 'mods'):
                         return await interaction.followup.send(content=f"Your input was not valid.", ephemeral=True)
                     await interaction.followup.send(game_value_output(type,target,emote,players))
                 else:
