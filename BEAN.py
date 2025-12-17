@@ -459,14 +459,15 @@ def get_world_records(target, players):
     return response
 
 def game_value_output(type, target, emote, players):
+    game_name = target['name']
     if type == 'codes':
-        return f"The available {emote} **Terminal Codes** for {target['emoji']} **{target['name']}** are...\n{codes_output(target['codes'])}"
+        return f"The available {emote} **Terminal Codes** for {target['emoji']} **{game_name}** are...\n{codes_output(target['codes'])}"
     if type == 'mods':
-        url_name = target['name'].replace(' ','+')
-        return f"Check out mods for {target['emoji']} **{target['name']}** here:\n<https://gamebanana.com/search?_sModelName=Mod&_sOrder=best_match&_sSearchString={url_name}&_idGameRow=23000&_csvFields=attribs>"
+        url_name = game_name.replace(' ','+')
+        return f"Check out mods for {target['emoji']} **{game_name}** here:\n<https://gamebanana.com/search?_sModelName=Mod&_sOrder=best_match&_sSearchString={url_name}&_idGameRow=23000&_csvFields=attribs>"
     if type == 'world record':
         return get_world_records(target, players)
-    return f"The {emote} **{type.capitalize()}** requirement for {target['emoji']} **{target['name']}** is...\n||{target[type]}||"
+    return f"The {emote} **{type.capitalize()}** requirement for {target['emoji']} **{game_name}** is...\n||{target[type]}||"
 
 # shared function code used for grabbing cherry, gold, and gift values
 async def get_game_value(interaction, game, number, type, emote, players=1):
@@ -489,7 +490,7 @@ async def get_game_value(interaction, game, number, type, emote, players=1):
             if number > 51 or number < 0:
                 return await interaction.followup.send(content=f"Your input was not valid.", ephemeral=True)
             else:
-                if number == 51 and type == 'world record':
+                if (number == 51 or number == 0) and (type == 'world record' or type == 'mods'):
                     return await interaction.followup.send(content=f"Your input was not valid.", ephemeral=True)
                 target = d[number-1]
                 await interaction.followup.send(game_value_output(type,target,emote,players))
@@ -508,6 +509,8 @@ async def get_game_value(interaction, game, number, type, emote, players=1):
                 if (best_match >= 90):
                     target = [x for x in d if best_match_game.lower() == x["name"].lower()]
                     target = target[0]
+                    if (target['name'] == 'The Terminal' or target['name'] == 'MT') and (type == 'world record' or type == 'mods')
+                        return await interaction.followup.send(content=f"Your input was not valid.", ephemeral=True)
                     await interaction.followup.send(game_value_output(type,target,emote,players))
                 else:
                     await interaction.followup.send(content=f"Your input was not recognized.", ephemeral=True)
