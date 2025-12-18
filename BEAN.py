@@ -592,7 +592,7 @@ async def rnd(interaction: discord.Interaction):
 # game of the day
 @client.tree.command(name="gotd",description="Get the UFO 50 Game of the Day", guild=GUILD_ID)
 async def rnd(interaction: discord.Interaction):
-    EST = datetime.timezone(datetime.timedelta(hours=-5))
+    EST = datetime.timezone(datetime.timedelta(hours=-7))
     today = datetime.datetime.now(EST).date()
     random.seed(today.toordinal())
     num = random.randint(1, 50)
