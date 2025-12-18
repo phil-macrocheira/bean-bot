@@ -269,7 +269,8 @@ class Client(commands.Bot):
                 await message.reply("NICE ROD, PAL.")
             return
         if "nice rod bean" in msg or "nice sword bean" in msg:
-            await message.reply(f"THANKS {message.author.nick.upper()}")
+            user_name = message.author.nick or message.author.name
+            await message.reply(f"THANKS {user_name.upper()}")
             return
         if not message.guild:
             return
