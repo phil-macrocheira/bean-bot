@@ -3,7 +3,7 @@ from discord.ext import commands
 import json
 import random
 import math
-import re 
+import re
 from thefuzz import fuzz
 import base64
 import os
@@ -205,30 +205,39 @@ async def get_scenario_result(interaction, seed):
     return await interaction.response.send_message(f"**SEED {str(seed).zfill(6)}**\n\n{" ".join(deck_names)}")
 
 def get_answer():
-    barbuta_response = random.randint(1,50)
-    if barbuta_response == 50:
-        return f'Ask me again in <:barbuta:1292612809682583564> **Barbuta**.'
+    num = random.randint(1,100)
 
-    num = random.randint(1,13)
-    if num == 1 or num == 2 or num == 3:
+    if num <= 25
         response = 'YES'
-    elif num == 4 or num == 5 or num == 6:
+    elif num <= 50:
         response = 'NO'
-    elif num == 7:
+    elif num <= 60:
         response = 'MOST LIKELY'
-    elif num == 8:
-        response = 'IT IS POSSIBLE'
-    elif num == 9:
-        response = 'DON\'T COUNT ON IT'
-    elif num == 10:
+    elif num <= 70:
         response = 'PROBABLY NOT'
-    elif num == 11:
-        response = 'I DO NOT UNDERSTAND'
-    elif num == 12:
+    elif num <= 75:
+        response = 'IT IS POSSIBLE'
+    elif num <= 80:
         response = 'I DON\'T KNOW'
-    elif num == 13:
-        response = 'BETTER NOT TELL YOU NOW'
-
+    elif num <= 85:
+        response = 'I DO NOT UNDERSTAND'
+    elif num <= 90:
+        response = 'I CAN\'T TELL YOU THAT'
+    elif num <= 92:
+        response = 'REMEMBER WHAT THEY SAY ABOUT MAKING OMELETTES'
+    elif num <= 94:
+        response = 'SOMETIMES THE SOLUTION TO YOUR TROUBLES LIE ELSEWHERE'
+    elif num <= 96:
+        response = 'YOU DON\'T WANT TO KNOW'
+    elif num <= 98:
+        response = 'YOU ALREADY KNOW THE ANSWER'
+    elif num == 99:
+        response = 'ASK ME AGAIN IN <:barbuta:1292612809682583564> **BARBUTA**'
+    elif num == 100:
+        game = random.choice(d)
+        while game["name"] == "The Terminal" or game["name"] == "MT":
+            game = random.choice(d)
+        response = f'You should play {game["emoji"]} **{game["name"]}**.'
     return response
 
 # create array of game names from json file as well as store json data
@@ -258,6 +267,9 @@ class Client(commands.Bot):
                 await message.reply("NICE SWORD, PAL.")
             else:
                 await message.reply("NICE ROD, PAL.")
+            return
+        if "nice rod bean" in msg or "nice sword bean" in msg:
+            await message.reply(f"THANKS {message.author.name.upper()}")
             return
         if not message.guild:
             return
