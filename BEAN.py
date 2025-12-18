@@ -8,6 +8,7 @@ from thefuzz import fuzz
 import base64
 import os
 import requests
+import datetime
 
 # UFO 50 Discord server ID
 GUILD_ID = discord.Object(id=525973026429206530)
@@ -586,6 +587,15 @@ async def rnd(interaction: discord.Interaction):
         while game["name"] == "The Terminal" or game["name"] == "MT":
             game = random.choice(d)
         response = f'You should play {game["emoji"]} **{game["name"]}**.'
+    await interaction.response.send_message(response)
+
+# game of the day
+@client.tree.command(name="gotd",description="Get the UFO 50 Game of the Day", guild=GUILD_ID)
+async def rnd(interaction: discord.Interaction):
+    random.seed(datetime.date.today().toordinal())
+    num = random.randint(1, 50)
+    game = d[num-1]
+    response = f'The **Game of the Day** is {game["emoji"]} **{game["name"]}**.'
     await interaction.response.send_message(response)
 
 # gift command
