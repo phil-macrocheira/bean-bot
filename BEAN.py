@@ -207,7 +207,7 @@ async def get_scenario_result(interaction, seed):
 def get_answer():
     num = random.randint(1,100)
 
-    if num <= 25
+    if num <= 25:
         response = 'YES'
     elif num <= 50:
         response = 'NO'
