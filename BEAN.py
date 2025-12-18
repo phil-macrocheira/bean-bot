@@ -577,7 +577,7 @@ async def mods(interaction: discord.Interaction, game: str|None, number: int|Non
     await interaction.response.defer()
     await get_game_value(interaction, game, number, "mods", "")
 
-# random game command
+# random command
 @client.tree.command(name="random",description="Get a random UFO 50 game suggestion", guild=GUILD_ID)
 async def rnd(interaction: discord.Interaction):
     if random.randint(1,50) == 50:
@@ -589,11 +589,24 @@ async def rnd(interaction: discord.Interaction):
         response = f'You should play {game["emoji"]} **{game["name"]}**.'
     await interaction.response.send_message(response)
 
-# game of the day
+# randomforme command
+@client.tree.command(name="randomforme",description="Get a personalized random UFO 50 game suggestion for the day", guild=GUILD_ID)
+async def rndforme(interaction: discord.Interaction):
+    user_name = interaction.user.nick or interaction.user.name
+    PST = datetime.timezone(datetime.timedelta(hours=-7))
+    today = datetime.datetime.now(PST).date()
+    seed = f"{interaction.user.name}-{today.toordinal()}"
+    random.seed(seed)
+    num = random.randint(1, 50)
+    game = d[num-1]
+    response = f'{user_name} should play {game["emoji"]} **{game["name"]}** today.'
+    await interaction.response.send_message(response)
+
+# game of the day command
 @client.tree.command(name="gotd",description="Get the UFO 50 Game of the Day", guild=GUILD_ID)
-async def rnd(interaction: discord.Interaction):
-    EST = datetime.timezone(datetime.timedelta(hours=-7))
-    today = datetime.datetime.now(EST).date()
+async def gotd(interaction: discord.Interaction):
+    PST = datetime.timezone(datetime.timedelta(hours=-7))
+    today = datetime.datetime.now(PST).date()
     random.seed(today.toordinal())
     num = random.randint(1, 50)
     game = d[num-1]
