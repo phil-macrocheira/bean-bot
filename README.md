@@ -33,10 +33,6 @@ Suggestions for additions to the bot can be sent our way via Discord to **phil\_
 
 * Get a personalized random UFO 50 game suggestion for the day
 
-### / gotd
-
-* Get the UFO 50 Game of the Day
-
 ### / 50club
 
 * See how many discord members have obtained 50 cherries based on discord roles

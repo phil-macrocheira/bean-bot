@@ -237,6 +237,23 @@ def get_answer():
         response = 'ASK ME AGAIN IN <:barbuta:1292612809682583564> **BARBUTA**' # 0.1% chance
     return response
 
+# filter nickname
+def nickname(nick):
+    if nick == None:
+        return None
+
+    # remove stuff in parentheses
+    if '(' in nick:
+        nick = nick.split('(')[0].rstrip()
+
+    # remove non-parentheses emoji+number sequences
+    nick = regex.sub(r'(\p{Emoji}+\d*)+$', '', nick)
+
+    # alphanumeric only
+    nick = re.sub(r'[^A-Za-z0-9]', '', nick)
+
+    return nick
+
 # create array of game names from json file as well as store json data
 with open('data.json') as f:
     d = json.load(f)
@@ -266,7 +283,12 @@ class Client(commands.Bot):
                 await message.reply("NICE ROD, PAL.")
             return
         if "nice rod bean" in msg or "nice sword bean" in msg:
-            user_name = message.author.nick or message.author.name
+            user_name = nickname(message.author.nick) or message.author.name
+
+            # Morzis check
+            if message.author.name == 'mort_lover_of_julien':
+                user_name = 'Morzis'
+
             await message.reply(f"THANKS {user_name.upper()}")
             return
         if not message.guild:
@@ -588,7 +610,7 @@ async def rnd(interaction: discord.Interaction):
 # randomforme command
 @client.tree.command(name="randomforme",description="Get a personalized random UFO 50 game suggestion for the day", guild=GUILD_ID)
 async def rndforme(interaction: discord.Interaction):
-    user_name = interaction.user.nick or interaction.user.name
+    user_name = nickname(interaction.user.nick) or interaction.user.name
     PST = datetime.timezone(datetime.timedelta(hours=-7))
     today = datetime.datetime.now(PST).date()
     seed = f"{interaction.user.name}-{today.toordinal()}"
@@ -596,17 +618,6 @@ async def rndforme(interaction: discord.Interaction):
     num = random.randint(1, 50)
     game = d[num-1]
     response = f'{user_name} should play {game["emoji"]} **{game["name"]}** today.'
-    await interaction.response.send_message(response)
-
-# game of the day command
-@client.tree.command(name="gotd",description="Get the UFO 50 Game of the Day", guild=GUILD_ID)
-async def gotd(interaction: discord.Interaction):
-    PST = datetime.timezone(datetime.timedelta(hours=-7))
-    today = datetime.datetime.now(PST).date()
-    random.seed(today.toordinal())
-    num = random.randint(1, 50)
-    game = d[num-1]
-    response = f'The **Game of the Day** is {game["emoji"]} **{game["name"]}**.'
     await interaction.response.send_message(response)
 
 # gift command
