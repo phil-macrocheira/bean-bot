@@ -284,7 +284,7 @@ class Client(commands.Bot):
                 await message.reply("NICE ROD, PAL.")
             return
         if "nice rod bean" in msg or "nice sword bean" in msg:
-            user_name = nickname(message.author.nick) or message.author.name
+            user_name = nickname(message.author.nick) or message.author.display_name or message.author.name
 
             # Morzis check
             if message.author.name == 'mort_lover_of_julien':
@@ -611,7 +611,7 @@ async def rnd(interaction: discord.Interaction):
 # randomforme command
 @client.tree.command(name="randomforme",description="Get a personalized random UFO 50 game suggestion for the day", guild=GUILD_ID)
 async def rndforme(interaction: discord.Interaction):
-    user_name = nickname(interaction.user.nick) or interaction.user.name
+    user_name = nickname(interaction.user.nick) or interaction.user.display_name or interaction.user.name
     PST = datetime.timezone(datetime.timedelta(hours=-7))
     today = datetime.datetime.now(PST).date()
     seed = f"{interaction.user.name}-{today.toordinal()}"
