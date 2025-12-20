@@ -244,7 +244,7 @@ def nickname(nick):
 
     # remove stuff in parentheses
     if '(' in nick:
-        nick = nick.split('(')[0].rstrip()
+        nick = nick.split('(')[0]
 
     # remove non-parentheses emoji+number sequences
     while re.search(r'[\U0001F300-\U0001FAFF]+\d*$', nick):
@@ -253,7 +253,7 @@ def nickname(nick):
     # alphanumeric only
     nick = re.sub(r'[^A-Za-z0-9 ]', '', nick)
 
-    return nick
+    return nick.rstrip()
 
 # create array of game names from json file as well as store json data
 with open('data.json') as f:
