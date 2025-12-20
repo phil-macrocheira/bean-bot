@@ -247,10 +247,11 @@ def nickname(nick):
         nick = nick.split('(')[0].rstrip()
 
     # remove non-parentheses emoji+number sequences
-    nick = re.sub(r'[\U0001F300-\U0001FAFF]+\d*$', '', nick)
+    while re.search(r'[\U0001F300-\U0001FAFF]+\d*$', nick):
+        nick = re.sub(r'[\U0001F300-\U0001FAFF]+\d*$', '', nick)
 
     # alphanumeric only
-    nick = re.sub(r'[^A-Za-z0-9]', '', nick)
+    nick = re.sub(r'[^A-Za-z0-9 ]', '', nick)
 
     return nick
 
