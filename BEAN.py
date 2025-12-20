@@ -247,7 +247,7 @@ def nickname(nick):
         nick = nick.split('(')[0].rstrip()
 
     # remove non-parentheses emoji+number sequences
-    nick = regex.sub(r'(\p{Emoji}+\d*)+$', '', nick)
+    nick = re.sub(r'(\p{Emoji}+\d*)+$', '', nick)
 
     # alphanumeric only
     nick = re.sub(r'[^A-Za-z0-9]', '', nick)
