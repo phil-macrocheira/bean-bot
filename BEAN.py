@@ -288,7 +288,7 @@ class Client(commands.Bot):
             user_name = filter_name(user_name)
 
             # Morzis check
-            if message.author.name == 'mort_lover_of_julien' or message.author.name == 'morzisse':
+            if message.author.id == 1233068337555177585 or message.author.id == 749386332752707665:
                 user_name = 'Morzis'
 
             await message.reply(f"THANKS {user_name.upper()}")
@@ -616,7 +616,7 @@ async def rndforme(interaction: discord.Interaction):
     user_name = filter_name(user_name)
 
     # Morzis check
-    if interaction.user.name == 'mort_lover_of_julien' or interaction.user.name == 'morzisse':
+    if interaction.user.id == 1233068337555177585 or interaction.user.id == 749386332752707665:
         user_name = 'Morzis'
 
     PST = datetime.timezone(datetime.timedelta(hours=-7))
