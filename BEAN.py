@@ -272,8 +272,8 @@ class Client(commands.Bot):
         if message.author == self.user or message.author.bot:
             return
         msg_ask = message.content.lower().replace(' ','')
-        if ("bean," in msg_ask and msg_ask.endswith("?")) or msg_ask.endswith("bean?"):
-            if (msg_ask != 'bean,?' and msg_ask != 'bean?'):
+        if msg_ask.startswith("bean") or "bean?" in msg_ask:
+            if msg_ask.replace('?','') != 'bean':
                 await message.reply(get_answer())
                 return
         msg = message.content.lower().replace(',','').replace('!','')
