@@ -616,7 +616,7 @@ async def rndforme(interaction: discord.Interaction):
     user_name = filter_name(user_name)
 
     # Morzis check
-    if message.author.name == 'mort_lover_of_julien' or message.author.name == 'morzisse'
+    if message.author.name == 'mort_lover_of_julien' or message.author.name == 'morzisse':
         user_name = 'Morzis'
 
     PST = datetime.timezone(datetime.timedelta(hours=-7))
