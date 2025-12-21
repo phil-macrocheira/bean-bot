@@ -237,23 +237,23 @@ def get_answer():
         response = 'ASK ME AGAIN IN <:barbuta:1292612809682583564> **BARBUTA**' # 0.1% chance
     return response
 
-# filter nickname
-def nickname(nick):
-    if nick == None:
+# filter usernames
+def filter_name(name):
+    if name == None:
         return None
 
     # remove stuff in parentheses
-    if '(' in nick:
-        nick = nick.split('(')[0]
+    if '(' in name:
+        name = name.split('(')[0]
 
     # remove non-parentheses emoji+number sequences
-    while re.search(r'[\U0001F300-\U0001FAFF]+\d*$', nick):
-        nick = re.sub(r'[\U0001F300-\U0001FAFF]+\d*$', '', nick)
+    while re.search(r'[\U0001F300-\U0001FAFF]+\d*$', name):
+        name = re.sub(r'[\U0001F300-\U0001FAFF]+\d*$', '', name)
 
     # alphanumeric only
-    nick = re.sub(r'[^A-Za-z0-9 ]', '', nick)
+    name = re.sub(r'[^A-Za-z0-9 ]', '', name)
 
-    return nick.rstrip()
+    return name.rstrip()
 
 # create array of game names from json file as well as store json data
 with open('data.json') as f:
@@ -284,10 +284,11 @@ class Client(commands.Bot):
                 await message.reply("NICE ROD, PAL.")
             return
         if "nice rod bean" in msg or "nice sword bean" in msg:
-            user_name = nickname(message.author.nick) or message.author.display_name or message.author.name
+            user_name = message.author.nick or message.author.display_name or message.author.name
+            user_name = filter_name(user_name)
 
             # Morzis check
-            if message.author.name == 'mort_lover_of_julien':
+            if message.author.name == 'mort_lover_of_julien' or message.author.name == 'morzisse':
                 user_name = 'Morzis'
 
             await message.reply(f"THANKS {user_name.upper()}")
@@ -611,7 +612,13 @@ async def rnd(interaction: discord.Interaction):
 # randomforme command
 @client.tree.command(name="randomforme",description="Get a personalized random UFO 50 game suggestion for the day", guild=GUILD_ID)
 async def rndforme(interaction: discord.Interaction):
-    user_name = nickname(interaction.user.nick) or interaction.user.display_name or interaction.user.name
+    user_name = interaction.user.nick or interaction.user.display_name or interaction.user.name
+    user_name = filter_name(user_name)
+
+    # Morzis check
+    if message.author.name == 'mort_lover_of_julien' or message.author.name == 'morzisse'
+        user_name = 'Morzis'
+
     PST = datetime.timezone(datetime.timedelta(hours=-7))
     today = datetime.datetime.now(PST).date()
     seed = f"{interaction.user.name}-{today.toordinal()}"
