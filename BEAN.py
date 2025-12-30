@@ -621,18 +621,18 @@ async def rnd(interaction: discord.Interaction):
 async def rndforme(interaction: discord.Interaction):
     user_name = interaction.user.nick or interaction.user.display_name or interaction.user.name
     user_name = filter_name(user_name)
-
-    # Morzis check
-    if interaction.user.id == 1233068337555177585 or interaction.user.id == 749386332752707665:
-        user_name = 'Morzis'
-
     PST = datetime.timezone(datetime.timedelta(hours=-7))
     today = datetime.datetime.now(PST).date()
     seed = f"{interaction.user.name}-{today.toordinal()}"
     random.seed(seed)
-    num = urandom(50)
+    num = random.randint(1, 50)
     game = d[num-1]
     response = f'{user_name} should play {game["emoji"]} **{game["name"]}** today.'
+
+    # Morzis check
+    if interaction.user.id == 1233068337555177585 or interaction.user.id == 749386332752707665:
+        response = 'Morzis should play 🐆 **Cheetahmen** today.'
+
     await interaction.response.send_message(response)
 
 # gift command
