@@ -144,6 +144,16 @@ CHAR_END = 44
 CHAR_PRESTIGE_START = 50
 CHAR_PRESTIGE_END = 58
 
+def urandom(n: int) -> int:
+    k = (n - 1).bit_length()
+    byte_len = (k + 7) // 8
+    max_val = 1 << (byte_len * 8)
+    limit = max_val - (max_val % n)
+    while True:
+        r = int.from_bytes(os.urandom(byte_len), "big")
+        if r < limit:
+            return (r % n) + 1
+
 def rng_random():
     global rng_state_1, rng_state_2
     rng_state_1 = (65192 * (rng_state_1 & 65535)) + ((rng_state_1 & 4294901760) >> 16)
@@ -206,7 +216,7 @@ async def get_scenario_result(interaction, seed):
     return await interaction.response.send_message(f"**SEED {str(seed).zfill(6)}**\n\n{" ".join(deck_names)}")
 
 def get_answer():
-    num = random.randint(1,1000)
+    num = urandom(1000)
 
     if num <= 375:
         response = 'YES' # 37.5% chance
@@ -275,7 +285,7 @@ class Client(commands.Bot):
                 return
         msg = message.content.lower().replace(',','').replace('!','')
         if "thanks bean" in msg or "thank you bean" in msg:
-            if random.randint(1,4) == 3:
+            if urandom(4) == 3:
                 await message.reply("NICE SWORD, PAL.")
             else:
                 await message.reply("NICE ROD, PAL.")
@@ -597,7 +607,7 @@ async def mods(interaction: discord.Interaction, game: str|None, number: int|Non
 # random command
 @client.tree.command(name="random",description="Get a random UFO 50 game suggestion", guild=GUILD_ID)
 async def rnd(interaction: discord.Interaction):
-    if random.randint(1,50) == 50:
+    if urandom(50) == 50:
         response = random.choice(suggest)
     else:
         game = random.choice(d)
@@ -620,7 +630,7 @@ async def rndforme(interaction: discord.Interaction):
     today = datetime.datetime.now(PST).date()
     seed = f"{interaction.user.name}-{today.toordinal()}"
     random.seed(seed)
-    num = random.randint(1, 50)
+    num = urandom(50)
     game = d[num-1]
     response = f'{user_name} should play {game["emoji"]} **{game["name"]}** today.'
     await interaction.response.send_message(response)
