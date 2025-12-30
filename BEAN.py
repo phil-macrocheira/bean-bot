@@ -208,50 +208,46 @@ async def get_scenario_result(interaction, seed):
 def get_answer():
     num = random.randint(1,1000)
 
-    if num <= 300:
-        response = 'YES' # 30% chance
-    elif num <= 600:
-        response = 'NO' # 30% chance
-    elif num <= 700:
-        response = 'MOST LIKELY' # 10% chance
+    if num <= 375:
+        response = 'YES' # 37.5% chance
+    elif num <= 750:
+        response = 'NO' # 37.5% chance
     elif num <= 800:
-        response = 'PROBABLY NOT' # 10% chance
-    elif num <= 875:
-        response = 'IT IS POSSIBLE' # 7.5% chance
+        response = 'MOST LIKELY' # 5% chance
+    elif num <= 850:
+        response = 'PROBABLY NOT' # 5% chance
+    elif num <= 900:
+        response = 'IT IS POSSIBLE' # 5% chance
     elif num <= 925:
-        response = 'I DON\'T KNOW' # 5% chance
-    elif num <= 950:
-        response = 'I DO NOT UNDERSTAND' # 2.5% chance
-    elif num <= 975:
         response = 'YOU ALREADY KNOW THE ANSWER' # 2.5% chance
-    elif num <= 985:
-        response = 'IT\'S A SECRET' # 1% chance
-    elif num <= 995:
+    elif num <= 950:
+        response = 'IT\'S A SECRET' # 2.5% chance
+    elif num <= 960:
+        response = 'I DON\'T KNOW' # 1% chance
+    elif num <= 970:
+        response = 'I DO NOT UNDERSTAND' # 1% chance
+    elif num <= 980:
         response = 'REMEMBER WHAT THEY SAY ABOUT MAKING OMELETTES' # 1% chance
+    elif num <= 990:
+        response = 'HA HA. THAT\'S A GOOD ONE.' # 1% chance
     elif num <= 999:
         game = random.choice(d)
         while game["name"] == "The Terminal" or game["name"] == "MT":
             game = random.choice(d)
-        response = f'THE SOLUTION TO YOUR TROUBLES LIES IN {game["emoji"]} **{game["name"]}**.' # 0.4% chance
+        response = f'THE SOLUTION TO YOUR TROUBLES LIES IN {game["emoji"]} **{game["name"]}**.' # 0.9% chance
     elif num == 1000:
         response = 'ASK ME AGAIN IN <:barbuta:1292612809682583564> **BARBUTA**' # 0.1% chance
     return response
 
 # filter usernames
 def filter_name(name):
-    if name == None:
+    if name == None or name == '':
         return None
 
-    # remove stuff in parentheses
-    if '(' in name:
-        name = name.split('(')[0]
-
-    # remove non-parentheses emoji+number sequences
-    while re.search(r'[\U0001F300-\U0001FAFF]+\d*$', name):
-        name = re.sub(r'[\U0001F300-\U0001FAFF]+\d*$', '', name)
-
-    # alphanumeric only
-    name = re.sub(r'[^A-Za-z0-9 ]', '', name)
+    name = re.split(r'[\U0001F300-\U0001FAFF]', name, 1)[0] # remove anything after an emoji
+    name = name.split('(', 1)[0] # remove anything after a left paren
+    name = name.split('{', 1)[0] # remove anything after a left curly brace
+    name = re.sub(r'[^A-Za-z0-9 ]', '', name) # alphanumeric only
 
     return name.rstrip()
 
