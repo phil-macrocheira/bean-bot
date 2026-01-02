@@ -56,3 +56,19 @@ Suggestions for additions to the bot can be sent our way via Discord to **phil\_
 ### / tierlist
 
 * Get a link to the Tier List Maker for UFO 50
+
+### / spreadsheet
+
+* Get a link to the data spreadsheet
+
+### / loredoc
+
+* Get a link to the lore documents
+
+### / resourcepack
+
+* Get a link to the resource pack
+
+### / quibblechart
+
+* Get a link to the Quibble Race Speed Chart

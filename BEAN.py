@@ -604,6 +604,26 @@ async def mods(interaction: discord.Interaction, game: str|None, number: int|Non
     await interaction.response.defer()
     await get_game_value(interaction, game, number, "mods", "")
 
+# link to data spreadsheet
+@client.tree.command(name="spreadsheet",description="Get a link to the data spreadsheet", guild=GUILD_ID)
+async def music(interaction: discord.Interaction):
+    await interaction.response.send_message(content='Check out the UFO 50 Data Spreadsheet by Phil here:\n<https://docs.google.com/spreadsheets/d/1w4lU9UpBfMbH7z95RiBF1rsyQv5YFhRsDA2AD7ZGb4A/edit?gid=722957170#gid=722957170>')
+
+# link to lore docs
+@client.tree.command(name="loredoc",description="Get a link to the lore documents", guild=GUILD_ID)
+async def music(interaction: discord.Interaction):
+    await interaction.response.send_message(content='Check out UFO 50 lore documents here:\nWrite-Up Doc: <https://docs.google.com/document/d/1yuVnnJDmKKGrlTIGVn1Zykp9Tpn4rthGFei1gztRAN4>\nRecurring Themes / Jingles: <https://docs.google.com/presentation/d/1kezGkQShVDwqH5fOEFxS6aC0PBZ0HmBB5mmo6H85R0M>')
+
+# link to resource pack
+@client.tree.command(name="resourcepack",description="Get a link to the resource pack", guild=GUILD_ID)
+async def music(interaction: discord.Interaction):
+    await interaction.response.send_message(content='Check out the UFO 50 Resource Pack here:\nhttps://discord.com/channels/525973026429206530/1297045222445944872/1341267216716529725')
+
+# link to quibble chart
+@client.tree.command(name="quibblechart",description="Get a link to the Quibble Race Speed Chart", guild=GUILD_ID)
+async def music(interaction: discord.Interaction):
+    await interaction.response.send_message(content='Check out the Quibble Race Speed Chart by The2ndBrick here:\nhttps://discord.com/channels/525973026429206530/1251507008427921559/1405303783088717914')
+
 # random command
 @client.tree.command(name="random",description="Get a random UFO 50 game suggestion", guild=GUILD_ID)
 async def rnd(interaction: discord.Interaction):
