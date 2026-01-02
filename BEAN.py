@@ -612,7 +612,7 @@ async def music(interaction: discord.Interaction):
 # link to lore docs
 @client.tree.command(name="loredoc",description="Get a link to the lore documents", guild=GUILD_ID)
 async def music(interaction: discord.Interaction):
-    await interaction.response.send_message(content='Check out UFO 50 lore documents here:\n\n**Write-Up Doc: **<https://docs.google.com/document/d/1yuVnnJDmKKGrlTIGVn1Zykp9Tpn4rthGFei1gztRAN4>\n\n**Game Lore Sheet: **<https://docs.google.com/spreadsheets/d/1JqOjkGkXjoRvE_uE-nc4bTfFOzcudvKP3WDanGdaio0/edit?gid=2032987708#gid=2032987708>\n\n**Recurring Themes / Jingles: **<https://tinyurl.com/ufomoti>\n\n**Mapping Music to Mias: **<https://tinyurl.com/musicmias>')
+    await interaction.response.send_message(content='Check out UFO 50 lore documents here:\n\n**Write-Up Doc: **<https://docs.google.com/document/d/1yuVnnJDmKKGrlTIGVn1Zykp9Tpn4rthGFei1gztRAN4>\n\n**Game Lore Sheet: **<https://docs.google.com/spreadsheets/d/1JqOjkGkXjoRvE_uE-nc4bTfFOzcudvKP3WDanGdaio0/edit?gid=2032987708#gid=2032987708>\n\n**Recurring Themes / Jingles: **<https://tinyurl.com/ufomotif>\n\n**Mapping Music to Mias: **<https://tinyurl.com/musicmias>')
 
 # link to resource pack
 @client.tree.command(name="resourcepack",description="Get a link to the resource pack", guild=GUILD_ID)
