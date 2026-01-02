@@ -278,11 +278,12 @@ class Client(commands.Bot):
         if message.author == self.user or message.author.bot:
             return
         msg_ask = message.content.lower()
-        msg_ask = re.sub(r'[^a-z0-9? ]', ' ', msg_ask)
-        if ("bean " in msg_ask and msg_ask.endswith('?')) or msg_ask.endswith('bean?'):
-            if re.sub(r'[^a-z]', '', msg_ask) != 'bean':
-                await message.reply(get_answer())
-                return
+        if msg_ask.endswith('?'):
+            msg_ask = re.sub(r'[^a-z0-9 ]', '', msg_ask)
+            if ' bean ' in msg_ask or msg_ask.startswith('bean ') or msg_ask.endswith(' bean'):
+                if re.sub(r'[^a-z]', '', msg_ask) != 'bean':
+                    await message.reply(get_answer())
+                    return
         msg = message.content.lower().replace(',','').replace('!','')
         if "thanks bean" in msg or "thank you bean" in msg:
             if urandom(4) == 3:
