@@ -612,7 +612,7 @@ async def music(interaction: discord.Interaction):
 # link to lore docs
 @client.tree.command(name="loredoc",description="Get a link to the lore documents", guild=GUILD_ID)
 async def music(interaction: discord.Interaction):
-    await interaction.response.send_message(content='Check out UFO 50 lore documents here:\nWrite-Up Doc: <https://docs.google.com/document/d/1yuVnnJDmKKGrlTIGVn1Zykp9Tpn4rthGFei1gztRAN4>\nRecurring Themes / Jingles: <https://docs.google.com/presentation/d/1kezGkQShVDwqH5fOEFxS6aC0PBZ0HmBB5mmo6H85R0M>')
+    await interaction.response.send_message(content='Check out UFO 50 lore documents here:\n\n**Write-Up Doc: **<https://docs.google.com/document/d/1yuVnnJDmKKGrlTIGVn1Zykp9Tpn4rthGFei1gztRAN4>\n\n**Recurring Themes / Jingles: **<https://docs.google.com/presentation/d/1kezGkQShVDwqH5fOEFxS6aC0PBZ0HmBB5mmo6H85R0M>')
 
 # link to resource pack
 @client.tree.command(name="resourcepack",description="Get a link to the resource pack", guild=GUILD_ID)
