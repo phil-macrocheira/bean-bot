@@ -309,7 +309,6 @@ class Client(commands.Bot):
         # save reader
         file_extension = message.attachments[0].filename.split(".")[-1].lower()
         if file_extension == 'ufo':
-            print(f"UFO File attachment detected from {message.author.name} ({message.author.id})")
             try:
                 file_content = await message.attachments[0].read()
                 file_content = base64.b64decode(file_content).decode('utf-8')
@@ -323,12 +322,16 @@ class Client(commands.Bot):
                     target = [y for y in d if x == int(y["game_id"])]
                     target = target[0]
                     if f"game0_gameWin{x}" in file_content:
-                        if file_content[f"game0_gameWin{x}"] == 1.0:
+                        gameWin = file_content[f"game0_gameWin{x}"]
+
+                        if gameWin == 1.0 or gameWin == '1.0':
                             totalGold.append(int(target["num"]))
-                        elif file_content[f"game0_gameWin{x}"] == 2.0:
+                        elif gameWin == 2.0 or gameWin == '2.0':
                             totalCherry.append(int(target["num"]))
                     if f"game0_gardenWin{x}" in file_content:
-                        if file_content[f"game0_gardenWin{x}"] == 1.0:
+                        gardenWin = file_content[f"game0_gardenWin{x}"]
+
+                        if gardenWin == 1.0 or gardenWin == '1.0':
                             totalGift.append(int(target["num"]))
                 totalGold.sort()
                 totalCherry.sort()
