@@ -313,50 +313,69 @@ class Client(commands.Bot):
                 file_content = await message.attachments[0].read()
                 file_content = base64.b64decode(file_content).decode('utf-8')
                 file_content = json.loads(file_content)
+                totalDarkCherry = []
                 totalCherry = []
                 totalGift = []
                 totalGold = []
+                darkCherryMsg = ""
+                noDarkCherryMsg = ""
                 cherryMsg = ""
                 goldMsg = ""
+
                 for x in range(1,51):
                     target = [y for y in d if x == int(y["game_id"])]
                     target = target[0]
                     if f"game0_gameWin{x}" in file_content:
                         gameWin = file_content[f"game0_gameWin{x}"]
-
                         if gameWin == 1.0 or gameWin == '1.0':
                             totalGold.append(int(target["num"]))
                         elif gameWin == 2.0 or gameWin == '2.0':
                             totalCherry.append(int(target["num"]))
+
                     if f"game0_gardenWin{x}" in file_content:
                         gardenWin = file_content[f"game0_gardenWin{x}"]
-
                         if gardenWin == 1.0 or gardenWin == '1.0':
                             totalGift.append(int(target["num"]))
+
+                    if f"game0_gameDarkWin{x}" in file_content:
+                        darkWin = file_content[f"game0_gameDarkWin{x}"]
+                        if darkWin == 10.0 or darkWin == '10.0':
+                            totalDarkCherry.append(int(target["num"]))
+
                 totalGold.sort()
                 totalCherry.sort()
+                totalDarkCherry.sort()
+
+                if len(totalDarkCherry > 0)
+                    for x in totalDarkCherry:
+                        target = [y for y in d if x == int(y["num"])]
+                        target = target[0]
+                        darkCherryMsg += target["emoji"]
+
                 if len(totalCherry) > 0:
                     for x in totalCherry:
                         target = [y for y in d if x == int(y["num"])]
                         target = target[0]
                         cherryMsg += target["emoji"]
-                else:
-                    cherryMsg += "*Nothing to show here*"
+
                 if len(totalGold) > 0:
                     for x in totalGold:
                         target = [y for y in d if x == int(y["num"])]
                         target = target[0]
                         goldMsg += target["emoji"]
-                else:
-                    if len(totalCherry) > 0:
-                        goldMsg += ""
-                    else:
-                        goldMsg += "*Nothing to show here*"
+
+                if len(darkCherryMsg) > 0:
+                    darkCherryMsg = f"`Dark Cherries:` **{len(totalDarkCherry)}**" + '\n' + darkCherryMsg + '\n'
+                    noDarkCherryMsg = f" ({len(totalCherry)-len(totalDarkCherry)} non-dark-cherried)"
+
                 if len(cherryMsg) > 0:
-                    cherryMsg = "\n" + cherryMsg
+                    cherryMsg = '\n' + cherryMsg
+
                 if len(goldMsg) > 0:
-                    goldMsg = "\n" + goldMsg
-                await message.reply(f"`Cherries:` **{len(totalCherry)}**{cherryMsg}\n`Golds:` **{len(totalGold)+len(totalCherry)}** ({len(totalGold)} non-cherried){goldMsg}\n`Gifts:` **{len(totalGift)}**")
+                    goldMsg = '\n' + goldMsg
+
+                await message.reply(f"{darkCherryMsg}`Cherries:` **{len(totalCherry)}**{noDarkCherryMsg}{cherryMsg}\n`Golds:` **{len(totalGold)+len(totalCherry)}** ({len(totalGold)} non-cherried){goldMsg}\n`Gifts:` **{len(totalGift)}**")
+            
             except ValueError as e:
                 await message.reply(content=f"I was not able to parse the save file data.", ephemeral=True)
 
