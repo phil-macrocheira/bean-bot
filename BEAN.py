@@ -327,19 +327,19 @@ class Client(commands.Bot):
                     target = target[0]
                     if f"game0_gameWin{x}" in file_content:
                         gameWin = file_content[f"game0_gameWin{x}"]
-                        if gameWin == 1.0 or gameWin == '1.0':
+                        if gameWin == 1.0 or gameWin == '1.0' or gameWin == 1 or gameWin == '1':
                             totalGold.append(int(target["num"]))
-                        elif gameWin == 2.0 or gameWin == '2.0':
+                        elif gameWin == 2.0 or gameWin == '2.0' or gameWin == 2 or gameWin == '2':
                             totalCherry.append(int(target["num"]))
 
                     if f"game0_gardenWin{x}" in file_content:
                         gardenWin = file_content[f"game0_gardenWin{x}"]
-                        if gardenWin == 1.0 or gardenWin == '1.0':
+                        if gardenWin == 1.0 or gardenWin == '1.0' or gardenWin == 1 or gardenWin == '1':
                             totalGift.append(int(target["num"]))
 
                     if f"game0_gameDarkWin{x}" in file_content:
                         darkWin = file_content[f"game0_gameDarkWin{x}"]
-                        if darkWin == 10.0 or darkWin == '10.0':
+                        if darkWin == 10.0 or darkWin == '10.0' or darkWin == 10 or darkWin == '10':
                             totalDarkCherry.append(int(target["num"]))
 
                 totalGold.sort()
@@ -348,20 +348,20 @@ class Client(commands.Bot):
 
                 if len(totalDarkCherry) > 0:
                     for x in totalDarkCherry:
-                        target = [y for y in d if x == int(y["num"])]
-                        target = target[0]
+                        target = [y for y in d if x == int(y["num"])][0]
                         darkCherryMsg += target["emoji"]
 
                 if len(totalCherry) > 0:
+                    dark_set = set(totalDarkCherry)
                     for x in totalCherry:
-                        target = [y for y in d if x == int(y["num"])]
-                        target = target[0]
+                        if x in dark_set:
+                            continue
+                        target = [y for y in d if x == int(y["num"])][0]
                         cherryMsg += target["emoji"]
 
                 if len(totalGold) > 0:
                     for x in totalGold:
-                        target = [y for y in d if x == int(y["num"])]
-                        target = target[0]
+                        target = [y for y in d if x == int(y["num"])][0]
                         goldMsg += target["emoji"]
 
                 if len(darkCherryMsg) > 0:
