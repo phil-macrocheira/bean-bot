@@ -346,7 +346,7 @@ class Client(commands.Bot):
                 totalCherry.sort()
                 totalDarkCherry.sort()
 
-                if len(totalDarkCherry > 0):
+                if len(totalDarkCherry) > 0:
                     for x in totalDarkCherry:
                         target = [y for y in d if x == int(y["num"])]
                         target = target[0]
