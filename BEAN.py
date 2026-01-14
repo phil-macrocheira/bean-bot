@@ -433,6 +433,9 @@ def get_world_records(target, players):
             other_var_id = var["id"]
             other_id, other_data = list(var["values"]["values"].items())[0]
             other_var_name = f" **({other_data["label"]})**"
+            # Pilot Quest is backwards??
+            if game == 'Pilot Quest':
+                other_id, other_data = list(var["values"]["values"].items())[1]
         # Item Restrictions: Mini & Max
         elif var_name == 'Item Restrictions':
             other_var_id2 = var["id"]
