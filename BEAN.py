@@ -19,6 +19,12 @@ game_list = []
 d = []
 counter = 0
 file_content = ""
+
+ban_list = [
+    1233068337555177585,
+    749386332752707665
+]
+
 suggest = [
     "You should play <:bingo:1406508535579279451> **UFO 50 Bingo**.",
     "You should play a **UFO 50 Mod**.",
@@ -295,9 +301,8 @@ class Client(commands.Bot):
             user_name = message.author.nick or message.author.display_name or message.author.name
             user_name = filter_name(user_name)
 
-            # Morzis check
-            if message.author.id == 1233068337555177585 or message.author.id == 749386332752707665:
-                user_name = 'Morzis'
+            if message.author.id in ban_list:
+                user_name = ''
 
             await message.reply(f"THANKS {user_name.upper()}")
             return
@@ -664,9 +669,8 @@ async def rnd(interaction: discord.Interaction):
         response = f'You should play {game["emoji"]} **{game["name"]}**.'
     await interaction.response.send_message(response)
 
-# randomforme command
-@client.tree.command(name="randomforme",description="Get a personalized random UFO 50 game suggestion for the day", guild=GUILD_ID)
-async def rndforme(interaction: discord.Interaction):
+# randomdaily / randomforme command
+async def randomdaily_handler(interaction: discord.Interaction):
     user_name = interaction.user.nick or interaction.user.display_name or interaction.user.name
     user_name = filter_name(user_name)
     PST = datetime.timezone(datetime.timedelta(hours=-7))
@@ -674,14 +678,21 @@ async def rndforme(interaction: discord.Interaction):
     seed = f"{interaction.user.name}-{today.toordinal()}"
     random.seed(seed)
     num = random.randint(1, 50)
+    offset = urandom(50)
+    num = num + offset
+    if num > 50:
+        num -= 50
     game = d[num-1]
     response = f'{user_name} should play {game["emoji"]} **{game["name"]}** today.'
-
-    # Morzis check
-    if interaction.user.id == 1233068337555177585 or interaction.user.id == 749386332752707665:
-        response = 'Morzis should play 🐆 **Cheetahmen** today.'
-
     await interaction.response.send_message(response)
+
+@client.tree.command(name="randomdaily",description="Get a personalized random UFO 50 game suggestion for the day", guild=GUILD_ID)
+async def randomdaily(interaction: discord.Interaction):
+    await randomdaily_handler(interaction)
+
+@client.tree.command(name="randomforme",description="Get a personalized random UFO 50 game suggestion for the day", guild=GUILD_ID)
+async def randomforme(interaction: discord.Interaction):
+    await randomforme_handler(interaction)
 
 # gift command
 @client.tree.command(name="gift",description="Check gift requirement for a game", guild=GUILD_ID)
