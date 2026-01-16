@@ -692,7 +692,7 @@ async def randomdaily(interaction: discord.Interaction):
 
 @client.tree.command(name="randomforme",description="Get a personalized random UFO 50 game suggestion for the day", guild=GUILD_ID)
 async def randomforme(interaction: discord.Interaction):
-    await randomforme_handler(interaction)
+    await randomdaily_handler(interaction)
 
 # gift command
 @client.tree.command(name="gift",description="Check gift requirement for a game", guild=GUILD_ID)
