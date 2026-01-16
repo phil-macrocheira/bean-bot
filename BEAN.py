@@ -22,7 +22,8 @@ file_content = ""
 
 ban_list = [
     1233068337555177585,
-    749386332752707665
+    749386332752707665,
+    1342708548425220208
 ]
 
 suggest = [
@@ -221,6 +222,12 @@ async def get_scenario_result(interaction, seed):
     deck_names = [character_types[index] for index in deck]
     return await interaction.response.send_message(f"**SEED {str(seed).zfill(6)}**\n\n{" ".join(deck_names)}")
 
+def get_random_game():
+    game = random.choice(d)
+    while game["name"] == "The Terminal" or game["name"] == "MT":
+        game = random.choice(d)
+    return game
+
 def get_answer():
     num = urandom(1000)
 
@@ -247,9 +254,7 @@ def get_answer():
     elif num <= 990:
         response = 'HA HA. THAT\'S A GOOD ONE.' # 1% chance
     elif num <= 999:
-        game = random.choice(d)
-        while game["name"] == "The Terminal" or game["name"] == "MT":
-            game = random.choice(d)
+        game = get_random_game()
         response = f'THE SOLUTION TO YOUR TROUBLES LIES IN {game["emoji"]} **{game["name"]}**.' # 0.9% chance
     elif num == 1000:
         response = 'ASK ME AGAIN IN <:barbuta:1292612809682583564> **BARBUTA**' # 0.1% chance
@@ -663,9 +668,7 @@ async def rnd(interaction: discord.Interaction):
     if urandom(50) == 50:
         response = random.choice(suggest)
     else:
-        game = random.choice(d)
-        while game["name"] == "The Terminal" or game["name"] == "MT":
-            game = random.choice(d)
+        game = get_random_game()
         response = f'You should play {game["emoji"]} **{game["name"]}**.'
     await interaction.response.send_message(response)
 
@@ -678,11 +681,11 @@ async def randomdaily_handler(interaction: discord.Interaction):
     seed = f"{interaction.user.name}-{today.toordinal()}"
     random.seed(seed)
     num = random.randint(1, 50)
-    offset = urandom(50)
-    num = num + offset
-    if num > 50:
-        num -= 50
     game = d[num-1]
+
+    if interaction.user.id in ban_list:
+        game = get_random_game()
+
     response = f'{user_name} should play {game["emoji"]} **{game["name"]}** today.'
     await interaction.response.send_message(response)
 
