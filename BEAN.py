@@ -223,9 +223,8 @@ async def get_scenario_result(interaction, seed):
     return await interaction.response.send_message(f"**SEED {str(seed).zfill(6)}**\n\n{" ".join(deck_names)}")
 
 def get_random_game():
-    game = random.choice(d)
-    while game["name"] == "The Terminal" or game["name"] == "MT":
-        game = random.choice(d)
+    num = urandom(50)
+    game = d[num-1]
     return game
 
 def get_answer():
