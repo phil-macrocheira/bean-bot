@@ -698,25 +698,21 @@ async def randomforme(interaction: discord.Interaction):
 # gift command
 @client.tree.command(name="gift",description="Check gift requirement for a game", guild=GUILD_ID)
 async def gift(interaction: discord.Interaction, game: str|None, number: int|None):
-    await interaction.response.defer()
     await get_game_value(interaction, game, number, "gift", "<:GiftGet:1292627978601365636>")
 
 # gold command
 @client.tree.command(name="gold",description="Check gold requirement for a game", guild=GUILD_ID)
 async def gold(interaction: discord.Interaction, game: str|None, number: int|None):
-    await interaction.response.defer()
     await get_game_value(interaction, game, number, "gold", "<:TrophyGet:1291281233254289460>")
 
 # cherry command
 @client.tree.command(name="cherry",description="Check cherry requirement for a game", guild=GUILD_ID)
 async def cherry(interaction: discord.Interaction, game: str|None, number: int|None):
-    await interaction.response.defer()
     await get_game_value(interaction, game, number, "cherry", "<:CherryGet:1291281262870528073>")
 
 # terminal codes command
 @client.tree.command(name="codes",description="Check the terminal codes for a game", guild=GUILD_ID)
 async def codes(interaction: discord.Interaction, game: str|None, number: int|None):
-    await interaction.response.defer()
     await get_game_value(interaction, game, number, "codes", "<:InfoBuddyOK:1291972595952123984>")
 
 # party house seed command
@@ -727,11 +723,10 @@ async def getphseed(interaction: discord.Interaction, seed: int|None):
 # world record command
 @client.tree.command(name="wr",description="Check the speedrun world records for a game", guild=GUILD_ID)
 async def worldrecord(interaction: discord.Interaction, game: str|None, number: int|None, players: int = 1):
+    await interaction.response.defer()
     try:
-        await interaction.response.defer()
         await get_game_value(interaction, game, number, "world record", "", players)
     except Exception as e:
-        await interaction.response.defer(ephemeral=True)
         await interaction.followup.send("An error occurred while fetching world record data.", ephemeral=True)
         raise
 
