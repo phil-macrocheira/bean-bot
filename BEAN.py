@@ -727,13 +727,11 @@ async def getphseed(interaction: discord.Interaction, seed: int|None):
 # world record command
 @client.tree.command(name="wr",description="Check the speedrun world records for a game", guild=GUILD_ID)
 async def worldrecord(interaction: discord.Interaction, game: str|None, number: int|None, players: int = 1):
+    await interaction.response.defer()
     try:
         await get_game_value(interaction, game, number, "world record", "", players)
     except Exception as e:
-        if interaction.response.is_done():
-            await interaction.followup.send("An error occurred while fetching world record data.", ephemeral=True)
-        else:
-            await interaction.response.send_message("An error occurred while fetching world record data.", ephemeral=True)
+        await interaction.followup.send("An error occurred while fetching world record data.", ephemeral=True)
         raise
 
 # 50club command
