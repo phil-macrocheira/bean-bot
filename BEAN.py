@@ -638,27 +638,27 @@ async def moddinginfo(interaction: discord.Interaction):
 # link to a game's mods
 @client.tree.command(name="mods",description="Get a link to a UFO 50 game's mods", guild=GUILD_ID)
 async def mods(interaction: discord.Interaction, game: str|None, number: int|None):
-    await interaction.response.defer()
+    await interaction.response.defer(ephemeral=True)
     await get_game_value(interaction, game, number, "mods", "")
 
 # link to data spreadsheet
 @client.tree.command(name="spreadsheet",description="Get a link to the data spreadsheet", guild=GUILD_ID)
-async def music(interaction: discord.Interaction):
+async def spreadsheet(interaction: discord.Interaction):
     await interaction.response.send_message(content='Check out the UFO 50 Data Spreadsheet by Phil here:\n<https://docs.google.com/spreadsheets/d/1w4lU9UpBfMbH7z95RiBF1rsyQv5YFhRsDA2AD7ZGb4A/edit?gid=722957170#gid=722957170>')
 
 # link to lore docs
 @client.tree.command(name="loredoc",description="Get a link to the lore documents", guild=GUILD_ID)
-async def music(interaction: discord.Interaction):
+async def loredoc(interaction: discord.Interaction):
     await interaction.response.send_message(content='Check out UFO 50 lore documents here:\n\n**Write-Up Doc: **<https://docs.google.com/document/d/1yuVnnJDmKKGrlTIGVn1Zykp9Tpn4rthGFei1gztRAN4>\n\n**Game Lore Sheet: **<https://docs.google.com/spreadsheets/d/1JqOjkGkXjoRvE_uE-nc4bTfFOzcudvKP3WDanGdaio0/edit?gid=2032987708#gid=2032987708>\n\n**Recurring Themes / Jingles: **<https://tinyurl.com/ufomotif>\n\n**Mapping Music to Mias: **<https://tinyurl.com/musicmias>')
 
 # link to resource pack
 @client.tree.command(name="resourcepack",description="Get a link to the resource pack", guild=GUILD_ID)
-async def music(interaction: discord.Interaction):
+async def resourcepack(interaction: discord.Interaction):
     await interaction.response.send_message(content='Check out the UFO 50 Resource Pack here:\nhttps://discord.com/channels/525973026429206530/1297045222445944872/1341267216716529725')
 
 # link to quibble chart
 @client.tree.command(name="quibblechart",description="Get a link to the Quibble Race Speed Chart", guild=GUILD_ID)
-async def music(interaction: discord.Interaction):
+async def quibblechart(interaction: discord.Interaction):
     await interaction.response.send_message(content='Check out the Quibble Race Speed Chart by The2ndBrick here:\nhttps://discord.com/channels/525973026429206530/1251507008427921559/1405303783088717914')
 
 # random command
@@ -681,12 +681,11 @@ async def randomdaily_handler(interaction: discord.Interaction):
     random.seed(seed)
     num = random.randint(1, 50)
     game = d[num-1]
-
-    if interaction.user.id in ban_list:
-        game = get_random_game()
-
     response = f'{user_name} should play {game["emoji"]} **{game["name"]}** today.'
-    await interaction.response.send_message(response)
+    if interaction.user.id in ban_list:
+        await interaction.response.defer(ephemeral=True)
+    else:
+        await interaction.response.send_message(response)
 
 @client.tree.command(name="randomdaily",description="Get a personalized random UFO 50 game suggestion for the day", guild=GUILD_ID)
 async def randomdaily(interaction: discord.Interaction):
@@ -699,28 +698,28 @@ async def randomforme(interaction: discord.Interaction):
 # gift command
 @client.tree.command(name="gift",description="Check gift requirement for a game", guild=GUILD_ID)
 async def gift(interaction: discord.Interaction, game: str|None, number: int|None):
-    await interaction.response.defer()
+    await interaction.response.defer(ephemeral=True)
     await get_game_value(interaction, game, number, "gift", "<:GiftGet:1292627978601365636>")
 
 # gold command
 @client.tree.command(name="gold",description="Check gold requirement for a game", guild=GUILD_ID)
 async def gold(interaction: discord.Interaction, game: str|None, number: int|None):
-    await interaction.response.defer()
+    await interaction.response.defer(ephemeral=True)
     await get_game_value(interaction, game, number, "gold", "<:TrophyGet:1291281233254289460>")
 
 # cherry command
 @client.tree.command(name="cherry",description="Check cherry requirement for a game", guild=GUILD_ID)
 async def cherry(interaction: discord.Interaction, game: str|None, number: int|None):
-    await interaction.response.defer()
+    await interaction.response.defer(ephemeral=True)
     await get_game_value(interaction, game, number, "cherry", "<:CherryGet:1291281262870528073>")
 
 # terminal codes command
 @client.tree.command(name="codes",description="Check the terminal codes for a game", guild=GUILD_ID)
 async def codes(interaction: discord.Interaction, game: str|None, number: int|None):
-    await interaction.response.defer()
+    await interaction.response.defer(ephemeral=True)
     await get_game_value(interaction, game, number, "codes", "<:InfoBuddyOK:1291972595952123984>")
 
-# gift command
+# party house seed command
 @client.tree.command(name="partyhouseseed",description="Check a seed for Party House or get a random one", guild=GUILD_ID)
 async def getphseed(interaction: discord.Interaction, seed: int|None):
     await get_scenario_result(interaction, seed)
@@ -728,7 +727,7 @@ async def getphseed(interaction: discord.Interaction, seed: int|None):
 # world record command
 @client.tree.command(name="wr",description="Check the speedrun world records for a game", guild=GUILD_ID)
 async def worldrecord(interaction: discord.Interaction, game: str|None, number: int|None, players: int = 1):
-    await interaction.response.defer()
+    await interaction.response.defer(ephemeral=True)
     try:
         await get_game_value(interaction, game, number, "world record", "", players)
     except Exception as e:
