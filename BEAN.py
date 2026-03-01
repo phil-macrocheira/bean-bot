@@ -398,7 +398,7 @@ def codes_output(codes):
     if len(codes) == 0:
         return '*No terminal codes available for this game.*'
     return "\n".join(
-        f"**{row[0]}:** {row[1]}"
+        f"**{row[0]}**: {row[1]}"
         for row in codes
     )
 
