@@ -397,7 +397,11 @@ client = Client(command_prefix="/",activity=discord.Game(name="UFO 50"),intents=
 def codes_output(codes):
     if len(codes) == 0:
         return '*No terminal codes available for this game.*'
-    return f"{'\n'.join(': '.join(str(x) for x in row) for row in codes)}"
+    return "\n".join(
+        f"**{line.split(':', 1)[0]}:**{line.split(':', 1)[1]}"
+        if ':' in line else line
+        for line in text.splitlines()
+    )
 
 # get world record data from speedrun.com API
 def get_world_records(target, players):
@@ -538,15 +542,15 @@ def get_world_records(target, players):
 def game_value_output(type, target, emote, players):
     game_name = target['name']
     if type == 'codes':
-        return f"The available {emote} **Terminal Codes** for {target['emoji']} **{game_name}** are...\n{codes_output(target['codes'])}"
+        return f"The available {emote} **Terminal Codes** for {target['emoji']} **{game_name}** are...\n\n{codes_output(target['codes'])}"
     if type == 'mods':
         url_name = game_name.replace(' ','+')
-        return f"Check out mods for {target['emoji']} **{game_name}** here:\n<https://gamebanana.com/search?_sModelName=Mod&_sOrder=best_match&_sSearchString={url_name}&_idGameRow=23000&_csvFields=attribs>"
+        return f"Check out mods for {target['emoji']} **{game_name}** here:\n\n<https://gamebanana.com/search?_sModelName=Mod&_sOrder=best_match&_sSearchString={url_name}&_idGameRow=23000&_csvFields=attribs>"
     if type == 'world record':
         return get_world_records(target, players)
     if type == 'history':
-        return f"The {emote} **History** for {target['emoji']} **{game_name}** is...\n{target[type]}"
-    return f"The {emote} **{type.capitalize()}** requirement for {target['emoji']} **{game_name}** is...\n{target[type]}"
+        return f"The {emote} **History** for {target['emoji']} **{game_name}** is...\n\n**{target[type]}**"
+    return f"The {emote} **{type.capitalize()}** requirement for {target['emoji']} **{game_name}** is...\n\n**{target[type]}**"
 
 # shared function code used for grabbing history, gift, gold, and cherry values
 async def get_game_value(interaction, game, number, type, emote, players=1):
