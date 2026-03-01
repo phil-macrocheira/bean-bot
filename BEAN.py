@@ -398,9 +398,8 @@ def codes_output(codes):
     if len(codes) == 0:
         return '*No terminal codes available for this game.*'
     return "\n".join(
-        f"**{line.split(':', 1)[0]}:**{line.split(':', 1)[1]}"
-        if ':' in line else line
-        for line in text.splitlines()
+        f"**{row[0]}:** {row[1]}"
+        for row in codes
     )
 
 # get world record data from speedrun.com API
