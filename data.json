@@ -7,6 +7,7 @@
         "alias": ["barbuta"],
         "codes":[],
         "sr_category": "vdo7e8v2",
+        "history": "THE GAME THAT STARTED IT ALL! DEVELOPED SECRETLY ON COMPANY TIME, IT ALMOST GOT THORSON PETTER FIRED.",
         "gift": "VISIT AT LEAST 25 ROOMS",
         "gold": "LIBERATE THE CASTLE",
         "cherry": "WIN WITH MAX EGGS"
@@ -26,6 +27,7 @@
             ["ACES-RULE","Purchased modules do not get replaced with new ones (Two player versus)"]
         ],
         "sr_category": "wkpzw1wd",
+        "history": "THE FIRST GAME BY LX SYSTEMS AFTER CO-FOUNDERS CHUN & SMOLSKI DECIDED TO MOVE AWAY FROM BUSINESS SOFTWARE.",
         "gift": "COMPLETE YOUR FIRST JOB",
         "gold": "COMPLETE 3 JOBS IN A ROW",
         "cherry": "COMPLETE 6 JOBS IN A ROW"
@@ -40,6 +42,7 @@
             ["HARD-LOOP","Begins the game at the second loop"]
         ],
         "sr_category": "mkem1962",
+        "history": "RIDING THE WAVE OF 'NINJAMANIA', NINPEK WAS THE FIRST IMPLEMENTATION OF SCROLLING ON THE LX.",
         "gift": "EAT 3 SANDWICHES",
         "gold": "BEAT THE GAME",
         "cherry": "BEAT THE SECOND LOOP"
@@ -55,6 +58,7 @@
             ["GOGO-GOGH","Play without a time limit or enemies"]
         ],
         "sr_category": "5dwz34ld",
+        "history": "CONCEIVED BY HARDWARE SPECIALIST GERRY SMOLSKI, PAINT CHASE SOLIDIFIED HIS NEW ROLE AS A GAME DESIGNER.",
         "gift": "PASS THE FIRST 12 COURSES",
         "gold": "PASS ALL 25 COURSES AND DEFEAT THE PINK RACER",
         "cherry": "WIN WITH A SCORE OF AT LEAST 500"
@@ -69,6 +73,7 @@
             ["OVER-GROW","Potions do not appear"]
         ],
         "sr_category": "wk6yqnxd",
+        "history": "AN EARLY GAME TO TAKE ADVANTAGE OF THE LX-II, WHICH ALLOWED FOR MORE COLORS PER SPRITE.",
         "gift": "SAVE AT LEAST 10 OPPIES AT ONCE",
         "gold": "SAVE 200 OPPIES",
         "cherry": "WIN WITH A SCORE OF AT LEAST 20000"
@@ -87,6 +92,7 @@
             ["LEAF-HEAD","Player always spawns a plantvine on death from hazards like spikes, drowning, or enemies"]
         ],
         "sr_category": "n2yzlo8k",
+        "history": "THE FIRST GAME IN THE MORTOL SERIES. CONCEIVED BY BENEDIKT CHUN, BUT DIRECTED BY GERRY SMOLSKI.",
         "gift": "BEAT LEVEL 2-C",
         "gold": "BEAT ALL 10 LEVELS.",
         "cherry": "FINISH WITH AT LEAST 75 LIVES."
@@ -101,6 +107,7 @@
             ["ALFA-BEST","Start with all shop upgrades: Recovery 2, Power 2, Lightfoot 2, Magnet, Lightning, and Double Jump"]
         ],
         "sr_category": "7kjw03xd",
+        "history": "THE SPACE PIRATE ALPHA MAKES HER DEBUT IN THIS GAME, NOTABLE FOR ITS USE OF RANDOM LEVEL GENERATION.",
         "gift": "COLLECT 2 KEYS",
         "gold": "ESCAPE VELGRESS",
         "cherry": "UNLOCK FINAL LEVEL AND DEFEAT CHARKAS"
@@ -116,6 +123,7 @@
             ["LESS-HARM","Always take exactly 0.5 damage from enemies, projectiles, and explosions"]
         ],
         "sr_category": "xk97zvyd",
+        "history": "THOUGH THEY REMAIN UNNAMED, PILOT AND THE CAMPANELLA MAKE THEIR FIRST APPEARANCE IN THIS GAME.",
         "gift": "FIND 1 MAP PART(S)",
         "gold": "FIND ALL 3 MAP PARTS AND ESCAPE ZOLDATH",
         "cherry": "WIN IN 20 MINUTES OR LESS"
@@ -130,6 +138,7 @@
             ["SLOW-DOWN","Play a \"Test Mode\" where there is no timer and turns are ended either when the move limit is hit or the player presses Button 1 (B). Begin by selecting Moves Per Turn from 1 to 9 or Unlimited as well as Challenge type, which can be Ranked mode from 0 to 300 or Survival."]
         ],
         "sr_category": "z27jz1g2",
+        "history": "THE RELEASE WAS DELAYED BECAUSE OUR TEAM SPENT TOO LONG CHALLENGING EACH OTHER TO BATTLE!",
         "gift": "BEAT THE FIRST 12 LEVELS IN THE CAMPAIGN",
         "gold": "BEAT ALL 24 LEVELS IN THE CAMPAIGN",
         "cherry": "BEAT THE CAMPAIGN AND REACH RANK 100 IN RANKED MODE"
@@ -147,6 +156,7 @@
             ["EVIL-EYES","Tiles that will be detonated remain colored orange"]
         ],
         "sr_category": "zdn9g8q2",
+        "history": "MANY RETAILERS REFUSED TO CARRY THE GAME DUE TO ITS DEMONIC BOX ART.",
         "gift": "SURVIVE FOR 5 ROUNDS",
         "gold": "SURVIVE 10 ROUNDS",
         "cherry": "SCORE 30000 POINTS"
@@ -162,6 +172,7 @@
             ["F00T-B4LL","Two player versus with 50 points to win"]
         ],
         "sr_category": "q256zm8k",
+        "history": "A VERSUS MODE WAS STARTED BUT NOT FINISHED BEFORE THE GAME'S RELEASE DATE.",
         "gift": "BEAT TRACK WORLD",
         "gold": "BEAT ALL 4 WORLDS",
         "cherry": "WIN WITH 150000 POINTS"
@@ -176,6 +187,7 @@
             ["BLUE-BEAK","Play any scenario"]
         ],
         "sr_category": "jdr4ylx2",
+        "history": "ORIGINALLY THE COMBAT WAS TURN BASED, BUT IT WAS DEEMED TOO SLOW AND REPLACED WITH AUTOMATIC FIGHTS.",
         "gift": "MAX OUT BLESSINGS FROM ONE ANCESTOR.",
         "gold": "BEAT HATCHLING, FLEDGLING, AND ADULT",
         "cherry": "BEAT ALL 5 TRIALS"
@@ -188,6 +200,7 @@
         "alias": ["mooncat", "moon cat"],
         "codes":[],
         "sr_category": "jdzzxwvd",
+        "history": "CONCEIVED AS A SPIRITUAL SEQUEL TO BARBUTA, THORSON PETTER SPENT NEARLY TWO YEARS PERFECTING IT.",
         "gift": "FIND A WARP",
         "gold": "FIND THE EGG",
         "cherry": "FIND ALL 3 EGGS"
@@ -202,6 +215,7 @@
             ["ZATO-1CHI","Ball is invisible"]
         ],
         "sr_category": "02qz6vp2",
+        "history": "TO PROMOTE THE GAME'S RELEASE, A BIG TOURNAMENT WAS STAGED AT A LOCAL BAR.",
         "gift": "DEFEAT 3 IN THE TOURNAMENT",
         "gold": "WIN THE TOURNAMENT",
         "cherry": "WIN WITH NO CONTINUES"
@@ -216,6 +230,7 @@
             ["WORM-1234","All overworld gates unlocked"]
         ],
         "sr_category": "8244z0g2",
+        "history": "WE HELD A LEVEL DESIGN CONTEST IN OUR BI-MONTHLY NEWSLETTER, THE LX STAR.",
         "gift": "COMPLETE A CUSTOM LEVEL",
         "gold": "BEAT LEVEL 50",
         "cherry": "EARN 50 STARS"
@@ -230,6 +245,7 @@
             ["FORM-ELDA","All levels unlocked"]
         ],
         "sr_category": "wdmjnv5d",
+        "history": "BASED ON AN UNPUBLISHED PICTURE BOOK WRITTEN BY SMOLSKI'S MOTHER.",
         "gift": "EARN 30% COMPLETION",
         "gold": "REACH THE SKY TEMPLE ON THE FAR SIDE OF THE ISLAND",
         "cherry": "EARN 100% COMPLETION"
@@ -244,6 +260,7 @@
             ["BEAN-DRIP","Play through all 5 bonus stages. The crystals are worth 100 points instead of 200."]
         ],
         "sr_category": "vdo7rxy2",
+        "history": "A SUPRISE SUCCESS THAT INSPIRED OUR REBRAND TO UFO SOFT. IT WAS LATER PACKAGED WITH THE LX-III.",
         "gift": "AMASS 15 SPARE SHIPS",
         "gold": "BEAT ALL 50 STAGES",
         "cherry": "WIN WITH ALL 40 COFFEES"
@@ -258,6 +275,7 @@
             ["FORE-EVER","Stroke count never decreases"]
         ],
         "sr_category": "wkpz80gd",
+        "history": "DIRECTED BY BENEDIKT CHUN, IT WAS THE BIGGEST GAME WE HAD EVER ATTEMPTED AT THE TIME OF ITS RELEASE.",
         "gift": "OBTAIN THE BLOCK BUSTER",
         "gold": "BEAT THE GAME",
         "cherry": "WIN WITH 100% COMPLETION"
@@ -272,6 +290,7 @@
             ["KIWI-AURA","New powerups spawn immediately after the current one is collected instead of having a delay between 3.5 and 6.5 seconds"]
         ],
         "sr_category": "7dgpw07d",
+        "history": "BUILT IN JUST TWO WEEKS, THIS 2P OFFSHOOT OF THE CAMPANELLA SERIES WAS ALSO SOLD WITH THE LX-III.",
         "gift": "WIN FIRST PLACE IN AT LEAST 1 RACE",
         "gold": "WIN FIRST PLACE IN THE TOURNAMENT",
         "cherry": "WIN FIRST PLACE IN ALL 8 RACES"
@@ -286,6 +305,7 @@
             ["SLIM-TANK","No overworld hub. Select level with up/down when level name is displayed. Play as a slime."]
         ],
         "sr_category": "mkemgl82",
+        "history": "BORN OUT OF A DREAM THORSON PETTER HAD WHILE NAPPING ON THE COMPANY'S ORANGE COUCH.",
         "gift": "DEFEAT RENEGADE",
         "gold": "DEFEAT BIG TANK",
         "cherry": "FIND ALL COFFEES AND CLEAR SPECIAL STAGE"
@@ -300,6 +320,7 @@
             ["BLUB-BLUB","Start with 30 shells"]
         ],
         "sr_category": "5dwzm6ed",
+        "history": "THE GAME'S PROTAGONIST WAS BASED ON A STUFFED WALRUS WON AT FRANKIE'S FAMILY FUN CENTER.",
         "gift": "COMPLETE 50% OF THE JOURNEY",
         "gold": "UNCOVER THE SECRET AT THE END OF THE DREAM",
         "cherry": "REACH THE END WITH 50 SHELLS"
@@ -315,6 +336,7 @@
             ["CALM-SEAS","Bosses never attack the player"]
         ],
         "sr_category": "wk6yxeqd",
+        "history": "THE FIRST TITLE RELEASED UNDER THE NEW UFO SOFT BRAND.",
         "gift": "DEFEAT LAMIA",
         "gold": "SOLVE THE MYSTERY",
         "cherry": "ACHIEVE 100% COMPLETION"
@@ -330,6 +352,7 @@
             ["GOOF-ZOOM","Inverted controls for turning in reverse"]
         ],
         "sr_category": "n2yzp9zk",
+        "history": "THE DIRECTORIAL DEBUT OF PROGRAMMER CHIFFON BOLA, WHO ONCE HAD A JOB AS A DELIVERY DRIVER.",
         "gift": "COMPLETE 2 DAYS OF DELIVERIES",
         "gold": "SURVIVE A WEEK ON THE JOB",
         "cherry": "MAKE 50+ DELIVERIES IN A WEEK"
@@ -344,6 +367,7 @@
             ["TEST-LENS","\"Practice Mode\" – Play any level"]
         ],
         "sr_category": "7kjwj8nd",
+        "history": "THE CAMERA ABILITY WAS LIFTED FROM ONE OF CHUN'S CANCELED PROJECTS, A SIDE SCROLLER CALLED 'PHOTO MOM.'",
         "gift": "BEAT THE EGG",
         "gold": "BEAT THE GAME",
         "cherry": "DEFEAT THE TRUE BOSS"
@@ -359,6 +383,7 @@
             ["MAKE-GLEE / RSVP-SOON","Create a custom scenario and play with one or two players."]
         ],
         "sr_category": "xk97oe4d",
+        "history": "MANY OF THE GAME'S PARTY-GOERS WERE BASED ON OUR FRIENDS AND FAMILY.",
         "gift": "BEAT 1 SCENARIO",
         "gold": "BEAT ALL 5 SCENARIOS",
         "cherry": "ACHIEVE A STREAK OF 5"
@@ -377,6 +402,7 @@
             ["DUAL-BAGS","Play two player versus with customizable rules: Point Goal (5 - 30), Max Bags (1 - 7), Special Cost (1 - 2), Teammate AI (Get Bags Only or Full Auto), and Teammate Jump (Synchronous or Independent)"]
         ],
         "sr_category": "z27j0402",
+        "history": "BASED ON AN ACTUAL CHILDREN'S GAME PLAYED BY SMOLKSI AND CHUN IN ELEMENTARY SCHOOL.",
         "gift": "WIN 3 MATCHES",
         "gold": "WIN THE TOURNAMENT",
         "cherry": "WIN WITH 6 BLOWOUTS"
@@ -391,6 +417,7 @@
             ["FREE-EGGS","Start with 3 eggs"]
         ],
         "sr_category": "zdn95le2",
+        "history": "THE SECOND OF TWO UNDERWATER GAMES RELEASED IN THE SAME YEAR.",
         "gift": "COLLECT PARASITE HAMMER",
         "gold": "EXPLORE THE DEEPEST DEPTHS",
         "cherry": "FIND ALL 3 EMBLEMS"
@@ -406,6 +433,7 @@
             ["GOOD-SPUR","Start with all powerups and max bullets. In the end credits, \"GOOD-SPUR\" is replaced with \"MR. N. SAVED MY LIFE\""]
         ],
         "sr_category": "q256leyk",
+        "history": "TAKES PLACE IN THE WORLD OF LONE STAR, A SETTING ALSO USED BY THE GAME GRIMSTONE.",
         "gift": "BEAT LEVEL 10",
         "gold": "BEAT ALL 20 LEVELS",
         "cherry": "BEAT THE GAME WITH AT LEAST 40 STARS"
@@ -420,6 +448,7 @@
             ["GRAV-GUNS","Start with all upgrades"]
         ],
         "sr_category": "jdzzge3d",
+        "history": "ALMOST CANCELED DUE TO TECHNICAL AND OTHER DEVELOPMENT CHALLENGES.",
         "gift": "OBTAIN A MOD",
         "gold": "BEAT THE GAME",
         "cherry": "WIN WITH 100% EXPLORATION AND UPGRADES"
@@ -434,6 +463,7 @@
             ["CLUB-PASS","All levels beaten"]
         ],
         "sr_category": "02qz19j2",
+        "history": "ORIGINALLY THE CAVEMEN WERE SUPPOSED TO MOVE AROUND, BUT IT WAS TOO HARD TO DESIGN AND PROGRAM.",
         "gift": "REACH THE SECOND VILLAGE",
         "gold": "CLEAR THE LAST LEVEL",
         "cherry": "CLEAR ALL LEVELS WITHOUT ANY DAMAGE"
@@ -448,6 +478,7 @@
             ["STAR-BALL","Character select only has Pilot and Waldorf"]
         ],
         "sr_category": "8244vlm2",
+        "history": "INSPIRED BY THE PUTTING GREEN AND PINBALL MACHINES AT THE NEW UFO OFFICES.",
         "gift": "GET A HOLE IN ONE",
         "gold": "WIN THE UFO INVITATIONAL",
         "cherry": "WIN WITH A SCORE OF 0 OR LESS"
@@ -462,6 +493,7 @@
             ["BENE-DIKT","2 random character classes are omitted from the game, leaving 3 to choose from"]
         ],
         "sr_category": "9d89mo62",
+        "history": "WITH NO WAY TO SAVE OR GAIN LIVES, THE SEQUEL TO MORTOL HEWS MORE CLOSELY TO CHUN'S DARKER ORIGINAL VISION.",
         "gift": "ACTIVATE A SWITCH",
         "gold": "DESTROY THE DARK HEARTS OF CASTLE NILPIS",
         "cherry": "SACRIFICE LESS THAN 50 LIVES TO WIN"
@@ -478,6 +510,7 @@
             ["GOOD-GIRL","Start with a dog that has 9999 HP"]
         ],
         "sr_category": "xd1p817d",
+        "history": "OUR FIRST GAME TO DEPICT BLOOD.",
         "gift": "SURVIVE 9 WAVES IN THE GYM",
         "gold": "BEAT THE GAME",
         "cherry": "BEAT THE GAME WITH NO CONTINUES"
@@ -493,6 +526,7 @@
             ["FAUX-GONE","Play an alternate version of two player versus. Each round starts with 14 random upgrades and 2 threats instead of a random number of upgrades and 1 threat. Raising the stakes can remove 2 upgrades at random even before reaching maximum threats. The level of each upgrade is not shown."]
         ],
         "sr_category": "zd3e3v8k",
+        "history": "THE SECOND GAME TO STAR THE SPACE PIRATE ALPHA. A THIRD GAME IS ALREADY IN THE WORKS... GET READY!",
         "gift": "WIN AT LEAST 500 IN ONE FIGHT",
         "gold": "SURVIVE 8 ROUNDS IN THE RED ARENA",
         "cherry": "WIN WITH AT LEAST 4500"
@@ -507,6 +541,7 @@
             ["MEGA-BELL","Start with 8 out of 16 specific upgrades, 16 HP instead of 8, and 1600 fuel instead of 800. Start each level with full health."]
         ],
         "sr_category": "9kvz4qod",
+        "history": "THE GAME'S PROTAGONIST WAS SWITCHED FROM PILOT TO ISABELL AT JOY AKEBI'S SUGGESTION.",
         "gift": "OBTAIN THE FRIENDSHIP BRACELET",
         "gold": "ESCAPE WITH PILOT?",
         "cherry": "SAVE THE PLANETOID"
@@ -521,6 +556,7 @@
             ["PAST-RULE","Instead of collecting rings, the objective is to KO the opponent or have more HP than the opponent when time runs out. Each contender has 4 HP. The timer starts at 63 in tournaments and 126 in draft battles."]
         ],
         "sr_category": "rkly79rd",
+        "history": "THE RING SYSTEM WAS ADDED LATE IN DEVELOPMENT TO PREVENT BORING DEFENSIVE PLAY.",
         "gift": "WIN A DRAFT BATTLE (ON DEFAULT RING SETTINGS)",
         "gold": "WIN THE TOURNAMENT (ON DEFAULT RING SETTINGS)",
         "cherry": "WIN WITH 4 DIFFERENT CHARACTERS (ON DEFAULT RING SETTINGS)"
@@ -536,6 +572,7 @@
             ["4RCH-M4GE","Start with 0 STR, 15 WIS, and 32 HP instead of 5 STR, 5 WIS, and 64 HP"]
         ],
         "sr_category": "ndxqoe5k",
+        "history": "THE ORIGINAL RELEASE OF VALBRACE CAME WITH A FULL COLOR HINT BOOK.",
         "gift": "OBTAIN 8 IN ANY STAT",
         "gold": "DEFEAT THE ABYSS LORD AND ESCAPE GNOTHROK KEEP",
         "cherry": "DEFEAT THE ABYSS LORD WITH THE RED STAR SWORD"
@@ -550,6 +587,7 @@
             ["SOUL-LOOP","Death counter does not increase on death"]
         ],
         "sr_category": "w20or882",
+        "history": "A RAKSHASA SEQUEL IS PLANNED IN WHICH THE PLAYER WILL BE ABLE TO REINCARNATE AS VARIOUS ANIMALS.",
         "gift": "CHEAT DEATH 3 TIMES",
         "gold": "BEAT THE GAME",
         "cherry": "BEAT THE GAME WITH A SCORE OF AT LEAST 50000"
@@ -564,6 +602,7 @@
             ["TRUE-BLUE","Play with infinite lives"]
         ],
         "sr_category": "wdmjn95d",
+        "history": "THE BLUE FLOWER IN THE INTRO WAS INSPIRED BY A PAINTING HANGING IN OUR OFFICE BATHROOM.",
         "gift": "OBTAIN A 10X MULTIPLIER",
         "gold": "BEAT 5 WAVES",
         "cherry": "WIN WITH AT LEAST 300000 POINTS"
@@ -578,6 +617,7 @@
             ["WOLF-PACK","Play with a party of 4 dogs named Luna, Fang, Misty, and Dingo. Each is identical to Rufus."]
         ],
         "sr_category": "vdo7rzy2",
+        "history": "ALMOST TWO YEARS IN THE MAKING, THIS MASSIVE GAME WAS ACTUALLY STARTED BEFORE ITS THEMATIC COUSIN RAIL HEIST.",
         "gift": "REACH EXP LEVEL 10",
         "gold": "BEAT THE GAME",
         "cherry": "WIN WITH ALL POSSE MEMBERS ALIVE"
@@ -593,6 +633,7 @@
             ["BUMP-MORE","Healing Fountains, Gold Boulders, and Big Crystals are destroyed after 99,999 hits instead of 3-5 hits"]
         ],
         "sr_category": "wkpz89gd",
+        "history": "IN CREATING THE DESIGN, DIRECTOR KC LEVIN WAS INSPIRED BY CARROM, A TABLETOP GAME FROM INDIA.",
         "gift": "BEAT LEVEL 5 IN THE CAMPAIGN",
         "gold": "BEAT ALL 10 SCENARIOS",
         "cherry": "ACHIEVE A STREAK OF AT LEAST 3"
@@ -607,6 +648,7 @@
             ["OPEN-CAGE","The killer is a giant hamster"]
         ],
         "sr_category": "7dgpwx7d",
+        "history": "OUR ONLY GAME TO REQUIRE A WARNING TEXT, AND THE FIRST GAME DIRECTED BY LONGTIME DESIGNER GREG-MILK.",
         "gift": "ESCAPE THE KILLER",
         "gold": "ESCAPE THE MANOR",
         "cherry": "END THE NIGHTMARE"
@@ -621,6 +663,7 @@
             ["SIDE-SHOW","Play the bonus minigame"]
         ],
         "sr_category": "mkemgv82",
+        "history": "OFTEN MISTAKEN FOR A DUCK, THE 2P PROTAGONIST IS ACTUALLY A PIGEON.",
         "gift": "EARN A CONTINUE IN THE BONUS ROUND",
         "gold": "DEFEAT ELFAZAR",
         "cherry": "DEFEAT ELFAZAR WITHOUT CONTINUES"
@@ -635,6 +678,7 @@
             ["MORE-MEAT","Start with 10 meat"]
         ],
         "sr_category": "5dwzm9ed",
+        "history": "USED THE CLOCK FEATURES OF THE LX-III TO GENERATE RESOURCES EVEN WHEN THE GAME WAS CLOSED.",
         "gift": "DEFEAT UNKTOMI",
         "gold": "FIX YOUR SHIP AND ESCAPE ZOLDATH",
         "cherry": "LEAVE ZOLDATH WITH THE DONKA DONKA IDOL"
@@ -649,6 +693,7 @@
             ["TINY-BUFF","Start with all upgrades"]
         ],
         "sr_category": "wk6yx0qd",
+        "history": "ONE OF OUR LARGEST GAMES TO DATE, IT PAYS HOMAGE TO SEVERAL UFO SOFT TITLES THAT PRECEDE IT.",
         "gift": "COLLECT AT LEAST 100 SHINIES",
         "gold": "ESCAPE THE STORAGE ROOM",
         "cherry": "FIND PONGO AND RESTORE BALANCE"
@@ -663,6 +708,7 @@
             ["ANTS-ANTS","All levels unlocked"]
         ],
         "sr_category": "n2yzpezk",
+        "history": "MR. NEMURU CREATED THE VISION FOR THIS HIGHLY INNOVATIVE STRATEGY GAME!",
         "gift": "SLAY A SPIDER",
         "gold": "RETAKE THE CAPITAL",
         "cherry": "COMPLETE ALL MISSIONS"
@@ -679,6 +725,7 @@
             ["WILD-BETS","Maximum bet is 99,999,999 in all rounds"]
         ],
         "sr_category": "7kjwjond",
+        "history": "THE GAME'S QUIBBLES BELONG TO AN ORIGINAL SCI FI UNIVERSE DEVELOPED FOR A BOARD GAME MANY YEARS AGO.",
         "gift": "SPONSOR A QUIBBLE THAT WINS A RACE",
         "gold": "BE THE RICHEST PLAYER IN A SINGLE PLAYER GAME THAT LASTS 6 ROUNDS",
         "cherry": "WIN WITH $10000 IN A 6 ROUND GAME"
@@ -694,6 +741,7 @@
             ["WEAK-SHOT","Player cannot drift and therefore cannot increase the charge meter"]
         ],
         "sr_category": "xk97op4d",
+        "history": "THE FIRST GAME DIRECTED BY ARTIST SHAYN NORTH, WHO ALSO CRAFTED THE GAME'S UNIQUE VISUAL STYLE.",
         "gift": "OBTAIN A COIN",
         "gold": "BEAT ALL 4 STAGES",
         "cherry": "BEAT THE GAME WITH AT LEAST 300000 POINTS."
@@ -708,6 +756,7 @@
             ["PACI-FIST","Player cannot attack, only move"]
         ],
         "sr_category": "z27j0m02",
+        "history": "THE FINAL ENTRY IN THE CAMPANELLA SERIES. IT FEATURES THREE DIMENSIONAL SCROLLING.",
         "gift": "CLEAR THE BONUS ROUND",
         "gold": "DEFEAT QUEEN ZU",
         "cherry": "WIN WITH A SCORE OF AT LEAST 1500"
@@ -724,6 +773,7 @@
             ["JOES-ERVO","Start each mission with 106 lives instead of 2"]
         ],
         "sr_category": "zdn95ne2",
+        "history": "WE LAUNCHED OUR LATEST GAME ALONGSIDE AN ORIGINAL COMIC BOOK SERIES.",
         "gift": "RESCUE AN OWL",
         "gold": "SAVE THE WORLD",
         "cherry": "SAVE THE WORLD WITH NO DEATHS"

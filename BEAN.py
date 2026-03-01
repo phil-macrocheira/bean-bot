@@ -397,7 +397,7 @@ client = Client(command_prefix="/",activity=discord.Game(name="UFO 50"),intents=
 def codes_output(codes):
     if len(codes) == 0:
         return '*No terminal codes available for this game.*'
-    return f"||{'||\n||'.join(': '.join(str(x) for x in row) for row in codes)}||"
+    return f"{'\n'.join(': '.join(str(x) for x in row) for row in codes)}"
 
 # get world record data from speedrun.com API
 def get_world_records(target, players):
@@ -544,9 +544,11 @@ def game_value_output(type, target, emote, players):
         return f"Check out mods for {target['emoji']} **{game_name}** here:\n<https://gamebanana.com/search?_sModelName=Mod&_sOrder=best_match&_sSearchString={url_name}&_idGameRow=23000&_csvFields=attribs>"
     if type == 'world record':
         return get_world_records(target, players)
-    return f"The {emote} **{type.capitalize()}** requirement for {target['emoji']} **{game_name}** is...\n||{target[type]}||"
+    if type == 'history':
+        return f"The {emote} **History** for {target['emoji']} **{game_name}** is...\n{target[type]}"
+    return f"The {emote} **{type.capitalize()}** requirement for {target['emoji']} **{game_name}** is...\n{target[type]}"
 
-# shared function code used for grabbing cherry, gold, and gift values
+# shared function code used for grabbing history, gift, gold, and cherry values
 async def get_game_value(interaction, game, number, type, emote, players=1):
     # no game or number specified
     if game is None and number is None:
@@ -693,6 +695,12 @@ async def randomdaily(interaction: discord.Interaction):
 @client.tree.command(name="randomforme",description="Get a personalized random UFO 50 game suggestion for the day", guild=GUILD_ID)
 async def randomforme(interaction: discord.Interaction):
     await randomdaily_handler(interaction)
+
+# history command
+@client.tree.command(name="history",description="Check history text for a game", guild=GUILD_ID)
+async def gift(interaction: discord.Interaction, game: str|None, number: int|None):
+    await interaction.response.defer()
+    await get_game_value(interaction, game, number, "history", "<:research:1349941940514455654>")
 
 # gift command
 @client.tree.command(name="gift",description="Check gift requirement for a game", guild=GUILD_ID)
