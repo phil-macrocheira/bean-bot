@@ -10,6 +10,11 @@ Suggestions for additions to the bot can be sent our way via Discord to **phil\_
 * Displays cherry, gold, or gift requirements for the specified game
 * Within channels that start with 01 through 50, parameters for number or name are not required and instead the channel number is used to determine the target game
 
+### / history \[optional: number] \[optional: name]
+
+* Displays history text for the specified game
+* Within channels that start with 01 through 50, parameters for number or name are not required and instead the channel number is used to determine the target game
+
 ### / codes \[optional: number] \[optional: name]
 
 * Check the terminal codes for a game
