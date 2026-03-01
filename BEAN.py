@@ -394,9 +394,11 @@ intents.members = True
 client = Client(command_prefix="/",activity=discord.Game(name="UFO 50"),intents=intents)
 
 # format 2d array for codes
-def codes_output(codes):
+def codes_output(codes, game_name=None):
     if len(codes) == 0:
         return '*No terminal codes available for this game.*'
+    if game_name == 'MT':
+        return f"||{'||\n||'.join(': '.join(str(x) for x in row) for row in codes)}||"
     return "\n".join(
         f"**{row[0]}**: {row[1]}"
         for row in codes
@@ -541,7 +543,7 @@ def get_world_records(target, players):
 def game_value_output(type, target, emote, players):
     game_name = target['name']
     if type == 'codes':
-        return f"The available {emote} **Terminal Codes** for {target['emoji']} **{game_name}** are...\n\n{codes_output(target['codes'])}"
+        return f"The available {emote} **Terminal Codes** for {target['emoji']} **{game_name}** are...\n\n{codes_output(target['codes'], game_name)}"
     if type == 'mods':
         url_name = game_name.replace(' ','+')
         return f"Check out mods for {target['emoji']} **{game_name}** here:\n\n<https://gamebanana.com/search?_sModelName=Mod&_sOrder=best_match&_sSearchString={url_name}&_idGameRow=23000&_csvFields=attribs>"
@@ -572,7 +574,7 @@ async def get_game_value(interaction, game, number, type, emote, players=1):
             if number > 51 or number < 0:
                 return await interaction.followup.send(content=f"Your input was not valid.", ephemeral=True)
             else:
-                if (number == 0 or number == 51) and (type == 'world record' or type == 'mods'):
+                if (number == 0 or number == 51) and (type == 'world record' or type == 'mods' or type == 'history'):
                     return await interaction.followup.send(content=f"Your input was not valid.", ephemeral=True)
                 target = d[number-1]
                 await interaction.followup.send(game_value_output(type,target,emote,players))
@@ -591,7 +593,7 @@ async def get_game_value(interaction, game, number, type, emote, players=1):
                 if (best_match >= 90):
                     target = [x for x in d if best_match_game.lower() == x["name"].lower()]
                     target = target[0]
-                    if (target['name'] == 'The Terminal' or target['name'] == 'MT') and (type == 'world record' or type == 'mods'):
+                    if (target['name'] == 'The Terminal' or target['name'] == 'MT') and (type == 'world record' or type == 'mods' or type == 'history'):
                         return await interaction.followup.send(content=f"Your input was not valid.", ephemeral=True)
                     await interaction.followup.send(game_value_output(type,target,emote,players))
                 else:
