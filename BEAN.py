@@ -548,7 +548,7 @@ def game_value_output(type, target, emote, players):
     if type == 'world record':
         return get_world_records(target, players)
     if type == 'history':
-        return f"The {emote} **History** for {target['emoji']} **{game_name}** is...\n\n**{target[type]}**"
+        return f'The {emote} **History** for {target['emoji']} **{game_name}** is...\n\n"{target[type]}"'
     return f"The {emote} **{type.capitalize()}** requirement for {target['emoji']} **{game_name}** is...\n\n**{target[type]}**"
 
 # shared function code used for grabbing history, gift, gold, and cherry values
