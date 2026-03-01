@@ -574,7 +574,7 @@ async def get_game_value(interaction, game, number, type, emote, players=1):
             if number > 51 or number < 0:
                 return await interaction.followup.send(content=f"Your input was not valid.", ephemeral=True)
             else:
-                if (number == 0 or number == 51) and (type == 'world record' or type == 'mods' or type == 'history'):
+                if (number == 0 or number == 51) and (type == 'world record' or type == 'mods' or type == 'history' or type == 'gift' or type == 'gold' or type == 'cherry'):
                     return await interaction.followup.send(content=f"Your input was not valid.", ephemeral=True)
                 target = d[number-1]
                 await interaction.followup.send(game_value_output(type,target,emote,players))
