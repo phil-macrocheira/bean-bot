@@ -36,7 +36,7 @@ class RngCommands(commands.Cog):
             response = f'You should play {game["emoji"]} **{game["name"]}**.'
         await interaction.response.send_message(response)
 
-    @app_commands.command(name="randomdaily",description="Get a personalized random UFO 50 game suggestion for the day based on your username and today's date", guild=GUILD_ID)
+    @app_commands.command(name="randomdaily",description="Get a personalized random UFO 50 game suggestion for the day based on your username and today's date")
     async def randomdaily(self, interaction: discord.Interaction):
         user_name = interaction.user.nick or interaction.user.display_name or interaction.user.name
         user_name = filter_name(user_name)
