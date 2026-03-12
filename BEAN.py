@@ -725,7 +725,7 @@ async def randomforme(interaction: discord.Interaction):
     # If already rolled today
     if user_data["date"] == today:
         game_num = user_data["game"]
-        game = self.d[game_num]
+        game = d[game_num]
     # If have not rolled today yet
     else:
         counts = user_data["counts"]
@@ -733,7 +733,7 @@ async def randomforme(interaction: discord.Interaction):
         counts[game_index] += 1
         user_history[user_id] = {"date": today, "game": game_index, "counts": counts}
         save_user_history(user_history)
-        game = self.d[game_num]
+        game = d[game_num]
 
     await interaction.response.send_message(f'{user_name} should play {game["emoji"]} **{game["name"]}** today.')
 
