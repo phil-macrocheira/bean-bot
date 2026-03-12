@@ -1,2 +1,4 @@
 .venv
 poetry.lock
+user_history.json
+SAVE_LOAD_JSON_COMMANDS.txt

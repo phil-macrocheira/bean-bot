@@ -705,7 +705,12 @@ def load_user_history():
 
 def save_user_history(user_history):
     with open(USER_HISTORY_FILE, "w") as f:
-        json.dump(user_history, f)
+        f.write("{\n")
+        items = list(history.items())
+        for i, (user_id, data) in enumerate(items):
+            comma = "," if i < len(items) - 1 else ""
+            f.write(f'  {json.dumps(user_id)}: {json.dumps(data)}{comma}\n')
+        f.write("}")
 
 def get_weighted_game(counts):
     weights = [1 / ((counts[i] + 1) ** RNG_BALANCE_STRENGTH) for i in range(50)]
