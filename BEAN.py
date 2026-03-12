@@ -742,6 +742,18 @@ async def randomforme(interaction: discord.Interaction):
 
     await interaction.response.send_message(f'{user_name} should play {game["emoji"]} **{game["name"]}** today.')
 
+#randomforme_history
+@client.tree.command(name="rollhistory", description="See your /randomforme roll history", guild=GUILD_ID)
+async def randomforme_history(interaction: discord.Interaction):
+    user_id = str(interaction.user.id)
+    user_history = load_user_history()
+    user_data = user_history.get(user_id)
+    if not user_data:
+        return await interaction.response.send_message("You have no roll history.", ephemeral=True)
+    counts = user_data["counts"]
+    result = " ".join(f'{d[i]["emoji"]} {counts[i]}' for i in range(50))
+    await interaction.response.send_message(result)
+
 # history command
 @client.tree.command(name="history",description="Check history text for a game", guild=GUILD_ID)
 async def gift(interaction: discord.Interaction, game: str|None, number: int|None):
