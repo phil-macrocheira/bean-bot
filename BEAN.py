@@ -712,7 +712,7 @@ def get_weighted_game(counts):
     return random.choices(range(50), weights=weights, k=1)[0]
 
 # randomforme
-@client.tree.command(name="randomforme",description="Get a personalized random UFO 50 game suggestion for the day with odds adjusted based on your past rolls", guild=GUILD_ID)
+@client.tree.command(name="randomforme",description="Get a personalized random UFO 50 game suggestion for the day with odds adjusted", guild=GUILD_ID)
 async def randomforme(interaction: discord.Interaction):
     user_id = str(interaction.user.id)
     user_name = interaction.user.nick or interaction.user.display_name or interaction.user.name
@@ -730,8 +730,8 @@ async def randomforme(interaction: discord.Interaction):
     else:
         counts = user_data["counts"]
         game_num = get_weighted_game(counts)
-        counts[game_index] += 1
-        user_history[user_id] = {"date": today, "game": game_index, "counts": counts}
+        counts[game_num] += 1
+        user_history[user_id] = {"date": today, "game": game_num, "counts": counts}
         save_user_history(user_history)
         game = d[game_num]
 
