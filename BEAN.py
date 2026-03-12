@@ -706,7 +706,7 @@ def load_user_history():
 def save_user_history(user_history):
     with open(USER_HISTORY_FILE, "w") as f:
         f.write("{\n")
-        items = list(history.items())
+        items = list(user_history.items())
         for i, (user_id, data) in enumerate(items):
             comma = "," if i < len(items) - 1 else ""
             f.write(f'  {json.dumps(user_id)}: {json.dumps(data)}{comma}\n')
