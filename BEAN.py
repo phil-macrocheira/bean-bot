@@ -707,7 +707,7 @@ def save_user_history(user_history):
     with open(USER_HISTORY_FILE, "w") as f:
         json.dump(user_history, f)
 
-def get_weighted_game(d, counts):
+def get_weighted_game(counts):
     weights = [1 / ((counts[i] + 1) ** RNG_BALANCE_STRENGTH) for i in range(50)]
     return random.choices(range(50), weights=weights, k=1)[0]
 
@@ -729,7 +729,7 @@ async def randomforme(interaction: discord.Interaction):
     # If have not rolled today yet
     else:
         counts = user_data["counts"]
-        game_num = get_weighted_game(self.d, counts)
+        game_num = get_weighted_game(counts)
         counts[game_index] += 1
         user_history[user_id] = {"date": today, "game": game_index, "counts": counts}
         save_user_history(user_history)
