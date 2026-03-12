@@ -34,9 +34,13 @@ Suggestions for additions to the bot can be sent our way via Discord to **phil\_
 
 * Get a random UFO 50 game suggestion
 
-### / randomdaily or / randomforme
+### / randomdaily
 
-* Get a personalized random UFO 50 game suggestion for the day
+Get a personalized random UFO 50 game suggestion for the day based on your username and today's date
+
+### / randomforme
+
+* Get a personalized random UFO 50 game suggestion for the day with odds adjusted based on your past rolls
 
 ### / 50club
 
