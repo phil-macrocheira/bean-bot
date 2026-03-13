@@ -42,6 +42,10 @@ Get a personalized random UFO 50 game suggestion for the day based on your usern
 
 * Get a personalized random UFO 50 game suggestion for the day with odds adjusted based on your past rolls
 
+### / randomformehistory
+
+* See your /randomforme roll history game counts
+
 ### / 50club
 
 * See how many discord members have obtained 50 cherries based on discord roles

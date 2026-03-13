@@ -743,8 +743,8 @@ async def randomforme(interaction: discord.Interaction):
     await interaction.response.send_message(f'{user_name} should play {game["emoji"]} **{game["name"]}** today.')
 
 #randomforme_history
-@client.tree.command(name="randomforme_history", description="See your /randomforme roll history game counts", guild=GUILD_ID)
-async def randomforme_history(interaction: discord.Interaction):
+@client.tree.command(name="randomformehistory", description="See your /randomforme roll history game counts", guild=GUILD_ID)
+async def randomformehistory(interaction: discord.Interaction):
     user_id = str(interaction.user.id)
     user_history = load_user_history()
     user_data = user_history.get(user_id)
