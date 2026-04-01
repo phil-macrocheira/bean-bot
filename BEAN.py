@@ -226,40 +226,20 @@ async def get_scenario_result(interaction, seed):
     return await interaction.response.send_message(f"**SEED {str(seed).zfill(6)}**\n\n{" ".join(deck_names)}")
 
 def get_random_game():
-    num = urandom(50)
-    game = d[num-1]
+    # num = urandom(50)
+    game = d[14]
     return game
 
 def get_answer():
     num = urandom(1000)
 
-    if num <= 375:
-        response = 'YES' # 37.5% chance
-    elif num <= 750:
-        response = 'NO' # 37.5% chance
-    elif num <= 800:
-        response = 'MOST LIKELY' # 5% chance
-    elif num <= 850:
-        response = 'PROBABLY NOT' # 5% chance
+    if num <= 450:
+        response = 'BLOCK' # 37.5% chance
     elif num <= 900:
-        response = 'IT IS POSSIBLE' # 5% chance
-    elif num <= 925:
-        response = 'YOU ALREADY KNOW THE ANSWER' # 2.5% chance
-    elif num <= 950:
-        response = 'IT\'S A SECRET' # 2.5% chance
-    elif num <= 960:
-        response = 'I DON\'T KNOW' # 1% chance
-    elif num <= 970:
-        response = 'I DO NOT UNDERSTAND' # 1% chance
-    elif num <= 980:
-        response = 'REMEMBER WHAT THEY SAY ABOUT MAKING OMELETTES' # 1% chance
-    elif num <= 990:
-        response = 'HA HA. THAT\'S A GOOD ONE.' # 1% chance
-    elif num <= 999:
+        response = 'KOALA' # 37.5% chance
+    else:
         game = get_random_game()
         response = f'THE SOLUTION TO YOUR TROUBLES LIES IN {game["emoji"]} **{game["name"]}**.' # 0.9% chance
-    elif num == 1000:
-        response = 'ASK ME AGAIN IN <:barbuta:1292612809682583564> **BARBUTA**' # 0.1% chance
     return response
 
 # filter usernames
@@ -566,7 +546,7 @@ async def get_game_value(interaction, game, number, type, emote, players=1):
             if (int(interaction.channel.name[:2]) > 50 or int(interaction.channel.name[:2]) < 1):
                 return await interaction.followup.send(content=f"Please specify a game or number to check the {type} for.", ephemeral=True)
             else:
-                target = d[int(interaction.channel.name[:2])-1]
+                target = d[14]
                 await interaction.followup.send(game_value_output(type,target,emote,players))
         # no target game, give error
         else:
@@ -580,7 +560,7 @@ async def get_game_value(interaction, game, number, type, emote, players=1):
             else:
                 if (number == 0 or number == 51) and (type == 'world record' or type == 'mods' or type == 'history' or type == 'gift' or type == 'gold' or type == 'cherry'):
                     return await interaction.followup.send(content=f"Your input was not valid.", ephemeral=True)
-                target = d[number-1]
+                target = d[14]
                 await interaction.followup.send(game_value_output(type,target,emote,players))
         # game specified
         elif number is None and not game is None:
@@ -686,16 +666,13 @@ async def rnd(interaction: discord.Interaction):
 async def randomdaily(interaction: discord.Interaction):
     user_name = interaction.user.nick or interaction.user.display_name or interaction.user.name
     user_name = filter_name(user_name)
-    today = datetime.datetime.now(TIMEZONE).date()
-    seed = f"{interaction.user.name}-{today.toordinal()}"
-    random.seed(seed)
-    num = random.randint(1, 50)
-    game = d[num-1]
+    #today = datetime.datetime.now(TIMEZONE).date()
+    #seed = f"{interaction.user.name}-{today.toordinal()}"
+    #random.seed(seed)
+    #num = random.randint(1, 50)
+    game = d[14]
     response = f'{user_name} should play {game["emoji"]} **{game["name"]}** today.'
-    if interaction.user.id in ban_list:
-        await interaction.response.defer(ephemeral=True)
-    else:
-        await interaction.response.send_message(response)
+    await interaction.response.send_message(response)
 
 def load_user_history():
     if not os.path.exists(USER_HISTORY_FILE):
@@ -722,36 +699,37 @@ async def randomforme(interaction: discord.Interaction):
     user_id = str(interaction.user.id)
     user_name = interaction.user.nick or interaction.user.display_name or interaction.user.name
     user_name = filter_name(user_name)
-    today = datetime.datetime.now(TIMEZONE).date().isoformat()
+    #today = datetime.datetime.now(TIMEZONE).date().isoformat()
 
-    user_history = load_user_history()
-    user_data = user_history.get(user_id, {"date": None, "game": None, "counts": [0] * 50})
+    #user_history = load_user_history()
+    #user_data = user_history.get(user_id, {"date": None, "game": None, "counts": [0] * 50})
 
     # If already rolled today
-    if user_data["date"] == today:
-        game_num = user_data["game"]
-        game = d[game_num]
+    #if user_data["date"] == today:
+    #    game_num = user_data["game"]
+    #    game = d[game_num]
     # If have not rolled today yet
-    else:
-        counts = user_data["counts"]
-        game_num = get_weighted_game(counts)
-        counts[game_num] += 1
-        user_history[user_id] = {"date": today, "game": game_num, "counts": counts}
-        save_user_history(user_history)
-        game = d[game_num]
+    #else:
+        #counts = user_data["counts"]
+        #game_num = get_weighted_game(counts)
+        #counts[game_num] += 1
+        #user_history[user_id] = {"date": today, "game": game_num, "counts": counts}
+        #save_user_history(user_history)
+    game = d[14]
 
     await interaction.response.send_message(f'{user_name} should play {game["emoji"]} **{game["name"]}** today.')
 
 #randomforme_history
 @client.tree.command(name="randomformehistory", description="See your /randomforme roll history game counts", guild=GUILD_ID)
 async def randomformehistory(interaction: discord.Interaction):
-    user_id = str(interaction.user.id)
-    user_history = load_user_history()
-    user_data = user_history.get(user_id)
-    if not user_data:
-        return await interaction.response.send_message("You have no roll history.", ephemeral=True)
-    counts = user_data["counts"]
-    result = " ".join(f'{d[i]["emoji"]} {counts[i]}' for i in range(50))
+    #user_id = str(interaction.user.id)
+    #user_history = load_user_history()
+    #user_data = user_history.get(user_id)
+    #if not user_data:
+    #    return await interaction.response.send_message("You have no roll history.", ephemeral=True)
+    #counts = user_data["counts"]
+    counts = [50] * 50
+    result = " ".join(f'{d[14]["emoji"]} {counts[i]}' for i in range(50))
     await interaction.response.send_message(result)
 
 # history command
