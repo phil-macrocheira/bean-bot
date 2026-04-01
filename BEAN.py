@@ -525,17 +525,17 @@ def get_world_records(target, players):
     return response
 
 def game_value_output(type, target, emote, players):
-    game_name = target['name']
+    game_name = "Block Koala"
     if type == 'codes':
-        return f"The available {emote} **Terminal Codes** for {target['emoji']} **{game_name}** are...\n\n{codes_output(target['codes'], game_name)}"
+        return f"The available {target['emoji']} **Terminal Codes** for {target['emoji']} **{game_name}** are...\n\n{codes_output(target['codes'], game_name)}"
     if type == 'mods':
         url_name = game_name.replace(' ','+')
         return f"Check out mods for {target['emoji']} **{game_name}** here:\n\n<https://gamebanana.com/search?_sModelName=Mod&_sOrder=best_match&_sSearchString={url_name}&_idGameRow=23000&_csvFields=attribs>"
     if type == 'world record':
         return get_world_records(target, players)
     if type == 'history':
-        return f'The {emote} **History** for {target['emoji']} **{game_name}** is...\n\n"{target[type]}"'
-    return f"The {emote} **{type.capitalize()}** requirement for {target['emoji']} **{game_name}** is...\n\n**{target[type]}**"
+        return f'The {target['emoji']} **History** for {target['emoji']} **{game_name}** is...\n\n"{target[type]}"'
+    return f"The {target['emoji']} **{type.capitalize()}** requirement for {target['emoji']} **{game_name}** is...\n\n**{target[type]}**"
 
 # shared function code used for grabbing history, gift, gold, and cherry values
 async def get_game_value(interaction, game, number, type, emote, players=1):
@@ -576,7 +576,7 @@ async def get_game_value(interaction, game, number, type, emote, players=1):
                         best_match = match
                 if (best_match >= 90):
                     target = [x for x in d if best_match_game.lower() == x["name"].lower()]
-                    target = target[0]
+                    target = d[14]
                     if (target['name'] == 'The Terminal' or target['name'] == 'MT') and (type == 'world record' or type == 'mods' or type == 'history' or type == 'gift' or type == 'gold' or type == 'cherry'):
                         return await interaction.followup.send(content=f"Your input was not valid.", ephemeral=True)
                     await interaction.followup.send(game_value_output(type,target,emote,players))
@@ -584,7 +584,7 @@ async def get_game_value(interaction, game, number, type, emote, players=1):
                     await interaction.followup.send(content=f"Your input was not recognized.", ephemeral=True)
             # direct alias search succeeds
             else:
-                target = target[0]
+                target = d[14]
                 await interaction.followup.send(game_value_output(type,target,emote,players))
         # error if both number and game are specified
         else:
