@@ -280,11 +280,11 @@ class Client(commands.Bot):
         msg = message.content.lower().replace(',','').replace('!','')
         if "thanks bean" in msg or "thank you bean" in msg:
             if urandom(4) == 3:
-                await message.reply("NICE SWORD, PAL.")
+                await message.reply("NICE KOALA, PAL.")
             else:
-                await message.reply("NICE ROD, PAL.")
+                await message.reply("NICE BLOCK, PAL.")
             return
-        if "nice rod bean" in msg or "nice sword bean" in msg:
+        if "nice koala bean" in msg or "nice block bean" in msg:
             user_name = message.author.nick or message.author.display_name or message.author.name
             user_name = filter_name(user_name)
 
@@ -593,7 +593,7 @@ async def get_game_value(interaction, game, number, type, emote, players=1):
 # ping test command
 @client.tree.command(name="ping",description="Check that I am online!", guild=GUILD_ID)
 async def ping(interaction: discord.Interaction):
-    await interaction.response.send_message('NICE ROD, PAL.')
+    await interaction.response.send_message('NICE BLOCK, PAL.')
 
 # link to steam guides
 @client.tree.command(name="guides",description="Get a link to steam guides for UFO 50!", guild=GUILD_ID)
