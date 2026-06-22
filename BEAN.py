@@ -623,7 +623,7 @@ async def guides(interaction: discord.Interaction):
 # link to tier list maker
 @client.tree.command(name="tierlist",description="Get a link to the Tier List Maker for UFO 50", guild=GUILD_ID)
 async def tier(interaction: discord.Interaction):
-    await interaction.response.send_message(content='Make your own UFO 50 Tier List here:\n<https://tiermaker.com/create/ufo-50-games-16603442>', ephemeral=True)
+    await interaction.response.send_message(content='Make your own UFO 50 Tier List here:\n<https://tiermaker.com/create/ufo-50-games-16603442>')
 
 # since people ask so much
 @client.tree.command(name="whatsthatdemogame",description="for when people ask about that one demo game", guild=GUILD_ID)
@@ -638,7 +638,7 @@ async def wiki(interaction: discord.Interaction):
 # link to bandcamp music
 @client.tree.command(name="music",description="Get a link to UFO 50 music on Bandcamp", guild=GUILD_ID)
 async def music(interaction: discord.Interaction):
-    await interaction.response.send_message(content='Check out the music for UFO 50 here:\n<https://phlogiston.bandcamp.com/album/ufo-50>', ephemeral=True)
+    await interaction.response.send_message(content='Check out the music for UFO 50 here:\n<https://phlogiston.bandcamp.com/album/ufo-50>')
 
 # link to gamebanana
 @client.tree.command(name="moddinginfo",description="Get links for UFO 50 modding", guild=GUILD_ID)
