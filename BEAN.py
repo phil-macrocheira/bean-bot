@@ -671,6 +671,16 @@ async def resourcepack(interaction: discord.Interaction):
 async def quibblechart(interaction: discord.Interaction):
     await interaction.response.send_message(content='Check out the Quibble Race Speed Chart by The2ndBrick here:\nhttps://discord.com/channels/525973026429206530/1251507008427921559/1405303783088717914')
 
+# ping the @multiplayergames role
+@client.tree.command(name="MultiplayerGamers",description="Ping the @multiplayergames role", guild=GUILD_ID)
+async def multiplayergames(interaction: discord.Interaction, game: str|None):
+    user_name = interaction.user.nick or interaction.user.display_name or interaction.user.name
+    user_name = filter_name(user_name)
+    game_text = f"play {game}"
+    if game == None:
+        game_text = "game"
+    await interaction.response.send_message(content=f'`@multiplayergames` {user_name} is looking for people to {game_text} with!')
+
 # random command
 @client.tree.command(name="random",description="Get a random UFO 50 game suggestion", guild=GUILD_ID)
 async def rnd(interaction: discord.Interaction):
