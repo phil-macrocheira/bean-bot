@@ -674,12 +674,13 @@ async def quibblechart(interaction: discord.Interaction):
 # ping the @multiplayergames role
 @client.tree.command(name="multiplayergamers",description="Ping the @multiplayergames role", guild=GUILD_ID)
 async def multiplayergames(interaction: discord.Interaction, game: str|None):
+    role_id = 1376286598676746361
     user_name = interaction.user.nick or interaction.user.display_name or interaction.user.name
     user_name = filter_name(user_name)
     game_text = f"play {game}"
     if game == None:
         game_text = "game"
-    await interaction.response.send_message(content=f'@multiplayergames {user_name} is looking for people to {game_text} with!')
+    await interaction.response.send_message(content=f'<@&{role_id}> {user_name} is looking for people to {game_text} with!')
 
 # random command
 @client.tree.command(name="random",description="Get a random UFO 50 game suggestion", guild=GUILD_ID)
