@@ -679,7 +679,7 @@ async def multiplayergames(interaction: discord.Interaction, game: str|None):
     game_text = f"play {game}"
     if game == None:
         game_text = "game"
-    await interaction.response.send_message(content=f'`@multiplayergames` {user_name} is looking for people to {game_text} with!')
+    await interaction.response.send_message(content=f'@multiplayergames {user_name} is looking for people to {game_text} with!')
 
 # random command
 @client.tree.command(name="random",description="Get a random UFO 50 game suggestion", guild=GUILD_ID)
