@@ -1,14 +1,15 @@
 import discord
 from discord.ext import commands
+from discord import app_commands
 import json
 import random
 import math
 import re
-from thefuzz import fuzz
 import base64
 import os
 import requests
-import datetime
+from datetime import datetime, timezone
+from thefuzz import fuzz
 
 # UFO 50 Discord server ID
 GUILD_ID = discord.Object(id=525973026429206530)
