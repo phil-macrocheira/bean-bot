@@ -8,7 +8,7 @@ import re
 import base64
 import os
 import requests
-from datetime import datetime, timezone
+from datetime import datetime
 from thefuzz import fuzz
 
 # UFO 50 Discord server ID
@@ -674,8 +674,9 @@ async def quibblechart(interaction: discord.Interaction):
 
 # ping the @multiplayergames role
 @client.tree.command(name="multiplayergamers",description="Ping the @multiplayergames role", guild=GUILD_ID)
-@app_commands.describe(time="Date in UTC format: MM-DD HH:MM")
-async def multiplayergames(interaction: discord.Interaction, game: str|None, time: str|None):
+#@app_commands.describe(time="Date in UTC format: MM-DD HH:MM")
+#async def multiplayergames(interaction: discord.Interaction, game: str|None, time: str|None):
+async def multiplayergames(interaction: discord.Interaction, game: str|None):
     role_id = 1376286598676746361
     allowed_mentions = discord.AllowedMentions(roles=True)
     user_name = interaction.user.nick or interaction.user.display_name or interaction.user.name
@@ -685,24 +686,24 @@ async def multiplayergames(interaction: discord.Interaction, game: str|None, tim
         game_text = "game"
 
     time_text = ""
-    if (time != None):
-        try:
-            # Add current year to input
-            current_year = datetime.now(timezone.utc).year
-            time_with_year = f"{current_year}-{time.strip()}"
-            # Parse input
-            parsed_date = datetime.strptime(time_with_year, "%Y-%m-%d %H:%M")
-            parsed_date_utc = parsed_date.replace(tzinfo=timezone.utc)
-            unix_timestamp = int(parsed_date_utc.timestamp())
-            # Create output (and output how many hours away if time is less than 24 hours away)
-            now_timestamp = int(datetime.now(timezone.utc).timestamp())
-            seconds_until = unix_timestamp - now_timestamp
-            time_text = f" at <t:{unix_timestamp}:F>"
-            if 0 <= seconds_until < 86400:
-                time_text += f" (<t:{unix_timestamp}:R>)"
-        except ValueError:
-            await interaction.response.send_message("There was an error with the time. Make sure your time format is `MM-DD HH:MM`", ephemeral=True)
-
+#    if (time != None):
+#        try:
+#            # Add current year to input
+#            current_year = datetime.now(timezone.utc).year
+#            time_with_year = f"{current_year}-{time.strip()}"
+#            # Parse input
+#            parsed_date = datetime.strptime(time_with_year, "%Y-%m-%d %H:%M")
+#            parsed_date_utc = parsed_date.replace(tzinfo=timezone.utc)
+#            unix_timestamp = int(parsed_date_utc.timestamp())
+#            # Create output (and output how many hours away if time is less than 24 hours away)
+#            now_timestamp = int(datetime.now(timezone.utc).timestamp())
+#            seconds_until = unix_timestamp - now_timestamp
+#            time_text = f" at <t:{unix_timestamp}:F>"
+#            if 0 <= seconds_until < 86400:
+#                time_text += f" (<t:{unix_timestamp}:R>)"
+#        except ValueError:
+#            await interaction.response.send_message("There was an error with the time. Make sure your time format is `MM-DD HH:MM`", ephemeral=True)
+#
     await interaction.response.send_message(content=f'<@&{role_id}> {user_name} is looking for people to {game_text} with{time_text}',allowed_mentions=allowed_mentions)
 
 # random command
