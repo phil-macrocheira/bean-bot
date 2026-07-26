@@ -678,7 +678,7 @@ async def quibblechart(interaction: discord.Interaction):
 #async def multiplayergames(interaction: discord.Interaction, game: str|None, time: str|None):
 async def multiplayergames(interaction: discord.Interaction, game: str|None):
     # Only allow multiplayer-matches channel
-    if interaction.channel_id != 1293412450502180934:
+    if interaction.channel_id != 1293412450502180934 and interaction.channel_id != 1409804983100244099:
         return
 
     role_id = 1376286598676746361
