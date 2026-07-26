@@ -702,9 +702,9 @@ async def multiplayergames(interaction: discord.Interaction, game: str|None, tim
             # Create output (and output how many hours away if time is less than 24 hours away)
             now_timestamp = int(datetime.datetime.now(datetime.timezone.utc).timestamp())
             seconds_until = unix_timestamp - now_timestamp
-            time_text = f" at <t:{unix_timestamp}:F>"
+            time_text = f" at <t:{unix_timestamp}:f>"
             if 0 <= seconds_until < 86400:
-                time_text += f" (<t:{unix_timestamp}:R>)"
+                time_text = f" at <t:{unix_timestamp}:t> (<t:{unix_timestamp}:R>)"
         except ValueError:
             await interaction.response.send_message("There was an error with the time. Make sure your time format is `MM-DD HH:MM`", ephemeral=True)
 
