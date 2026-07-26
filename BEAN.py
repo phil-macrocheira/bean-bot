@@ -675,8 +675,7 @@ async def quibblechart(interaction: discord.Interaction):
 # ping the @multiplayergames role
 @client.tree.command(name="multiplayergamers",description="Ping the @multiplayergames role", guild=GUILD_ID)
 #@app_commands.describe(time="Date in UTC format: MM-DD HH:MM")
-#async def multiplayergames(interaction: discord.Interaction, game: str|None, time: str|None):
-async def multiplayergames(interaction: discord.Interaction, game: str|None):
+async def multiplayergames(interaction: discord.Interaction, game: str|None, time: str|None):
     # Only allow multiplayer-matches channel
     if interaction.channel_id != 1293412450502180934 and interaction.channel_id != 1409804983100244099:
         return
