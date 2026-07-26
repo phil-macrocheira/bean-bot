@@ -8,7 +8,7 @@ import re
 import base64
 import os
 import requests
-from datetime import datetime
+import datetime
 from thefuzz import fuzz
 
 # UFO 50 Discord server ID
@@ -703,7 +703,7 @@ async def multiplayergames(interaction: discord.Interaction, game: str|None):
 #                time_text += f" (<t:{unix_timestamp}:R>)"
 #        except ValueError:
 #            await interaction.response.send_message("There was an error with the time. Make sure your time format is `MM-DD HH:MM`", ephemeral=True)
-#
+
     await interaction.response.send_message(content=f'<@&{role_id}> {user_name} is looking for people to {game_text} with{time_text}',allowed_mentions=allowed_mentions)
 
 # random command
