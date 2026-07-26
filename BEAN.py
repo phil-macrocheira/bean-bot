@@ -676,12 +676,11 @@ async def quibblechart(interaction: discord.Interaction):
 @client.tree.command(name="multiplayergamers",description="Ping the @multiplayergames role", guild=GUILD_ID)
 #@app_commands.describe(time="Date in UTC format: MM-DD HH:MM")
 async def multiplayergames(interaction: discord.Interaction, game: str|None, time: str|None):
-    # Only allow multiplayer-matches channel
+    # Only allow multiplayer-matches channel and bean commands+ thread
     if interaction.channel_id != 1293412450502180934 and interaction.channel_id != 1409804983100244099:
         return
 
     role_id = 1376286598676746361
-    role_id = -1 # remove role for testing
     allowed_mentions = discord.AllowedMentions(roles=True)
     user_name = interaction.user.nick or interaction.user.display_name or interaction.user.name
     user_name = filter_name(user_name)
