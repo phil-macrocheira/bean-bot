@@ -693,14 +693,14 @@ async def multiplayergames(interaction: discord.Interaction, game: str|None, tim
     if (time != None):
         try:
             # Add current year to input
-            current_year = datetime.now(timezone.utc).year
+            current_year = datetime.datetime.now(timezone.utc).year
             time_with_year = f"{current_year}-{time.strip()}"
             # Parse input
-            parsed_date = datetime.strptime(time_with_year, "%Y-%m-%d %H:%M")
+            parsed_date = datetime.datetime.strptime(time_with_year, "%Y-%m-%d %H:%M")
             parsed_date_utc = parsed_date.replace(tzinfo=timezone.utc)
             unix_timestamp = int(parsed_date_utc.timestamp())
             # Create output (and output how many hours away if time is less than 24 hours away)
-            now_timestamp = int(datetime.now(timezone.utc).timestamp())
+            now_timestamp = int(datetime.datetime.now(datetime.timezone.utc).timestamp())
             seconds_until = unix_timestamp - now_timestamp
             time_text = f" at <t:{unix_timestamp}:F>"
             if 0 <= seconds_until < 86400:
