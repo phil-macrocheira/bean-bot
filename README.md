@@ -46,6 +46,14 @@ Get a personalized random UFO 50 game suggestion for the day based on your usern
 
 * See your /randomforme roll history game counts
 
+### / randomseed
+
+* Get a random 6 digit seed
+
+### / seedoftheday
+
+* Get the Seed of the Day
+
 ### / 50club
 
 * See how many discord members have obtained 50 cherries based on discord roles
