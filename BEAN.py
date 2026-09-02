@@ -806,6 +806,7 @@ async def seedoftheday(interaction: discord.Interaction):
     random.seed(today.toordinal())
     seed = random.randint(0, 999999)
     response = f'The **Seed of the Day** is **{seed}**'
+    await interaction.response.send_message(response)
 
 # history command
 @client.tree.command(name="history",description="Check history text for a game", guild=GUILD_ID)
