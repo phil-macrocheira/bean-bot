@@ -155,7 +155,7 @@ CHAR_END = 44
 CHAR_PRESTIGE_START = 50
 CHAR_PRESTIGE_END = 58
 
-def urandom(n: int) -> int:
+def urandom(n: int, start: int = 1) -> int:
     k = (n - 1).bit_length()
     byte_len = (k + 7) // 8
     max_val = 1 << (byte_len * 8)
@@ -163,7 +163,7 @@ def urandom(n: int) -> int:
     while True:
         r = int.from_bytes(os.urandom(byte_len), "big")
         if r < limit:
-            return (r % n) + 1
+            return (r % n) + start
 
 def rng_random():
     global rng_state_1, rng_state_2
@@ -791,6 +791,21 @@ async def randomformehistory(interaction: discord.Interaction):
     counts = user_data["counts"]
     result = " ".join(f'{d[i]["emoji"]} {counts[i]}' for i in range(50))
     await interaction.response.send_message(result)
+
+# randomseed command
+@client.tree.command(name="randomseed",description="Get a random 6 digit seed", guild=GUILD_ID)
+async def rnd(interaction: discord.Interaction):
+    seed = urandom(999999, 0)
+    response = f'**{seed}**'
+    await interaction.response.send_message(response)
+
+# seedoftheday command
+@client.tree.command(name="seedoftheday",description="Get the Seed of the Day", guild=GUILD_ID)
+async def rnd(interaction: discord.Interaction):
+    today = datetime.datetime.now(TIMEZONE).date()
+    random.seed(today.toordinal())
+    seed = random.randint(0, 999999)
+    response = f'The **Seed of the Day** is **{seed}**'
 
 # history command
 @client.tree.command(name="history",description="Check history text for a game", guild=GUILD_ID)
