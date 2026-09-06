@@ -54,6 +54,14 @@ Get a personalized random UFO 50 game suggestion for the day based on your usern
 
 * Get the Seed of the Day
 
+### / allgames
+
+* See all UFO 50 game icons
+
+### / allgames_numbered
+
+* See all UFO 50 game icons with numbers
+
 ### / 50club
 
 * See how many discord members have obtained 50 cherries based on discord roles
