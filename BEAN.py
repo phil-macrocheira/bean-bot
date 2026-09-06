@@ -811,21 +811,21 @@ async def seedoftheday(interaction: discord.Interaction):
 #allgames command
 @client.tree.command(name="allgames", description="See all UFO 50 game icons", guild=GUILD_ID)
 async def allgames(interaction: discord.Interaction):
-    games_list = "".join(f'{d[i]["emoji"]}' for i in range(0, 9))
-    games_list += "\n" + "".join(f'{d[i]["emoji"]}' for i in range(10, 19))
-    games_list += "\n" + "".join(f'{d[i]["emoji"]}' for i in range(20, 29))
-    games_list += "\n" + "".join(f'{d[i]["emoji"]}' for i in range(30, 39))
-    games_list += "\n" + "".join(f'{d[i]["emoji"]}' for i in range(40, 49))
+    games_list = "".join(f'{d[i]["emoji"]}' for i in range(0, 10))
+    games_list += "\n" + "".join(f'{d[i]["emoji"]}' for i in range(10, 20))
+    games_list += "\n" + "".join(f'{d[i]["emoji"]}' for i in range(20, 30))
+    games_list += "\n" + "".join(f'{d[i]["emoji"]}' for i in range(30, 40))
+    games_list += "\n" + "".join(f'{d[i]["emoji"]}' for i in range(40, 50))
     await interaction.response.send_message(games_list)
 
 #allgames_numbered command
 @client.tree.command(name="allgames_numbered", description="See all UFO 50 game icons with numbers", guild=GUILD_ID)
 async def allgames_numbered(interaction: discord.Interaction):
-    games_list = "".join(f'{i+1}{d[i]["emoji"]}' for i in range(0, 9))
-    games_list += "\n" + "".join(f'{i+1}{d[i]["emoji"]}' for i in range(10, 19))
-    games_list += "\n" + "".join(f'{i+1}{d[i]["emoji"]}' for i in range(20, 29))
-    games_list += "\n" + "".join(f'{i+1}{d[i]["emoji"]}' for i in range(30, 39))
-    games_list += "\n" + "".join(f'{i+1}{d[i]["emoji"]}' for i in range(40, 49))
+    games_list = "".join(f'{i+1}{d[i]["emoji"]}' for i in range(0, 10))
+    games_list += "\n" + "".join(f'{i+1}{d[i]["emoji"]}' for i in range(10, 20))
+    games_list += "\n" + "".join(f'{i+1}{d[i]["emoji"]}' for i in range(20, 30))
+    games_list += "\n" + "".join(f'{i+1}{d[i]["emoji"]}' for i in range(30, 40))
+    games_list += "\n" + "".join(f'{i+1}{d[i]["emoji"]}' for i in range(40, 50))
     await interaction.response.send_message(games_list)
 
 # history command
