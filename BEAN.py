@@ -571,7 +571,7 @@ def game_value_output(type, target, emote, players):
     if type == 'codes':
         return f"The available {emote} **Terminal Codes** for {target['emoji']} **{game_name}** are...\n\n{codes_output(target['codes'], game_name)}"
     if type == 'modded codes':
-        return f"The available {emote} **Terminal Codes** for {target['emoji']} **{game_name}** are...\n\n{modded_codes_output(game_name)}"
+        return f"The available {emote} **Modded Terminal Codes** for {target['emoji']} **{game_name}** are...\n\n{modded_codes_output(game_name)}"
         SHEET_API_KEY
     if type == 'mods':
         url_name = game_name.replace(' ','+')
