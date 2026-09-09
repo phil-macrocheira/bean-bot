@@ -858,7 +858,7 @@ async def cherry(interaction: discord.Interaction, game: str|None, number: int|N
 @client.tree.command(name="darkcherry",description="Check dark cherry mod requirement for a game", guild=GUILD_ID)
 async def darkcherry(interaction: discord.Interaction, game: str|None, number: int|None):
     await interaction.response.defer()
-    await get_game_value(interaction, game, number, "dark cherry", "<:CherryGet:1291281262870528073>")
+    await get_game_value(interaction, game, number, "dark cherry", "<:DarkCherry:1547058086529867797>")
 
 # terminal codes command
 @client.tree.command(name="codes",description="Check the terminal codes for a game", guild=GUILD_ID)
