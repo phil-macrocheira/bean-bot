@@ -9,7 +9,11 @@ import base64
 import os
 import requests
 import datetime
+import gspread
 from thefuzz import fuzz
+
+# Get pine's sheet API from fly.io
+SHEET_API_KEY = os.getenv('SHEET_API_KEY')
 
 # UFO 50 Discord server ID
 GUILD_ID = discord.Object(id=525973026429206530)
@@ -409,6 +413,23 @@ def codes_output(codes, game_name=None):
         for row in codes
     )
 
+# get modded codes
+def modded_codes_output(game_name=None):
+    gc = gspread.api_key(SHEET_API_KEY)
+    ss = gc.open_by_key("16SWEmLnEP0-GzBpU2xFGBpGDwinceIgUDP2CWJJzudw")
+    sheet = ss.sheet1
+    records = sheet.get_all_records()
+
+    results = [
+        f"**{row['Terminal Code']}**: ||{row['Description']}|| (**[{row['Mod']}](<https://gamebanana.com/mods/{row['Gamebanana ID']}>)**)"
+        for row in records 
+        if str(row.get("Game")) == str(game_name)
+    ]
+    if not results:
+        return '*No modded terminal codes available for this game.*'
+
+    return "\n".join(results)
+
 # get world record data from speedrun.com API
 def get_world_records(target, players):
     game = target['name']
@@ -549,6 +570,9 @@ def game_value_output(type, target, emote, players):
     game_name = target['name']
     if type == 'codes':
         return f"The available {emote} **Terminal Codes** for {target['emoji']} **{game_name}** are...\n\n{codes_output(target['codes'], game_name)}"
+    if type == 'modded codes':
+        return f"The available {emote} **Terminal Codes** for {target['emoji']} **{game_name}** are...\n\n{modded_codes_output(game_name)}"
+        SHEET_API_KEY
     if type == 'mods':
         url_name = game_name.replace(' ','+')
         return f"Check out mods for {target['emoji']} **{game_name}** here:\n\n<https://gamebanana.com/search?_sModelName=Mod&_sOrder=best_match&_sSearchString={url_name}&_idGameRow=23000&_csvFields=attribs>"
@@ -865,6 +889,12 @@ async def darkcherry(interaction: discord.Interaction, game: str|None, number: i
 async def codes(interaction: discord.Interaction, game: str|None, number: int|None):
     await interaction.response.defer()
     await get_game_value(interaction, game, number, "codes", "<:InfoBuddyOK:1291972595952123984>")
+
+# modded terminal codes command
+@client.tree.command(name="codesmodded",description="Check the modded terminal codes for a game", guild=GUILD_ID)
+async def codes(interaction: discord.Interaction, game: str|None, number: int|None):
+    await interaction.response.defer()
+    await get_game_value(interaction, game, number, "modded codes", "<:InfoBuddyOK:1291972595952123984>")
 
 # party house seed command
 @client.tree.command(name="partyhouseseed",description="Check a seed for Party House or get a random one", guild=GUILD_ID)
