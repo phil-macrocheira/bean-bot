@@ -11,7 +11,7 @@
         "gift": "VISIT AT LEAST 25 ROOMS",
         "gold": "LIBERATE THE CASTLE",
         "cherry": "WIN WITH MAX EGGS",
-        "dark_cherry": "WIN WITH MAX EGGS AND 750 CASH"
+        "dark cherry": "WIN WITH MAX EGGS AND 750 CASH"
     },
     {
         "name": "Bug Hunter",
@@ -32,7 +32,7 @@
         "gift": "COMPLETE YOUR FIRST JOB",
         "gold": "COMPLETE 3 JOBS IN A ROW",
         "cherry": "COMPLETE 6 JOBS IN A ROW",
-        "dark_cherry": "COMPLETE 15 JOBS IN A ROW"
+        "dark cherry": "COMPLETE 15 JOBS IN A ROW"
     },
     {
         "name": "Ninpek",
@@ -48,7 +48,7 @@
         "gift": "EAT 3 SANDWICHES",
         "gold": "BEAT THE GAME",
         "cherry": "BEAT THE SECOND LOOP",
-        "dark_cherry": "BEAT THE SECOND LOOP WITH 60000 POINTS"
+        "dark cherry": "BEAT THE SECOND LOOP WITH 60000 POINTS"
     },
     {
         "name": "Paint Chase",
@@ -65,7 +65,7 @@
         "gift": "PASS THE FIRST 12 COURSES",
         "gold": "PASS ALL 25 COURSES AND DEFEAT THE PINK RACER",
         "cherry": "WIN WITH A SCORE OF AT LEAST 500",
-        "dark_cherry": "WIN WITH A SCORE OF AT LEAST 600"
+        "dark cherry": "WIN WITH A SCORE OF AT LEAST 600"
     },
     {
         "name": "Magic Garden",
@@ -81,7 +81,7 @@
         "gift": "SAVE AT LEAST 10 OPPIES AT ONCE",
         "gold": "SAVE 200 OPPIES",
         "cherry": "WIN WITH A SCORE OF AT LEAST 20000",
-        "dark_cherry": "WIN WITH A SCORE OF AT LEAST 200000"
+        "dark cherry": "WIN WITH A SCORE OF AT LEAST 200000"
     },
     {
         "name": "Mortol",
@@ -101,7 +101,7 @@
         "gift": "BEAT LEVEL 2-C",
         "gold": "BEAT ALL 10 LEVELS.",
         "cherry": "FINISH WITH AT LEAST 75 LIVES.",
-        "dark_cherry": "WIN WITH AT LEAST 150 LIVES"
+        "dark cherry": "WIN WITH AT LEAST 150 LIVES"
     },
     {
         "name": "Velgress",
@@ -117,7 +117,7 @@
         "gift": "COLLECT 2 KEYS",
         "gold": "ESCAPE VELGRESS",
         "cherry": "UNLOCK FINAL LEVEL AND DEFEAT CHARKAS",
-        "dark_cherry": "DEFEAT CHARKAS AND WIN WITH AT LEAST 120 COINS"
+        "dark cherry": "DEFEAT CHARKAS AND WIN WITH AT LEAST 120 COINS"
     },
     {
         "name": "Planet Zoldath",
@@ -134,7 +134,7 @@
         "gift": "FIND 1 MAP PART(S)",
         "gold": "FIND ALL 3 MAP PARTS AND ESCAPE ZOLDATH",
         "cherry": "WIN IN 20 MINUTES OR LESS",
-        "dark_cherry": "WIN IN 10 MINUTES OR LESS"
+        "dark cherry": "WIN IN 10 MINUTES OR LESS"
     },
     {
         "name": "Attactics",
@@ -150,7 +150,7 @@
         "gift": "BEAT THE FIRST 12 LEVELS IN THE CAMPAIGN",
         "gold": "BEAT ALL 24 LEVELS IN THE CAMPAIGN",
         "cherry": "BEAT THE CAMPAIGN AND REACH RANK 100 IN RANKED MODE",
-        "dark_cherry": "BEAT THE CAMPAIGN AND REACH RANK 200 IN RANKED MODE"
+        "dark cherry": "BEAT THE CAMPAIGN AND REACH RANK 200 IN RANKED MODE"
     },
     {
         "name": "Devilition",
@@ -169,7 +169,7 @@
         "gift": "SURVIVE FOR 5 ROUNDS",
         "gold": "SURVIVE 10 ROUNDS",
         "cherry": "SCORE 30000 POINTS",
-        "dark_cherry": "SCORE 50000 POINTS"
+        "dark cherry": "SCORE 50000 POINTS"
     },
     {
         "name": "Kick Club",
@@ -186,7 +186,7 @@
         "gift": "BEAT TRACK WORLD",
         "gold": "BEAT ALL 4 WORLDS",
         "cherry": "WIN WITH 150000 POINTS",
-        "dark_cherry": "WIN WITH 200000 POINTS"
+        "dark cherry": "WIN WITH 200000 POINTS"
     },
     {
         "name": "Avianos",
@@ -202,7 +202,7 @@
         "gift": "MAX OUT BLESSINGS FROM ONE ANCESTOR.",
         "gold": "BEAT HATCHLING, FLEDGLING, AND ADULT",
         "cherry": "BEAT ALL 5 TRIALS",
-        "dark_cherry": "SURVIVE THE GREAT SIEGE"
+        "dark cherry": "SURVIVE THE GREAT SIEGE"
     },
     {
         "name": "Mooncat",
@@ -216,7 +216,7 @@
         "gift": "FIND A WARP",
         "gold": "FIND THE EGG",
         "cherry": "FIND ALL 3 EGGS",
-        "dark_cherry": "GET ALL 3 EGGS IN UNDER 9 DEATHS TOTAL (SUM OF DEATH RECORD PER EGG)"
+        "dark cherry": "GET ALL 3 EGGS IN UNDER 9 DEATHS TOTAL (SUM OF DEATH RECORD PER EGG)"
     },
     {
         "name": "Bushido Ball",
@@ -232,7 +232,7 @@
         "gift": "DEFEAT 3 IN THE TOURNAMENT",
         "gold": "WIN THE TOURNAMENT",
         "cherry": "WIN WITH NO CONTINUES",
-        "dark_cherry": "WIN WITH ALL 6 CHARACTERS IN SOLO TOURNAMENTS WITH NO CONTINUES (USING DEFAULT RULES)"
+        "dark cherry": "WIN WITH ALL 6 CHARACTERS IN SOLO TOURNAMENTS WITH NO CONTINUES (USING DEFAULT RULES)"
     },
     {
         "name": "Block Koala",
@@ -248,7 +248,7 @@
         "gift": "COMPLETE A CUSTOM LEVEL",
         "gold": "BEAT LEVEL 50",
         "cherry": "EARN 50 STARS",
-        "dark_cherry": "EARN ALL 50 STARS IN UNDER 50 UNDOS"
+        "dark cherry": "EARN ALL 50 STARS IN UNDER 50 UNDOS"
     },
     {
         "name": "Camouflage",
@@ -264,7 +264,7 @@
         "gift": "EARN 30% COMPLETION",
         "gold": "REACH THE SKY TEMPLE ON THE FAR SIDE OF THE ISLAND",
         "cherry": "EARN 100% COMPLETION",
-        "dark_cherry": "EARN 100% COMPLETION WITHOUT EVER GETTING CAUGHT"
+        "dark cherry": "EARN 100% COMPLETION WITHOUT EVER GETTING CAUGHT"
     },
     {
         "name": "Campanella",
@@ -280,7 +280,7 @@
         "gift": "AMASS 15 SPARE SHIPS",
         "gold": "BEAT ALL 50 STAGES",
         "cherry": "WIN WITH ALL 40 COFFEES",
-        "dark_cherry": "WIN WITH 50 LIVES AND 40 COFFEES"
+        "dark cherry": "WIN WITH 50 LIVES AND 40 COFFEES"
     },
     {
         "name": "Golfaria",
@@ -296,7 +296,7 @@
         "gift": "OBTAIN THE BLOCK BUSTER",
         "gold": "BEAT THE GAME",
         "cherry": "WIN WITH 100% COMPLETION",
-        "dark_cherry": "WIN IN UNDER 750 STROKES WITH 100% COMPLETION"
+        "dark cherry": "WIN IN UNDER 750 STROKES WITH 100% COMPLETION"
     },
     {
         "name": "The Big Bell Race",
@@ -312,7 +312,7 @@
         "gift": "WIN FIRST PLACE IN AT LEAST 1 RACE",
         "gold": "WIN FIRST PLACE IN THE TOURNAMENT",
         "cherry": "WIN FIRST PLACE IN ALL 8 RACES",
-        "dark_cherry": "WIN FIRST IN ALL RACES, AND EITHER TAKE LESS THAN 8 HITS OR LESS THAN 8 MINUTES WHILE RACING"
+        "dark cherry": "WIN FIRST IN ALL RACES, AND EITHER TAKE LESS THAN 8 HITS OR LESS THAN 8 MINUTES WHILE RACING"
     },
     {
         "name": "Warptank",
@@ -328,7 +328,7 @@
         "gift": "DEFEAT RENEGADE",
         "gold": "DEFEAT BIG TANK",
         "cherry": "FIND ALL COFFEES AND CLEAR SPECIAL STAGE",
-        "dark_cherry": "CLEAR THE SPECIAL STAGE WHILE HAVING A TOTAL BEST TIME OF UNDER 25 MINUTES"
+        "dark cherry": "CLEAR THE SPECIAL STAGE WHILE HAVING A TOTAL BEST TIME OF UNDER 25 MINUTES"
     },
     {
         "name": "Waldorf's Journey",
@@ -344,7 +344,7 @@
         "gift": "COMPLETE 50% OF THE JOURNEY",
         "gold": "UNCOVER THE SECRET AT THE END OF THE DREAM",
         "cherry": "REACH THE END WITH 50 SHELLS",
-        "dark_cherry": "REACH THE END WITH 101 SHELLS"
+        "dark cherry": "REACH THE END WITH 101 SHELLS"
     },
     {
         "name": "Porgy",
@@ -361,7 +361,7 @@
         "gift": "DEFEAT LAMIA",
         "gold": "SOLVE THE MYSTERY",
         "cherry": "ACHIEVE 100% COMPLETION",
-        "dark_cherry": "BEAT THE GAME WITH 100% COMPLETION IN 40 DIVES OR LESS"
+        "dark cherry": "BEAT THE GAME WITH 100% COMPLETION IN 40 DIVES OR LESS"
     },
     {
         "name": "Onion Delivery",
@@ -378,7 +378,7 @@
         "gift": "COMPLETE 2 DAYS OF DELIVERIES",
         "gold": "SURVIVE A WEEK ON THE JOB",
         "cherry": "MAKE 50+ DELIVERIES IN A WEEK",
-        "dark_cherry": "MAKE 75+ DELIVERIES IN A WEEK"
+        "dark cherry": "MAKE 75+ DELIVERIES IN A WEEK"
     },
     {
         "name": "Caramel Caramel",
@@ -394,7 +394,7 @@
         "gift": "BEAT THE EGG",
         "gold": "BEAT THE GAME",
         "cherry": "DEFEAT THE TRUE BOSS",
-        "dark_cherry": "DEFEAT THE TRUE BOSS WITH 100000 POINTS"
+        "dark cherry": "DEFEAT THE TRUE BOSS WITH 100000 POINTS"
     },
     {
         "name": "Party House",
@@ -411,7 +411,7 @@
         "gift": "BEAT 1 SCENARIO",
         "gold": "BEAT ALL 5 SCENARIOS",
         "cherry": "ACHIEVE A STREAK OF 5",
-        "dark_cherry": "BEAT ALL 10 SCENARIOS, AND ACHIEVE A STREAK OF 5 IN NORMAL AND CHALLENGE MODE"
+        "dark cherry": "BEAT ALL 10 SCENARIOS, AND ACHIEVE A STREAK OF 5 IN NORMAL AND CHALLENGE MODE"
     },
     {
         "name": "Hot Foot",
@@ -431,7 +431,7 @@
         "gift": "WIN 3 MATCHES",
         "gold": "WIN THE TOURNAMENT",
         "cherry": "WIN WITH 6 BLOWOUTS",
-        "dark_cherry": "WIN WITH 6 BLOWOUTS WITH EVERY CHARACTER"
+        "dark cherry": "WIN WITH 6 BLOWOUTS WITH EVERY CHARACTER"
     },
     {
         "name": "Divers",
@@ -447,7 +447,7 @@
         "gift": "COLLECT PARASITE HAMMER",
         "gold": "EXPLORE THE DEEPEST DEPTHS",
         "cherry": "FIND ALL 3 EMBLEMS",
-        "dark_cherry": "EXPLORE THE DEEPEST DEPTHS WITH ALL 3 EMBLEMS WITH NO GAME OVERS AND NO QUITTING DURING A DIVE"
+        "dark cherry": "EXPLORE THE DEEPEST DEPTHS WITH ALL 3 EMBLEMS WITH NO GAME OVERS AND NO QUITTING DURING A DIVE"
     },
     {
         "name": "Rail Heist",
@@ -464,7 +464,7 @@
         "gift": "BEAT LEVEL 10",
         "gold": "BEAT ALL 20 LEVELS",
         "cherry": "BEAT THE GAME WITH AT LEAST 40 STARS",
-        "dark_cherry": "BEAT THE GAME WITH 60 STARS"
+        "dark cherry": "BEAT THE GAME WITH 60 STARS"
     },
     {
         "name": "Vainger",
@@ -480,7 +480,7 @@
         "gift": "OBTAIN A MOD",
         "gold": "BEAT THE GAME",
         "cherry": "WIN WITH 100% EXPLORATION AND UPGRADES",
-        "dark_cherry": "WIN WITH 100% EXPLORATION AND UPGRADES AND 0 DEATHS"
+        "dark cherry": "WIN WITH 100% EXPLORATION AND UPGRADES AND 0 DEATHS"
     },
     {
         "name": "Rock On! Island",
@@ -496,7 +496,7 @@
         "gift": "REACH THE SECOND VILLAGE",
         "gold": "CLEAR THE LAST LEVEL",
         "cherry": "CLEAR ALL LEVELS WITHOUT ANY DAMAGE",
-        "dark_cherry": "CLEAR ALL LEVELS WITHOUT ANY DAMAGE, SELLING, OR DIGGING"
+        "dark cherry": "CLEAR ALL LEVELS WITHOUT ANY DAMAGE, SELLING, OR DIGGING"
     },
     {
         "name": "Pingolf",
@@ -512,7 +512,7 @@
         "gift": "GET A HOLE IN ONE",
         "gold": "WIN THE UFO INVITATIONAL",
         "cherry": "WIN WITH A SCORE OF 0 OR LESS",
-        "dark_cherry": "WIN WITH A SCORE OF -18 OR LESS"
+        "dark cherry": "WIN WITH A SCORE OF -18 OR LESS"
     },
     {
         "name": "Mortol II",
@@ -528,7 +528,7 @@
         "gift": "ACTIVATE A SWITCH",
         "gold": "DESTROY THE DARK HEARTS OF CASTLE NILPIS",
         "cherry": "SACRIFICE LESS THAN 50 LIVES TO WIN",
-        "dark_cherry": "SACRIFICE LESS THAN 50 LIVES, PRESS ALL SWITCHES, UNLOCK ALL DOORS, AND WIN"
+        "dark cherry": "SACRIFICE LESS THAN 50 LIVES, PRESS ALL SWITCHES, UNLOCK ALL DOORS, AND WIN"
     },
     {
         "name": "Fist Hell",
@@ -546,7 +546,7 @@
         "gift": "SURVIVE 9 WAVES IN THE GYM",
         "gold": "BEAT THE GAME",
         "cherry": "BEAT THE GAME WITH NO CONTINUES",
-        "dark_cherry": "BEAT THE GAME WITH NO CONTINUES AND 100 BUCKS"
+        "dark cherry": "BEAT THE GAME WITH NO CONTINUES AND 100 BUCKS"
     },
     {
         "name": "Overbold",
@@ -563,7 +563,7 @@
         "gift": "WIN AT LEAST 500 IN ONE FIGHT",
         "gold": "SURVIVE 8 ROUNDS IN THE RED ARENA",
         "cherry": "WIN WITH AT LEAST 4500",
-        "dark_cherry": "WIN WITH AT LEAST 10000"
+        "dark cherry": "WIN WITH AT LEAST 10000"
     },
     {
         "name": "Campanella 2",
@@ -579,7 +579,7 @@
         "gift": "OBTAIN THE FRIENDSHIP BRACELET",
         "gold": "ESCAPE WITH PILOT?",
         "cherry": "SAVE THE PLANETOID",
-        "dark_cherry": "SAVE THE PLANETOID WITH AT LEAST 1500 COINS"
+        "dark cherry": "SAVE THE PLANETOID WITH AT LEAST 1500 COINS"
     },
     {
         "name": "Hyper Contender",
@@ -595,7 +595,7 @@
         "gift": "WIN A DRAFT BATTLE (ON DEFAULT RING SETTINGS)",
         "gold": "WIN THE TOURNAMENT (ON DEFAULT RING SETTINGS)",
         "cherry": "WIN WITH 4 DIFFERENT CHARACTERS (ON DEFAULT RING SETTINGS)",
-        "dark_cherry": "WIN WITH ALL 8 CHARACTERS WITHOUT USING REMATCHES (ON DEFAULT RING SETTINGS)"
+        "dark cherry": "WIN WITH ALL 8 CHARACTERS WITHOUT USING REMATCHES (ON DEFAULT RING SETTINGS)"
     },
     {
         "name": "Valbrace",
@@ -612,7 +612,7 @@
         "gift": "OBTAIN 8 IN ANY STAT",
         "gold": "DEFEAT THE ABYSS LORD AND ESCAPE GNOTHROK KEEP",
         "cherry": "DEFEAT THE ABYSS LORD WITH THE RED STAR SWORD",
-        "dark_cherry": "DEFEAT THE ABYSS LORD WITH THE RED STAR SWORD WITHOUT DYING"
+        "dark cherry": "DEFEAT THE ABYSS LORD WITH THE RED STAR SWORD WITHOUT DYING"
     },
     {
         "name": "Rakshasa",
@@ -628,7 +628,7 @@
         "gift": "CHEAT DEATH 3 TIMES",
         "gold": "BEAT THE GAME",
         "cherry": "BEAT THE GAME WITH A SCORE OF AT LEAST 50000",
-        "dark_cherry": "BEAT THE GAME WITH A SCORE OF AT LEAST 70000"
+        "dark cherry": "BEAT THE GAME WITH A SCORE OF AT LEAST 70000"
     },
     {
         "name": "Star Waspir",
@@ -644,7 +644,7 @@
         "gift": "OBTAIN A 10X MULTIPLIER",
         "gold": "BEAT 5 WAVES",
         "cherry": "WIN WITH AT LEAST 300000 POINTS",
-        "dark_cherry": "WIN WITH AT LEAST 1000000 POINTS"
+        "dark cherry": "WIN WITH AT LEAST 1000000 POINTS"
     },
     {
         "name": "Grimstone",
@@ -660,7 +660,7 @@
         "gift": "REACH EXP LEVEL 10",
         "gold": "BEAT THE GAME",
         "cherry": "WIN WITH ALL POSSE MEMBERS ALIVE",
-        "dark_cherry": "WIN WITH 3 OR LESS POSSE MEMBERS WITH ALL POSSE MEMBERS ALIVE"
+        "dark cherry": "WIN WITH 3 OR LESS POSSE MEMBERS WITH ALL POSSE MEMBERS ALIVE"
     },
     {
         "name": "Lords of Diskonia",
@@ -677,7 +677,7 @@
         "gift": "BEAT LEVEL 5 IN THE CAMPAIGN",
         "gold": "BEAT ALL 10 SCENARIOS",
         "cherry": "ACHIEVE A STREAK OF AT LEAST 3",
-        "dark_cherry": "ACHIEVE A STREAK OF AT LEAST 10"
+        "dark cherry": "ACHIEVE A STREAK OF AT LEAST 10"
     },
     {
         "name": "Night Manor",
@@ -693,7 +693,7 @@
         "gift": "ESCAPE THE KILLER",
         "gold": "ESCAPE THE MANOR",
         "cherry": "END THE NIGHTMARE",
-        "dark_cherry": "END THE NIGHTMARE WITHOUT HAVING A BAD DREAM"
+        "dark cherry": "END THE NIGHTMARE WITHOUT HAVING A BAD DREAM"
     },
     {
         "name": "Elfazar's Hat",
@@ -709,7 +709,7 @@
         "gift": "EARN A CONTINUE IN THE BONUS ROUND",
         "gold": "DEFEAT ELFAZAR",
         "cherry": "DEFEAT ELFAZAR WITHOUT CONTINUES",
-        "dark_cherry": "DEFEAT ELFAZAR WITH 9 LIVES WITHOUT CONTINUES"
+        "dark cherry": "DEFEAT ELFAZAR WITH 9 LIVES WITHOUT CONTINUES"
     },
     {
         "name": "Pilot Quest",
@@ -725,7 +725,7 @@
         "gift": "DEFEAT UNKTOMI",
         "gold": "FIX YOUR SHIP AND ESCAPE ZOLDATH",
         "cherry": "LEAVE ZOLDATH WITH THE DONKA DONKA IDOL",
-        "dark_cherry": "EITHER LEAVE WITH THE IDOL IN 8 OR LESS WILD VISITS, OR LEAVE WITH THE IDOL WITH 3 LEVEL 5 STATUES"
+        "dark cherry": "EITHER LEAVE WITH THE IDOL IN 8 OR LESS WILD VISITS, OR LEAVE WITH THE IDOL WITH 3 LEVEL 5 STATUES"
     },
     {
         "name": "Mini & Max",
@@ -741,7 +741,7 @@
         "gift": "COLLECT AT LEAST 100 SHINIES",
         "gold": "ESCAPE THE STORAGE ROOM",
         "cherry": "FIND PONGO AND RESTORE BALANCE",
-        "dark_cherry": "RESTORE BALANCE BY 7:30"
+        "dark cherry": "RESTORE BALANCE BY 7:30"
     },
     {
         "name": "Combatants",
@@ -757,7 +757,7 @@
         "gift": "SLAY A SPIDER",
         "gold": "RETAKE THE CAPITAL",
         "cherry": "COMPLETE ALL MISSIONS",
-        "dark_cherry": "COMPLETE ALL MISSIONS WITH 8 OR LESS TOTAL FAILED MISSIONS"
+        "dark cherry": "COMPLETE ALL MISSIONS WITH 8 OR LESS TOTAL FAILED MISSIONS"
     },
     {
         "name": "Quibble Race",
@@ -775,7 +775,7 @@
         "gift": "SPONSOR A QUIBBLE THAT WINS A RACE",
         "gold": "BE THE RICHEST PLAYER IN A SINGLE PLAYER GAME THAT LASTS 6 ROUNDS",
         "cherry": "WIN WITH $10000 IN A 6 ROUND GAME",
-        "dark_cherry": "WIN WITH $100000 IN A 6 ROUND GAME"
+        "dark cherry": "WIN WITH $100000 IN A 6 ROUND GAME"
     },
     {
         "name": "Seaside Drive",
@@ -792,7 +792,7 @@
         "gift": "OBTAIN A COIN",
         "gold": "BEAT ALL 4 STAGES",
         "cherry": "BEAT THE GAME WITH AT LEAST 300000 POINTS.",
-        "dark_cherry": "BEAT THE GAME WITH 9 LIVES AND AT LEAST 300000 POINTS"
+        "dark cherry": "BEAT THE GAME WITH 9 LIVES AND AT LEAST 300000 POINTS"
     },
     {
         "name": "Campanella 3",
@@ -808,7 +808,7 @@
         "gift": "CLEAR THE BONUS ROUND",
         "gold": "DEFEAT QUEEN ZU",
         "cherry": "WIN WITH A SCORE OF AT LEAST 1500",
-        "dark_cherry": "WIN WITH A SCORE OF AT LEAST 2400"
+        "dark cherry": "WIN WITH A SCORE OF AT LEAST 2400"
     },
     {
         "name": "Cyber Owls",
@@ -826,7 +826,7 @@
         "gift": "RESCUE AN OWL",
         "gold": "SAVE THE WORLD",
         "cherry": "SAVE THE WORLD WITH NO DEATHS",
-        "dark_cherry": "SAVE THE WORLD WITH 10000 POINTS AND NO DEATHS"
+        "dark cherry": "SAVE THE WORLD WITH 10000 POINTS AND NO DEATHS"
     },
     {
         "name": "MT",
