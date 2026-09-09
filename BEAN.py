@@ -558,7 +558,7 @@ def game_value_output(type, target, emote, players):
         return f'The {emote} **History** for {target['emoji']} **{game_name}** is...\n\n"{target[type]}"'
     return f"The {emote} **{type.capitalize()}** requirement for {target['emoji']} **{game_name}** is...\n\n**{target[type]}**"
 
-# shared function code used for grabbing history, gift, gold, and cherry values
+# shared function code used for grabbing history, gift, gold, cherry, and dark cherry values
 async def get_game_value(interaction, game, number, type, emote, players=1):
     # no game or number specified
     if game is None and number is None:
@@ -579,7 +579,7 @@ async def get_game_value(interaction, game, number, type, emote, players=1):
             if number > 51 or number < 0:
                 return await interaction.followup.send(content=f"Your input was not valid.", ephemeral=True)
             else:
-                if (number == 0 or number == 51) and (type == 'world record' or type == 'mods' or type == 'history' or type == 'gift' or type == 'gold' or type == 'cherry'):
+                if (number == 0 or number == 51) and (type == 'world record' or type == 'mods' or type == 'history' or type == 'gift' or type == 'gold' or type == 'cherry' or type == 'dark cherry'):
                     return await interaction.followup.send(content=f"Your input was not valid.", ephemeral=True)
                 target = d[number-1]
                 await interaction.followup.send(game_value_output(type,target,emote,players))
@@ -598,7 +598,7 @@ async def get_game_value(interaction, game, number, type, emote, players=1):
                 if (best_match >= 90):
                     target = [x for x in d if best_match_game.lower() == x["name"].lower()]
                     target = target[0]
-                    if (target['name'] == 'The Terminal' or target['name'] == 'MT') and (type == 'world record' or type == 'mods' or type == 'history' or type == 'gift' or type == 'gold' or type == 'cherry'):
+                    if (target['name'] == 'The Terminal' or target['name'] == 'MT') and (type == 'world record' or type == 'mods' or type == 'history' or type == 'gift' or type == 'gold' or type == 'cherry' or type == 'dark cherry'):
                         return await interaction.followup.send(content=f"Your input was not valid.", ephemeral=True)
                     await interaction.followup.send(game_value_output(type,target,emote,players))
                 else:
@@ -851,6 +851,12 @@ async def gold(interaction: discord.Interaction, game: str|None, number: int|Non
 async def cherry(interaction: discord.Interaction, game: str|None, number: int|None):
     await interaction.response.defer()
     await get_game_value(interaction, game, number, "cherry", "<:CherryGet:1291281262870528073>")
+
+# darkcherry command
+@client.tree.command(name="darkcherry",description="Check dark cherry mod requirement for a game", guild=GUILD_ID)
+async def darkcherry(interaction: discord.Interaction, game: str|None, number: int|None):
+    await interaction.response.defer()
+    await get_game_value(interaction, game, number, "dark cherry", "<:CherryGet:1291281262870528073>")
 
 # terminal codes command
 @client.tree.command(name="codes",description="Check the terminal codes for a game", guild=GUILD_ID)
