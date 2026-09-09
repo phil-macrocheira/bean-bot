@@ -420,11 +420,13 @@ def modded_codes_output(game_name=None):
     sheet = ss.sheet1
     records = sheet.get_all_records()
 
-    results = [
-        f"**{row['Terminal Code']}**: ||{row['Description']}|| (**[{row['Mod']}](<https://gamebanana.com/mods/{row['Gamebanana ID']}>)**)"
-        for row in records 
-        if str(row.get("Game")) == str(game_name)
-    ]
+    results = []
+    for row in records:
+        if str(row.get("Game")) == str(game_name):
+            players = f" ({row['2P?']})" if row.get("2P?") else ""
+            line = f"**{row['Terminal Code']}**: ||{row['Description']}{players}|| (**[{row['Mod']}](<https://gamebanana.com/mods/{row['Gamebanana ID']}>)**)"
+            results.append(line)
+
     if not results:
         return '*No modded terminal codes available for this game.*'
 
