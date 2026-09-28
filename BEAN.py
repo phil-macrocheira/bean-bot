@@ -824,7 +824,7 @@ async def randomformehistory(interaction: discord.Interaction):
 @client.tree.command(name="randomseed",description="Get a random 6 digit seed", guild=GUILD_ID)
 async def randomseed(interaction: discord.Interaction):
     seed = urandom(999999, 0)
-    response = f'**{seed}**'
+    response = f'**{seed:06d}**'
     await interaction.response.send_message(response)
 
 # seedoftheday command
@@ -833,7 +833,7 @@ async def seedoftheday(interaction: discord.Interaction):
     today = datetime.datetime.now(TIMEZONE).date()
     random.seed(today.toordinal())
     seed = random.randint(0, 999999)
-    response = f'The **Seed of the Day** is **{seed}**'
+    response = f'The **Seed of the Day** is **{seed:06d}**'
     await interaction.response.send_message(response)
 
 #allgames command
