@@ -10,6 +10,7 @@ import os
 import requests
 import datetime
 import gspread
+import io
 from thefuzz import fuzz
 
 # Get pine's sheet API from fly.io
@@ -932,6 +933,72 @@ async def fiftyclub(interaction: discord.Interaction):
     role_message += f"**{switch_members}** members on **Switch**"
 
     await interaction.response.send_message(role_message)
+
+@client.tree.command(
+    name="memberinfo",
+    description="Export profile info (ID, name, avatar) for the given people",
+    guild=GUILD_ID,
+)
+async def memberinfo(
+    interaction: discord.Interaction,
+    names: str,
+):
+    try:
+        with requests.Session() as session:
+            session.headers.update({
+                "Authorization": f"Bot {os.getenv("BEAN_TOKEN")}",
+            })
+
+            for query in names.split(","):
+                response = session.get(
+                    f"https://discord.com/api/v10/guilds/{GUILD_ID}/members/search",
+                    params={
+                        "query": query,
+                        "limit": 10,
+                    },
+                    timeout=5,
+                )
+                response.raise_for_status()
+
+                profiles = []
+                for member in response.json():
+                    user = member.get("user") or {}
+                    profiles.append({
+                        "nick": member.get("nick"),
+                        "global_name": user.get("global_name"),
+                        "username": user.get("username"),
+                        "guild_avatar": member.get("avatar"),
+                        "user_avatar": user.get("avatar"),
+                        "id": user.get("id"),
+                    })
+
+                results[query] = profiles
+
+        json_bytes = json.dumps(
+            results,
+            indent=2,
+            ensure_ascii=False,
+        ).encode("utf-8")
+
+        attachment = discord.File(
+            io.BytesIO(json_bytes),
+            filename="memberinfo.json",
+        )
+
+        await interaction.followup.send(
+            content=(
+                "Results JSON file is attached."
+            ),
+            file=attachment,
+            ephemeral=True,
+        )
+        
+    except Exception:
+        await interaction.followup.send(
+            "Member lookup failed.",
+            ephemeral=True,
+        )
+        raise
 
 # Get token from fly.io
 TOKEN = os.getenv('BEAN_TOKEN')
