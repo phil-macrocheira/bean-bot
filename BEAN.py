@@ -943,6 +943,7 @@ async def memberinfo(
     interaction: discord.Interaction,
     names: str,
 ):
+    await interaction.response.defer(ephemeral=True)
     try:
         with requests.Session() as session:
             session.headers.update({
@@ -998,7 +999,6 @@ async def memberinfo(
             "Member lookup failed.",
             ephemeral=True,
         )
-        raise
 
 # Get token from fly.io
 TOKEN = os.getenv('BEAN_TOKEN')
