@@ -946,6 +946,7 @@ async def memberinfo(
 ):
     await interaction.response.defer(ephemeral=True)
     try:
+        results = {}
         with requests.Session() as session:
             session.headers.update({
                 "Authorization": f"Bot {os.getenv("BEAN_TOKEN")}",
