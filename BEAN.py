@@ -17,7 +17,8 @@ from thefuzz import fuzz
 SHEET_API_KEY = os.getenv('SHEET_API_KEY')
 
 # UFO 50 Discord server ID
-GUILD_ID = discord.Object(id=525973026429206530)
+RAW_GUILD_ID = 525973026429206530
+GUILD_ID = discord.Object(id=RAW_GUILD_ID)
 TESTGUILD_ID = discord.Object(id=1292608815891480648)
 
 # globally reused variables
@@ -952,7 +953,7 @@ async def memberinfo(
 
             for query in names.split(","):
                 response = session.get(
-                    f"https://discord.com/api/v10/guilds/{GUILD_ID}/members/search",
+                    f"https://discord.com/api/v10/guilds/{RAW_GUILD_ID}/members/search",
                     params={
                         "query": query,
                         "limit": 10,
